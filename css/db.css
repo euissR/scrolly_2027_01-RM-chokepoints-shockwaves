@@ -565,7 +565,9 @@
 .db-root .db-title {
   margin: 0 0 1rem !important;
   padding: 0 !important;
-  font: 700 2.125rem/1.15 var(--db-font-title) !important;
+  font-size: 2.125rem !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
   color: var(--db-navy) !important;
   text-transform: none !important;
 }
@@ -573,7 +575,9 @@
 .db-root .db-h3 {
   margin: 0 0 0.25rem !important;
   padding: 0 !important;
-  font: 700 1.5rem/1.25 var(--db-font-title) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
   color: var(--db-navy) !important;
   text-transform: none !important;
 }
@@ -673,7 +677,7 @@
 
 .db-root .db-q {
   margin: 0 0 0.75rem;
-  font: italic 0.9375rem/1.4 var(--db-font-title);
+  font: italic 1rem/1.4 var(--db-font-title);
   color: var(--db-muted);
 }
 
@@ -952,51 +956,40 @@
 }
 
 .db-chain {
-  position: relative;
-  margin: 0.125rem 0 0.875rem;
-  padding: 0;
-  list-style: none;
+  margin: 0.25rem 0 0.875rem !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
-.db-chain li {
+.db-root .db-chain li {
   position: relative;
-  padding: 0 0 0.875rem 30px;
+  margin: 0 !important;
+  padding: 0 0 0.625rem 26px !important;
+  list-style: none !important;
 }
 
+/* first step filled, the rest empty: fuchsia2 */
 .db-chain li::before {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 16px;
-  bottom: -2px;
-  width: 2px;
-  background: var(--db-shock);
-  opacity: 0.35;
-}
-
-.db-chain li:last-child::before {
-  display: none;
-}
-
-.db-chain li::after {
-  content: "";
-  position: absolute;
   left: 2px;
-  top: 4px;
-  width: 14px;
-  height: 14px;
+  top: 0.4em;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
   border-radius: 50%;
   background: #fff;
-  border: 3px solid var(--db-shock);
+  border: 2px solid var(--db-shock);
 }
 
-.db-chain li:first-child::after {
+.db-chain li:first-child::before {
   background: var(--db-shock);
 }
 
-.db-reach {
-  font: 0.9375rem var(--db-font);
-  color: var(--db-muted);
+.db-root p.db-reach {
+  margin: 0 0 1rem !important;
+  font: 0.875rem/1.45 var(--db-font) !important;
+  color: var(--db-muted) !important;
 }
 
 /* ── patterns tab ───────────────────────────────────────────────────────── */
@@ -1125,11 +1118,30 @@
     font-size: 0.8125rem !important;
   }
 
-  /* region and theme tiles: one row that scrolls sideways */
+  /* region and theme tiles: two per row, no sideways scroll */
+  .db-filters {
+    display: block;
+    padding: 12px 0 16px;
+  }
+
   .db-tiles {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .db-tiles + .db-tiles {
+    margin-top: 12px;
+  }
+
+  .db-tiles .db-flabel {
+    grid-column: 1 / -1;
+  }
+
+  .db-root .db-tile {
+    padding: 6px 10px;
+    line-height: 1.15 !important;
+    white-space: normal;
   }
 
   .db-cards {

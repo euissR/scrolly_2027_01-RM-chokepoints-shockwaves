@@ -297,7 +297,7 @@
    ],
    "lab": {
     "dx": 0,
-    "dy": 4,
+    "dy": -22,
     "a": "middle"
    },
    "line": "Excepteur labore veniam veniam egestas commodo duis reprehenderit laoreet quis porta tincidunt.",
@@ -335,9 +335,9 @@
     43.4
    ],
    "lab": {
-    "dx": 30,
-    "dy": -2,
-    "a": "start"
+    "dx": -30,
+    "dy": 4,
+    "a": "end"
    },
    "line": "Esse pharetra sed lacus exercitation consectetur et minim.",
    "themes": {
@@ -395,9 +395,9 @@
     -1
    ],
    "lab": {
-    "dx": 0,
-    "dy": 36,
-    "a": "middle"
+    "dx": -26,
+    "dy": 4,
+    "a": "end"
    },
    "line": "Pulvinar dolore consectetur tempor sed cillum aliqua velit ea.",
    "themes": {

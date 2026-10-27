@@ -61,9 +61,7 @@ export function panelHTML(state, D) {
   const kinRow = (sel, icon, name, sub) =>
     `<button type="button" class="db-kinrow" data-sel="${sel}">${icon}<span><b>${esc(name)}</b><span>${esc(sub)}</span></span></button>`;
   const prompts = () =>
-    gq
-      ? `<div class="db-prompts"><b>Suggested prompts for authors (not a template)</b><ul>${D.prompts.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>`
-      : "";
+    "";
 
   // ── overview ──────────────────────────────────────────────────────────
   function overview() {
@@ -166,7 +164,7 @@ export function panelHTML(state, D) {
   function shock(s) {
     const cks = s.theatre ? D.chokepoints.filter((x) => x.theatre === s.theatre) : D.chokepoints.filter((x) => x.theme === s.theme);
     const kin = cks.map((x) => kinRow(`choke:${x.id}`, ICON.ck, x.name, x.blurb)).join("");
-    const chain = `<p class="db-spread">How it spreads</p><ol class="db-chain">${s.spread.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><p class="db-reach"><b>Reaches:</b> ${s.reach.map((r) => esc(r[2])).join(", ")}. Shown on the map as places lit up around the epicentre.</p>`;
+    const chain = `<p class="db-spread">How it spreads</p><ul class="db-chain">${s.spread.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="db-reach"><b>Reaches:</b> ${s.reach.map((r) => esc(r[2])).join(", ")}. Shown on the map as places lit up around the epicentre.</p>`;
     return `${backToMap}${crumbs(ownerCrumbs(s))}
       ${kicker("sk", `Shockwave · ${s.status}`)}
       <h2 class="db-title">${esc(s.name)}</h2>
