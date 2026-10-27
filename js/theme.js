@@ -16,6 +16,7 @@ export const theme = {
   egg: "#ffde75",
   grey: "#595959",
   light: "#c6c6c6",
+  light: "#ececec",
   nearWhite: "#f9f9f9",
   // neutral: "#1a1a1a", // 90% black; deliberately not the EU teal
   neutral: "#333333",

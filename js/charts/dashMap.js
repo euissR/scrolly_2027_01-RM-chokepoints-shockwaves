@@ -117,7 +117,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     "d",
     path(fc(geo.borders.features.filter(disputed))),
   );
-  q(".db-coast").setAttribute("d", path(geo.coast));
+  // q(".db-coast").setAttribute("d", path(geo.coast));
 
   // ── camera: a viewBox that follows { cx, cy, k } ────────────────────────
   let cam = { cx: V0[0] + V0[2] / 2, cy: V0[1] + V0[3] / 2, k: 1 };
@@ -387,7 +387,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     );
     const hit = make("circle", { class: "db-hit", r: 11 }, g);
     const rot = make("g", { transform: `rotate(${c.angle}) scale(1.2)` }, g);
-    make("line", { class: "db-lane", x1: -26, y1: 0, x2: 26, y2: 0 }, rot);
     make("path", { class: "db-wedge db-wedge--a", d: "M-8-10H8L0-1.4Z" }, rot);
     make("path", { class: "db-wedge db-wedge--b", d: "M-8 10H8L0 1.4Z" }, rot);
     [0, 0.8, 1.6].forEach((delay) => {

@@ -10,6 +10,7 @@ export function patternsHTML(D) {
     .filter((x) => x.list.length);
   const both = D.theatres.filter((t) => t.themes.gas && t.themes.subcon).map((t) => t.name);
   const ul = (a) => `<ul>${a.map((x) => `<li>${x}</li>`).join("")}</ul>`;
+  const lines = (a) => a.map((x) => `<div>${x}</div>`).join(""); // one plain line per item in the table
   const names = (list) => list.map((s) => esc(s.name)).join("; ");
 
   const callouts = `
@@ -28,8 +29,8 @@ export function patternsHTML(D) {
       const none = '<span class="db-sub">None mapped</span>';
       return `<tr class="db-tr" tabindex="0" data-sel="theatre:${t.id}">
         <td><div class="db-nm">${esc(t.name)}</div><div class="db-sub">${esc(D.groups[t.group].name)}</div></td>
-        <td>${cs.length ? ul(cs.map((c) => esc(c.name))) : none}</td>
-        <td>${ss.length ? ul(ss.map((s) => `${esc(s.name)} <span class="db-sub">(${esc(s.status.toLowerCase())})</span>`)) : none}</td>
+        <td>${cs.length ? lines(cs.map((c) => esc(c.name))) : none}</td>
+        <td>${ss.length ? lines(ss.map((s) => `${esc(s.name)} <span class="db-sub">(${esc(s.status.toLowerCase())})</span>`)) : none}</td>
         <td>${esc(t.line)}</td></tr>`;
     })
     .join("");
