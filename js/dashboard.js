@@ -70,6 +70,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   const mapcol = q(".db-mapcol");
   const textcol = q(".db-textcol");
   const gqBtn = q(".db-gq");
+  const filters = q(".db-filters");
 
   const map = makeDashMap(q(".db-map"), {
     rows: D,
@@ -127,6 +128,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     mapView.hidden = !isMap;
     patView.hidden = isMap;
     gqBtn.hidden = !isMap;
+    filters.hidden = !isMap; // region and theme tiles do nothing in the patterns table
     root.querySelectorAll(".db-tab").forEach((b) => b.setAttribute("aria-selected", b.dataset.view === v));
     if (isMap) {
       render({ user, scroll: false });

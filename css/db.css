@@ -1026,43 +1026,90 @@
   border: 1px solid var(--db-light);
 }
 
-.db-tbl {
-  width: 100%;
+/* the table: Drupal styles table, th, td and zebra rows, so every part is set here and wins */
+.db-root .db-tbl {
+  display: table !important;
+  width: 100% !important;
   min-width: 860px;
-  border-collapse: collapse;
+  margin: 0 !important;
+  border: 0 !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  table-layout: auto !important;
+  background: #fff !important;
+  box-shadow: none !important;
 }
 
-.db-tbl th,
-.db-tbl td {
-  padding: 11px 14px;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid var(--db-light);
-  font-size: 0.9375rem;
+.db-root .db-tbl thead {
+  display: table-header-group !important;
+  background: none !important;
+  border: 0 !important;
 }
 
-.db-tbl th {
-  font: 700 0.9375rem var(--db-font);
-  color: var(--db-muted);
-  background: var(--db-wash);
+.db-root .db-tbl tbody {
+  display: table-row-group !important;
+  border: 0 !important;
+}
+
+.db-root .db-tbl tr,
+.db-root .db-tbl tbody tr:nth-child(odd),
+.db-root .db-tbl tbody tr:nth-child(even) {
+  display: table-row !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.db-root .db-tbl th,
+.db-root .db-tbl td {
+  display: table-cell !important;
+  position: static !important;
+  width: auto;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 11px 14px !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--db-light) !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  font: 400 1rem/1.35 var(--db-font) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--db-ink) !important;
+}
+
+.db-root .db-tbl th {
+  font-weight: 700 !important;
+  color: var(--db-muted) !important;
+  background: var(--db-wash) !important;
   white-space: nowrap;
 }
 
-.db-tbl td ul {
-  margin: 0;
-  padding-left: 16px;
+.db-root .db-tbl td ul {
+  margin: 0 !important;
+  padding: 0 0 0 16px !important;
+  list-style: disc !important;
 }
 
-.db-tr {
+.db-root .db-tbl td li {
+  margin: 0 !important;
+  padding: 0 !important;
+  font: inherit !important;
+  list-style: disc !important;
+}
+
+.db-root .db-tbl .db-tr {
   cursor: pointer;
 }
 
-.db-tr:hover td {
-  background: var(--db-wash);
+.db-root .db-tbl .db-tr:hover td {
+  background: var(--db-wash) !important;
 }
 
-.db-tbl tr:last-child td {
-  border-bottom: 0;
+.db-root .db-tbl tbody tr:last-child td {
+  border-bottom: 0 !important;
 }
 
 .db-nm {
