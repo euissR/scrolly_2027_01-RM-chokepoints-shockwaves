@@ -24,7 +24,7 @@ import { makeHover } from "./hover.js";
 import { esc } from "../content.js";
 
 const NS = "http://www.w3.org/2000/svg";
-const HALO = { local: 16, regional: 28, global: 46 }; // size of the soft wash behind a shockwave
+const RING = 16; // radius of the dashed ring; the soft wash behind a shockwave is 1.5 x this and breathes out to 2.5 x (CSS)
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let count = 0;
 
@@ -69,8 +69,8 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     <svg class="db-svg" role="group" aria-label="${esc(spec.alt ?? "World map of maritime theatres, chokepoints and shockwaves. Every place on it can also be chosen from the text next to the map.")}">
       <defs>
         <radialGradient id="${uid}-wash">
-          <stop offset="0" stop-color="${theme.fuchsia2}" stop-opacity=".34"/>
-          <stop offset=".55" stop-color="${theme.fuchsia2}" stop-opacity=".12"/>
+          <stop offset="0" stop-color="${theme.fuchsia2}" stop-opacity=".4"/>
+          <stop offset=".55" stop-color="${theme.fuchsia2}" stop-opacity=".2"/>
           <stop offset="1" stop-color="${theme.fuchsia2}" stop-opacity="0"/>
         </radialGradient>
       </defs>
@@ -87,8 +87,8 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     </svg>
     <div class="db-ctl db-layers" role="group" aria-label="Map layers">
       <button type="button" class="db-pill" data-layer="th" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="none" stroke="${theme.navy}" stroke-width="1.5"/><text x="8" y="12" text-anchor="middle" class="db-sw-t">T</text></svg>Theatres</button>
-      <button type="button" class="db-pill" data-layer="ch" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.teal}" stroke="${theme.ink}" stroke-width="1.3" stroke-linejoin="round"/></svg>Chokepoints</button>
-      <button type="button" class="db-pill" data-layer="sh" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="${theme.fuchsia2}"/><circle cx="8" cy="8" r="5.6" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5"/></svg>Shockwaves</button>
+      <button type="button" class="db-pill" data-layer="ch" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.teal}" stroke="#fff" stroke-width="1" stroke-linejoin="round" paint-order="stroke"/></svg>Chokepoints</button>
+      <button type="button" class="db-pill" data-layer="sh" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.5" fill="${theme.fuchsia2}" fill-opacity=".2"/><circle cx="8" cy="8" r="5.6" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5" stroke-dasharray="2 2"/></svg>Shockwaves</button>
     </div>
     <div class="db-ctl db-zoom">
       <button type="button" class="db-zb" data-zoom="in" aria-label="Zoom in">+</button>
@@ -144,8 +144,81 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     const r = svg.getBoundingClientRect();
     scale = Math.min(r.width / w, r.height / h) || 1;
     svg.classList.toggle("is-showlabels", scale >= 2.4);
-    markers.classList.toggle("is-hidelabels", scale < 0.7); // the whole world in a narrow frame: markers only
+    markers.classList.toggle("is-hidelabels", scale < 0.7 && r.width < 520); // the whole world in a phone-width frame: markers only
     placeAll();
+    clearTimeout(dodgeTimer);
+    dodgeTimer = setTimeout(dodge, 150); // once the camera has settled
+  }
+
+  // ── label dodging ───────────────────────────────────────────────────────
+  // Dimmed places carry no label (hidden in CSS). The rest are placed in priority order: selected
+  // first, then the others. A label that would overlap one already placed, or another place's
+  // marker, moves up or down at most two steps, so it stays beside its own marker; with no free spot it stays put.
+  let dodgeTimer;
+  function dodge() {
+    if (!el.offsetParent) return;
+    const nodes = [
+      ...markers.querySelectorAll(".db-tl text, .db-lb, .db-rn text"),
+    ];
+    const mateOf = (n) =>
+      n.parentNode.classList.contains("db-tl")
+        ? n.previousElementSibling
+        : null;
+    nodes.forEach((n) => {
+      n.removeAttribute("transform");
+      mateOf(n)?.removeAttribute("transform");
+    });
+    const ownerOf = (n) => n.closest(".db-mk");
+    const rank = (n) => (ownerOf(n)?.classList.contains("is-sel") ? 0 : 1);
+    const marks = [
+      ...markers.querySelectorAll(".db-ck .db-hit, .db-sk .db-hit"),
+    ]
+      .filter((h) => h.getClientRects().length && !h.closest(".is-dim"))
+      .map((h) => ({
+        owner: h.closest(".db-mk"),
+        box: h.getBoundingClientRect(),
+      }));
+    const items = nodes
+      .filter((n) => n.getClientRects().length && !n.closest(".is-dim"))
+      .map((n, i) => ({ n, i, r: rank(n) }))
+      .sort((a, b) => a.r - b.r || a.i - b.i);
+    const placed = [];
+    const clash = (a, b) =>
+      a.left < b.right + 2 &&
+      a.right + 2 > b.left &&
+      a.top < b.bottom + 2 &&
+      a.bottom + 2 > b.top;
+    items.forEach(({ n }) => {
+      const b = n.getBoundingClientRect();
+      const step = b.height + 2;
+      const others = marks
+        .filter((k) => k.owner !== ownerOf(n))
+        .map((k) => k.box);
+      let spot = null;
+      for (const s of [0, -1, 1, -2, 2]) {
+        const box = {
+          left: b.left,
+          right: b.right,
+          top: b.top + s * step,
+          bottom: b.bottom + s * step,
+        };
+        if (
+          !placed.some((p) => clash(box, p)) &&
+          !others.some((p) => clash(box, p))
+        ) {
+          spot = { s, box };
+          break;
+        }
+      }
+      if (!spot) spot = { s: 0, box: b };
+      if (spot.s) {
+        const k = n.getScreenCTM().a || 1; // screen pixels per local unit
+        const t = `translate(0 ${(spot.s * step) / k})`;
+        n.setAttribute("transform", t);
+        mateOf(n)?.setAttribute("transform", t);
+      }
+      placed.push(spot.box);
+    });
   }
   const clamp = (c) => {
     const k = Math.max(1, Math.min(9, c.k));
@@ -228,6 +301,25 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   const selPoint = (s) =>
     s.t === "theatre" ? XY.t[s.id] : s.t === "choke" ? XY.c[s.id] : XY.s[s.id];
 
+  // a shockwave: its epicentre and every place it reaches. A chokepoint: itself plus the same
+  // for each shockwave of its theatre (or theme).
+  const shockPoints = (sw) => [
+    XY.s[sw.id],
+    ...sw.reach.map((r) => proj(r[0], r[1])),
+  ];
+  function eventPoints(s) {
+    if (s.t === "shock") return shockPoints(D.S[s.id]);
+    const c = D.C[s.id];
+    return [
+      XY.c[c.id],
+      ...D.shockwaves
+        .filter((sw) =>
+          c.theatre ? sw.theatre === c.theatre : sw.theme === c.theme,
+        )
+        .flatMap(shockPoints),
+    ];
+  }
+
   function targetFor(st) {
     const s = st.sel;
     if (s) {
@@ -237,7 +329,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
             minSpan: 40,
             maxK: 9,
           })
-        : fitTarget([selPoint(s)], { padFrac: 0.8, minSpan: 10, maxK: 9 });
+        : fitTarget(eventPoints(s), { padFrac: 0.3, minSpan: 40, maxK: 6 });
     }
     if (st.theme)
       return fitTarget(pointsForTheme(st.theme), {
@@ -298,19 +390,22 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     g.addEventListener("pointerleave", hover.leave);
   }
 
-  // impact washes: a soft fuchsia glow whose size reflects the shockwave's reach
+  // impact washes: a soft fuchsia glow behind each shockwave. The outer group keeps a constant
+  // screen size like the markers; the circle inside breathes (CSS).
   D.shockwaves.forEach((s) => {
+    const g = make("g", {}, washLayer);
     washes[s.id] = make(
       "circle",
       {
-        cx: XY.s[s.id][0],
-        cy: XY.s[s.id][1],
-        r: HALO[s.scope],
+        cx: 0,
+        cy: 0,
+        r: RING * 1.5,
         fill: `url(#${uid}-wash)`,
         class: "db-wash",
       },
-      washLayer,
+      g,
     );
+    place(g, XY.s[s.id]);
   });
 
   // theatre labels
@@ -331,7 +426,27 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       { x: t.lab.dx, y: t.lab.dy, "text-anchor": t.lab.a },
       g,
     );
-    text.textContent = t.short || t.name;
+    // a long name breaks into two lines at the space nearest its middle
+    const nm = t.short || t.name;
+    let cut = -1;
+    if (nm.length > 18)
+      for (let i = 0; i < nm.length; i++)
+        if (
+          nm[i] === " " &&
+          (cut < 0 ||
+            Math.abs(i - nm.length / 2) < Math.abs(cut - nm.length / 2))
+        )
+          cut = i;
+    if (cut < 0) text.textContent = nm;
+    else
+      [nm.slice(0, cut), nm.slice(cut + 1)].forEach((ln, i) => {
+        const ts = make(
+          "tspan",
+          { x: t.lab.dx, dy: i ? "1.1em" : "-0.55em" },
+          text,
+        );
+        ts.textContent = ln;
+      });
     labels.push({ rect, text });
     activate(g, () => on.select("theatre", t.id));
     els.th[t.id] = place(g, XY.t[t.id]);
@@ -351,18 +466,16 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     );
     const hit = make(
       "circle",
-      { class: `db-hit${s.coincident ? " db-hit--ring" : ""}`, r: 14 },
+      { class: `db-hit${s.coincident ? " db-hit--ring" : ""}`, r: 16 },
       g,
     );
-    if (!s.coincident) make("circle", { class: "db-core", r: 4 }, g);
-    make("circle", { class: "db-r1", r: s.coincident ? 15 : 10 }, g);
-    make("circle", { class: "db-r2", r: s.coincident ? 21 : 16 }, g);
+    make("circle", { class: "db-r2", r: 16 }, g);
     const lb = make(
       "text",
       {
         class: "db-lb",
         x: 0,
-        y: s.coincident ? 36 : 28,
+        y: 28,
         "text-anchor": "middle",
       },
       g,
@@ -387,8 +500,22 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     );
     const hit = make("circle", { class: "db-hit", r: 11 }, g);
     const rot = make("g", { transform: `rotate(${c.angle}) scale(1.2)` }, g);
-    make("path", { class: "db-wedge db-wedge--a", d: "M-8-10H8L0-1.4Z" }, rot);
-    make("path", { class: "db-wedge db-wedge--b", d: "M-8 10H8L0 1.4Z" }, rot);
+    make(
+      "path",
+      {
+        class: "db-wedge db-wedge--a",
+        d: "M-6.2-10H6.2Q8-10 6.85-8.61L1.15-1.73Q0-0.34-1.15-1.73L-6.85-8.61Q-8-10-6.2-10Z",
+      },
+      rot,
+    );
+    make(
+      "path",
+      {
+        class: "db-wedge db-wedge--b",
+        d: "M-6.2 10H6.2Q8 10 6.85 8.61L1.15 1.73Q0 0.34-1.15 1.73L-6.85 8.61Q-8 10-6.2 10Z",
+      },
+      rot,
+    );
     [0, 0.8, 1.6].forEach((delay) => {
       const ship = make(
         "circle",
@@ -446,17 +573,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     measured = false;
     measure();
   });
-
-  // a few slow breaths of the wash (CSS runs them three times, then it rests)
-  function breathe(ids) {
-    if (REDUCED) return;
-    ids.forEach((id) => {
-      const w = washes[id];
-      w.classList.remove("is-breathing");
-      void w.getBoundingClientRect(); // restart the animation
-      w.classList.add("is-breathing");
-    });
-  }
 
   // ── selection: rings around the epicentre and the places it reaches ──────
   function drawSelection(st) {
@@ -685,7 +801,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
 
   // ── update: the chart contract ──────────────────────────────────────────
   let lastKey = null;
-  let lastSel = null;
   function update(st, { animate = true } = {}) {
     state = st;
     if (!measured) measure();
@@ -697,12 +812,12 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       lastKey = key;
       moveCam(targetFor(st), animate && !first);
     }
-    const selId = st.sel?.t === "shock" ? st.sel.id : null;
-    if (selId && selId !== lastSel) breathe([selId]);
-    lastSel = selId;
   }
 
-  requestAnimationFrame(() => breathe(Object.keys(washes))); // a first few breaths when the map appears
+  // the breathing pauses while the map is off screen
+  new IntersectionObserver(([e]) =>
+    svg.classList.toggle("is-offscreen", !e.isIntersecting),
+  ).observe(svg);
 
   return { el, update };
 }

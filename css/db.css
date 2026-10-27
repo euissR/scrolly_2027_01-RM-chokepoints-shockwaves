@@ -20,10 +20,11 @@
   --db-light: #c6c6c6;
   --db-land: #ececec;
   --db-wash: #f9f9f9;
-  --db-dim: 0.2; /* dimmed items keep their own colour at this opacity */
+  --db-dim: 0.33; /* dimmed items keep their own colour at this opacity */
   --db-font: "PT Sans Narrow", "Arial Narrow", sans-serif;
   --db-font-title: "PT Sans", Arial, sans-serif;
   --db-map-h: 560px;
+  --db-land: #ececec;
   --db-sticky-top: 1rem; /* raise this if the Drupal theme has a fixed header */
 
   position: relative;
@@ -270,7 +271,6 @@
 /* ── the three world layers ─────────────────────────────────────────────── */
 
 .db-land {
-  /* fill: #fff; */
   fill: var(--db-land);
   stroke: none;
 }
@@ -365,9 +365,10 @@
 /* chokepoints: a gate that pinches the shipping lane */
 .db-wedge {
   fill: var(--db-choke);
-  stroke: var(--db-ink);
-  stroke-width: 1.4;
+  stroke: #fff;
+  stroke-width: 1.6;
   stroke-linejoin: round;
+  paint-order: stroke;
   transition: transform 0.2s;
 }
 
@@ -401,18 +402,6 @@
 }
 
 /* shockwave epicentres */
-.db-core {
-  fill: var(--db-shock);
-  stroke: #fff;
-  stroke-width: 2;
-}
-
-.db-r1 {
-  fill: none;
-  stroke: var(--db-shock);
-  stroke-width: 2;
-}
-
 .db-r2 {
   fill: none;
   stroke: var(--db-shock);
@@ -421,13 +410,16 @@
   opacity: 0.7;
 }
 
-.db-sk:hover .db-r1 {
-  stroke-width: 3;
+.db-sk:hover .db-r2 {
+  stroke-width: 2.5;
+  opacity: 1;
 }
 
-.db-sk.is-sel .db-r1 {
+.db-sk.is-sel .db-r2 {
   stroke: #000;
-  stroke-width: 3.5;
+  stroke-width: 3;
+  stroke-dasharray: none;
+  opacity: 1;
 }
 
 .db-sk:focus-visible .db-hit {
@@ -438,7 +430,7 @@
 .db-hit--ring {
   fill: none;
   stroke: transparent;
-  stroke-width: 9;
+  stroke-width: 14;
   pointer-events: stroke;
 }
 
@@ -450,8 +442,12 @@
   transform-origin: center;
 }
 
-.db-wash.is-breathing {
-  animation: db-breathe 5s ease-in-out 3;
+.db-wash {
+  animation: db-breathe 3.5s ease-in-out infinite;
+}
+
+.db-svg.is-offscreen .db-wash {
+  animation-play-state: paused;
 }
 
 @keyframes db-breathe {
@@ -460,7 +456,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.6667); /* 1.5 x the ring out to 2.5 x */
   }
 }
 
@@ -489,6 +485,12 @@
 .db-svg.is-showlabels .db-lb,
 .db-mk.is-sel .db-lb {
   display: inline;
+}
+
+/* dimmed places carry no label: faint text is too hard to read (the marker keeps its tooltip) */
+.db-root .db-mk.is-dim .db-lb,
+.db-root .db-tl.is-dim text {
+  visibility: hidden;
 }
 
 /* places a shockwave reaches */
@@ -559,7 +561,7 @@
 .db-root .db-title {
   margin: 0 0 1rem !important;
   padding: 0 !important;
-  font-size: 2.125rem !important;
+  font-size: 1.875rem !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
   color: var(--db-navy) !important;
@@ -569,7 +571,7 @@
 .db-root .db-h3 {
   margin: 0 0 0.25rem !important;
   padding: 0 !important;
-  font-size: 1.5rem !important;
+  font-size: 1.375rem !important;
   font-weight: 700 !important;
   line-height: 1.25 !important;
   color: var(--db-navy) !important;
@@ -949,35 +951,45 @@
   color: var(--db-ink);
 }
 
-.db-chain {
+/* Drupal decorates every li with its own dot (a ::before). Switch that off inside the dashboard,
+   then draw our own marker as a real element, which the theme does not touch. */
+.db-root li::before,
+.db-root li::after {
+  content: none !important;
+  display: none !important;
+}
+
+.db-root ul.db-chain {
   margin: 0.25rem 0 0.875rem !important;
   padding: 0 !important;
   list-style: none !important;
+  background: none !important;
 }
 
-.db-root .db-chain li {
+.db-root ul.db-chain > li {
   position: relative;
   margin: 0 !important;
   padding: 0 0 0.625rem 26px !important;
   list-style: none !important;
+  background: none !important;
 }
 
 /* first step filled, the rest empty: fuchsia2 */
-.db-chain li::before {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: 0.4em;
-  width: 10px;
-  height: 10px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid var(--db-shock);
+.db-root .db-chain .db-dot {
+  position: absolute !important;
+  left: 2px !important;
+  top: 0.45em !important;
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+  box-sizing: border-box !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  border: 2px solid var(--db-shock) !important;
 }
 
-.db-chain li:first-child::before {
-  background: var(--db-shock);
+.db-root .db-chain li:first-child .db-dot {
+  background: var(--db-shock) !important;
 }
 
 .db-root p.db-reach {
@@ -1010,9 +1022,17 @@
   font-size: 0.9375rem;
 }
 
-.db-callout ul {
-  margin: 0;
-  padding-left: 18px;
+.db-root .db-callout ul {
+  margin: 0 !important;
+  padding: 0 0 0 18px !important;
+  list-style: disc !important;
+}
+
+.db-root .db-callout li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: disc !important;
+  background: none !important;
 }
 
 .db-tblwrap {

@@ -251,7 +251,7 @@
  "theatres": [
   {
    "id": "malacca",
-   "name": "Malacca Strait",
+   "name": "Malacca and Singapore straits",
    "group": "indo",
    "at": [
     3.7,
@@ -289,7 +289,7 @@
   },
   {
    "id": "taiwan",
-   "name": "Taiwan Strait",
+   "name": "Taiwan and the East China Sea",
    "group": "indo",
    "at": [
     30.5,
@@ -308,7 +308,7 @@
   },
   {
    "id": "hormuz",
-   "name": "Strait of Hormuz",
+   "name": "Gulf and Hormuz approaches",
    "group": "west",
    "at": [
     26.5,
@@ -334,11 +334,7 @@
     12.6,
     43.4
    ],
-   "lab": {
-    "dx": -30,
-    "dy": 4,
-    "a": "end"
-   },
+   "lab": { "dx": 0, "dy": 38, "a": "middle" },
    "line": "Esse pharetra sed lacus exercitation consectetur et minim.",
    "themes": {
     "gas": "Nostrud maecenas sit sint ullamco faucibus pretium suspendisse vel commodo pulvinar ea tempor amet mollit pharetra at.",

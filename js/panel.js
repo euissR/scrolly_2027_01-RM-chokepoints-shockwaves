@@ -164,7 +164,7 @@ export function panelHTML(state, D) {
   function shock(s) {
     const cks = s.theatre ? D.chokepoints.filter((x) => x.theatre === s.theatre) : D.chokepoints.filter((x) => x.theme === s.theme);
     const kin = cks.map((x) => kinRow(`choke:${x.id}`, ICON.ck, x.name, x.blurb)).join("");
-    const chain = `<p class="db-spread">How it spreads</p><ul class="db-chain">${s.spread.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p class="db-reach"><b>Reaches:</b> ${s.reach.map((r) => esc(r[2])).join(", ")}. Shown on the map as places lit up around the epicentre.</p>`;
+    const chain = `<p class="db-spread">How it spreads</p><ul class="db-chain">${s.spread.map((x) => `<li><span class="db-dot"></span>${esc(x)}</li>`).join("")}</ul><p class="db-reach"><b>Reaches:</b> ${s.reach.map((r) => esc(r[2])).join(", ")}. Shown on the map as places lit up around the epicentre.</p>`;
     return `${backToMap}${crumbs(ownerCrumbs(s))}
       ${kicker("sk", `Shockwave · ${s.status}`)}
       <h2 class="db-title">${esc(s.name)}</h2>
