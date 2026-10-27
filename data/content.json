@@ -1,0 +1,2576 @@
+{
+ "overview": {
+  "title": "Securing the EU's sea lanes",
+  "lede": "Vitae dolor in adipiscing mollit ullamco deserunt laboris occaecat sed duis pulvinar ex consectetur nostrud commodo cupidatat. Excepteur ut mauris leo incididunt malesuada fringilla urna sint turpis leo.",
+  "sections": [
+   {
+    "h": "The strategic picture",
+    "p": "Minim turpis commodo fringilla nunc nostrud nisi curabitur pulvinar nisi et enim sint elit minim pulvinar. Laborum tempor et velit turpis ad reprehenderit labore eu aliqua ac voluptate mollit ut. Et elit pulvinar curabitur sint cillum id egestas quis at."
+   }
+  ],
+  "hint": "Select a theatre label, a chokepoint gate or a shockwave epicentre on the map, or pick one below. Regions and cross-cutting themes are listed together, as one set of entry points."
+ },
+ "prompts": [
+  "Where do the places interact, and how does pressure at one travel to the others?",
+  "What do they have in common (triggers, dependencies, vulnerabilities)?",
+  "What does this mean for the EU as a whole, and what should it do?",
+  "Who are the EU's partners across the geography or theme, and under what conditions?"
+ ],
+ "ui": {
+  "cardsNote": "Indicative figures for layout only. The author verifies and sources each one.",
+  "status": "Status: placeholder",
+  "overviewNote": "All content on this page is placeholder text and indicative figures, for layout only."
+ },
+ "sections": [
+  {
+   "k": "stake",
+   "title": "The stake",
+   "q": "Why does this matter to the EU?"
+  },
+  {
+   "k": "risks",
+   "title": "What could go wrong",
+   "q": "What are the main threats or risks for the EU? Existing ones, or potential ones if tensions rise or armed groups attack."
+  },
+  {
+   "k": "bites",
+   "title": "Where it bites",
+   "q": "What are the implications for the EU, including dependencies and vulnerabilities?"
+  },
+  {
+   "k": "prepare",
+   "title": "Getting ready",
+   "q": "How could the EU prepare for or respond to these risks?"
+  },
+  {
+   "k": "partners",
+   "title": "Partners and terms",
+   "q": "Who are the EU's potential partners, and under what conditions?"
+  }
+ ],
+ "groups": {
+  "indo": {
+   "name": "Indo-Pacific",
+   "lede": "At duis pretium et leo maecenas irure officia ex fames labore cupidatat nostrud cillum fames turpis sed elit fugiat eiusmod duis.",
+   "overview": [
+    {
+     "h": "One corridor, three pressure points",
+     "p": "Elementum sagittis elit occaecat et porta et laboris cillum laoreet vel do irure nostrud urna ipsum lorem nunc nunc ullamco commodo enim ex laborum ultricies id irure. Deserunt ultricies vehicula vehicula fames fames nunc posuere nostrud elementum id ullamco consectetur amet neque tincidunt ullamco fames aliquip malesuada consectetur tempor qui pulvinar lorem elementum fugiat aliquip consectetur mauris consectetur veniam fringilla lorem pretium deserunt. Vitae molestie deserunt quis esse curabitur urna aute et faucibus non eu fugiat suspendisse."
+    },
+    {
+     "h": "Why Europe cares",
+     "p": "Dolor sint interdum ea ac labore ac irure qui qui consectetur fames culpa veniam exercitation ea veniam lacus nunc ad elementum non sit voluptate mauris. Occaecat sed turpis pharetra deserunt quis aute convallis sunt urna convallis vehicula eu tincidunt irure culpa nisi consequat egestas cillum egestas aute vehicula ac."
+    },
+    {
+     "h": "A response that links the places",
+     "p": "Voluptate amet ut eiusmod tempor mauris ea vel egestas ipsum dolor anim faucibus faucibus ex porta maecenas vehicula aliquip pulvinar pretium sint elementum leo sagittis vitae amet irure laoreet elementum amet ullamco faucibus pulvinar duis tincidunt laoreet duis nostrud veniam ipsum fugiat maecenas reprehenderit fringilla id."
+    }
+   ],
+   "links": [
+    {
+     "title": "The Taiwan–South China Sea–Malacca chain",
+     "theatres": [
+      "taiwan",
+      "scs",
+      "malacca"
+     ],
+     "text": "Enim vitae excepteur ipsum veniam duis morbi in occaecat proident in pharetra fringilla elit faucibus fringilla consectetur sunt minim fringilla turpis qui faucibus enim minim adipiscing vehicula convallis commodo duis ex maecenas. Irure elit fames leo excepteur consectetur exercitation urna consectetur consequat posuere dolor ut."
+    },
+    {
+     "title": "The Gulf-to-Asia energy artery",
+     "theatres": [
+      "hormuz",
+      "malacca"
+     ],
+     "text": "Officia occaecat aliquip labore qui pharetra ipsum dolore proident in quis aliqua velit do laboris vitae. Mollit id laborum fugiat ea ultricies duis anim tincidunt sunt posuere curabitur vitae anim vehicula elit deserunt labore consectetur do consectetur id qui."
+    }
+   ],
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~1/3",
+     "label": "Share of global maritime trade through the South China Sea (commonly cited, to verify)"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Partners",
+     "label": "Japan, Australia, India and ASEAN positions to collect"
+    }
+   ],
+   "author": "Author to be confirmed"
+  },
+  "west": {
+   "name": "Middle East and Red Sea",
+   "lede": "Nostrud pretium labore et vitae ad ipsum urna nulla do lacus nostrud eiusmod irure quis faucibus veniam consectetur pharetra elementum vitae urna curabitur minim deserunt veniam.",
+   "overview": [
+    {
+     "h": "Two gates on one route",
+     "p": "Ipsum nisi incididunt mollit faucibus laborum malesuada sint libero minim porta laoreet non adipiscing faucibus commodo integer dolor sed excepteur integer leo. Consectetur nulla qui velit officia excepteur at tempor id enim libero id elit reprehenderit amet sint do id. Irure sed pulvinar suspendisse officia maecenas fringilla duis nisi at laboris cillum ad occaecat duis posuere culpa in ac duis duis reprehenderit libero sunt."
+    },
+    {
+     "h": "The relief-valve problem",
+     "p": "Vehicula esse aliqua incididunt libero vitae laboris eiusmod nulla pharetra pariatur id leo ullamco posuere urna leo irure nunc maecenas ex lacus sagittis laoreet id fugiat urna. Libero vehicula vitae curabitur ut elit laoreet vitae elementum vitae integer sint aliqua curabitur at curabitur dolore lorem."
+    },
+    {
+     "h": "What this means for the EU",
+     "p": "Malesuada sed tempor laboris tempor turpis et magna leo pulvinar non anim ac vitae dolor cillum morbi. Ut convallis vel ipsum excepteur quis sint aliquip nisi porta maecenas turpis posuere duis aliquip officia consequat fringilla proident eiusmod enim laborum incididunt vel sagittis culpa et excepteur elit exercitation velit mollit pulvinar excepteur officia consectetur."
+    }
+   ],
+   "links": [
+    {
+     "title": "Hormuz and Bab-el-Mandeb: the pressure pair",
+     "theatres": [
+      "hormuz",
+      "aden"
+     ],
+     "text": "Maecenas ea ullamco nisi dolor aliquip amet sunt duis elit nisi ut dolor ipsum. Interdum fames elit suspendisse aliquip incididunt laborum culpa in sed sint culpa non pharetra pariatur magna sit pharetra enim amet curabitur deserunt laoreet tincidunt."
+    },
+    {
+     "title": "From the gate to the canal",
+     "theatres": [
+      "aden",
+      "redsea"
+     ],
+     "text": "Integer maecenas aliqua sed fugiat neque amet aliquip interdum occaecat mauris quis id. Nisi libero sit morbi pulvinar eiusmod nostrud magna duis velit ac non dolore commodo amet leo qui consectetur curabitur turpis curabitur convallis ut vitae suspendisse convallis."
+    }
+   ],
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~12%",
+     "label": "Share of global trade using Suez (commonly cited, to verify)"
+    },
+    {
+     "type": "Military presence",
+     "value": "Agenor, Aspides",
+     "label": "European missions covering the two gates"
+    }
+   ],
+   "author": "Author to be confirmed"
+  },
+  "atl": {
+   "name": "Atlantic",
+   "lede": "Proident excepteur interdum aliquip id molestie faucibus leo velit leo morbi tincidunt dolore ultricies lorem leo et lacus pulvinar egestas integer leo fames incididunt nunc elit sunt officia curabitur leo sed.",
+   "overview": [
+    {
+     "h": "A loop, not a line",
+     "p": "Occaecat vel adipiscing consectetur aliqua occaecat malesuada esse fugiat dolore ac sed neque ac ad convallis laoreet dolor vehicula aliqua occaecat officia pretium. Leo posuere nostrud molestie esse laborum eu sunt sit molestie leo tempor molestie ad consectetur ad occaecat pulvinar ea posuere vel anim pariatur velit faucibus et leo nunc faucibus eiusmod exercitation convallis aliquip."
+    },
+    {
+     "h": "Different risks, common weakness",
+     "p": "Nisi adipiscing esse leo ad velit neque incididunt deserunt leo in anim urna deserunt faucibus turpis interdum malesuada enim vitae ex ea cillum dolore ex. Convallis excepteur labore interdum cillum fringilla minim cillum et ad esse mauris incididunt exercitation officia officia convallis ad minim."
+    },
+    {
+     "h": "What the EU can do",
+     "p": "Id et id pariatur sed pretium consectetur consectetur pariatur exercitation esse eu consectetur laboris aliquip anim vitae morbi laborum anim officia laboris at leo in cillum esse incididunt posuere sint interdum ultricies."
+    }
+   ],
+   "links": [
+    {
+     "title": "The cocaine loop",
+     "theatres": [
+      "latam",
+      "guinea"
+     ],
+     "text": "Fringilla sed aute leo libero laboris elit ex aliquip culpa commodo leo do laoreet ea turpis porta occaecat non malesuada minim leo. Irure ultricies est elit pretium et officia pariatur ex."
+    },
+    {
+     "title": "Gas and cables across the ocean",
+     "theatres": [
+      "natlantic",
+      "latam"
+     ],
+     "text": "Interdum sit nisi pariatur laborum cillum ea fames amet est mauris leo et exercitation interdum. Pharetra adipiscing deserunt in minim nulla urna vel esse convallis minim exercitation vehicula culpa ipsum sed non eiusmod reprehenderit."
+    }
+   ],
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "LNG",
+     "label": "US share of EU LNG imports (to verify)"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Yaoundé, NATO",
+     "label": "Regional and allied frameworks to map"
+    }
+   ],
+   "author": "Author to be confirmed"
+  },
+  "arc": {
+   "name": "High North",
+   "lede": "Neque convallis interdum laboris fames libero veniam sint sed dolore et occaecat irure id tempor aliqua fringilla do vitae curabitur nulla tempor deserunt ipsum magna non adipiscing.",
+   "overview": [
+    {
+     "h": "A theatre defined by its links",
+     "p": "Ipsum in minim fugiat laboris ea magna libero non cupidatat convallis non aute neque fringilla sagittis ea mollit nostrud faucibus fringilla dolore interdum aliquip laoreet cillum aute aute et mollit consectetur ad reprehenderit maecenas consectetur proident id anim faucibus morbi maecenas."
+    },
+    {
+     "h": "Security first",
+     "p": "Pulvinar nunc leo ullamco consequat tincidunt incididunt vitae do deserunt aute incididunt esse urna pulvinar ex vitae leo deserunt et mollit proident laoreet occaecat. Anim ac reprehenderit sunt nisi cillum pariatur nostrud qui."
+    },
+    {
+     "h": "What the EU can do",
+     "p": "Adipiscing lorem anim nulla aliqua integer mauris consectetur ac ullamco ut curabitur duis morbi laborum pharetra cillum sed pulvinar ut at dolore faucibus officia id morbi ipsum."
+    }
+   ],
+   "links": [
+    {
+     "title": "An alternative to Suez and Malacca",
+     "theatres": [
+      "arctic",
+      "malacca",
+      "redsea"
+     ],
+     "text": "Vitae officia laoreet laoreet esse proident elementum aliqua sunt malesuada duis quis ex reprehenderit et curabitur elementum duis molestie. Officia aliqua tincidunt anim ultricies at est duis maecenas in lorem id curabitur."
+    },
+    {
+     "title": "The northern approaches",
+     "theatres": [
+      "arctic",
+      "natlantic"
+     ],
+     "text": "Duis culpa ea dolor excepteur egestas tincidunt irure tempor sagittis fugiat vehicula mollit enim magna mauris at id morbi."
+    }
+   ],
+   "data": [
+    {
+     "type": "Military presence",
+     "value": "NATO+",
+     "label": "Finland and Sweden now members; deployments to compile"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "LNG",
+     "label": "Russian LNG via the Northern Sea Route (volumes to verify)"
+    }
+   ],
+   "author": "Author to be confirmed"
+  }
+ },
+ "theatres": [
+  {
+   "id": "malacca",
+   "name": "Malacca Strait",
+   "group": "indo",
+   "at": [
+    3.7,
+    100.1
+   ],
+   "lab": {
+    "dx": -26,
+    "dy": 4,
+    "a": "end"
+   },
+   "line": "Aute aliquip nunc minim consequat mauris culpa nulla laboris minim voluptate aliqua est.",
+   "themes": {
+    "subcon": "Do amet mauris aliqua commodo fugiat irure labore egestas quis enim exercitation fringilla occaecat excepteur consequat egestas laoreet ac."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "scs",
+   "name": "South China Sea",
+   "group": "indo",
+   "at": [
+    13,
+    109
+   ],
+   "lab": {
+    "dx": 0,
+    "dy": 4,
+    "a": "end"
+   },
+   "line": "Velit pulvinar consequat veniam tempor cillum id nostrud libero leo non ac tincidunt reprehenderit.",
+   "themes": {
+    "subcon": "Interdum pulvinar amet aliquip elementum laborum leo irure anim pharetra malesuada at cillum vehicula enim."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "taiwan",
+   "name": "Taiwan Strait",
+   "group": "indo",
+   "at": [
+    30.5,
+    123
+   ],
+   "lab": {
+    "dx": 0,
+    "dy": 4,
+    "a": "middle"
+   },
+   "line": "Excepteur labore veniam veniam egestas commodo duis reprehenderit laoreet quis porta tincidunt.",
+   "themes": {
+    "subcon": "Dolore sint sunt deserunt sint cupidatat interdum ex molestie qui eu."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "hormuz",
+   "name": "Strait of Hormuz",
+   "group": "west",
+   "at": [
+    26.5,
+    56.3
+   ],
+   "lab": {
+    "dx": 30,
+    "dy": -4,
+    "a": "start"
+   },
+   "line": "Deserunt ipsum tempor urna incididunt vehicula id ac laboris.",
+   "themes": {
+    "gas": "Amet ad convallis posuere eiusmod in morbi do veniam dolore et sunt."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "aden",
+   "name": "Gulf of Aden and Bab-el-Mandeb",
+   "short": "Gulf of Aden",
+   "group": "west",
+   "at": [
+    12.6,
+    43.4
+   ],
+   "lab": {
+    "dx": 30,
+    "dy": -2,
+    "a": "start"
+   },
+   "line": "Esse pharetra sed lacus exercitation consectetur et minim.",
+   "themes": {
+    "gas": "Nostrud maecenas sit sint ullamco faucibus pretium suspendisse vel commodo pulvinar ea tempor amet mollit pharetra at.",
+    "subcon": "Mollit consectetur qui convallis enim cupidatat ex laborum vitae neque amet id pharetra vel."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "redsea",
+   "name": "Red Sea",
+   "group": "west",
+   "at": [
+    20.4,
+    38.6
+   ],
+   "lab": {
+    "dx": -26,
+    "dy": 4,
+    "a": "end"
+   },
+   "line": "Sed elementum lacus consectetur cupidatat minim suspendisse posuere voluptate incididunt.",
+   "themes": {
+    "gas": "Ipsum commodo consectetur nulla vitae aliquip veniam eiusmod turpis irure fringilla sunt.",
+    "subcon": "Tempor porta libero ipsum ipsum elementum excepteur porta suspendisse egestas urna veniam do."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "arctic",
+   "name": "Arctic",
+   "group": "arc",
+   "at": [
+    71,
+    30
+   ],
+   "lab": {
+    "dx": 26,
+    "dy": 4,
+    "a": "start"
+   },
+   "line": "Deserunt et deserunt culpa mollit lacus id occaecat.",
+   "themes": {
+    "gas": "Et adipiscing veniam vitae est malesuada proident mauris.",
+    "subcon": "Posuere commodo vel nunc morbi veniam lorem labore nulla sit laoreet cillum tincidunt amet ut."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "guinea",
+   "name": "South",
+   "group": "atl",
+   "at": [
+    0,
+    -1
+   ],
+   "lab": {
+    "dx": 0,
+    "dy": 36,
+    "a": "middle"
+   },
+   "line": "Pulvinar dolore consectetur tempor sed cillum aliqua velit ea.",
+   "themes": {
+    "gas": "Sagittis sed cillum quis sit vehicula at leo vel sagittis aliqua velit urna."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "latam",
+   "name": "Caribbean",
+   "group": "atl",
+   "at": [
+    10,
+    -75
+   ],
+   "lab": {
+    "dx": 0,
+    "dy": -16,
+    "a": "middle"
+   },
+   "line": "Sagittis suspendisse sed sint nisi est turpis labore.",
+   "themes": {
+    "gas": "Duis consectetur reprehenderit proident et mauris mauris ad leo minim vitae molestie."
+   },
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "natlantic",
+   "name": "North",
+   "group": "atl",
+   "at": [
+    46,
+    -37
+   ],
+   "lab": {
+    "dx": 0,
+    "dy": 4,
+    "a": "middle"
+   },
+   "line": "Lorem tincidunt enim pariatur laoreet curabitur adipiscing reprehenderit et.",
+   "themes": {
+    "gas": "Esse officia fugiat aute pharetra cupidatat esse duis interdum.",
+    "subcon": "Exercitation vehicula nunc mauris integer consectetur minim elit consequat in laoreet dolore."
+   },
+   "author": "Author to be confirmed"
+  }
+ ],
+ "chokepoints": [
+  {
+   "id": "c_malacca",
+   "theatre": "malacca",
+   "name": "Strait of Malacca",
+   "kind": "Strait",
+   "lat": 3.7,
+   "lon": 100.1,
+   "angle": 40,
+   "blurb": "Aliqua posuere id elit enim mollit interdum elit porta leo.",
+   "sections": {
+    "stake": [
+     "In libero dolore anim laoreet minim pariatur duis leo id ultricies sagittis anim. Nulla eu dolor incididunt ut et turpis et vehicula dolore sint sint malesuada interdum fringilla nulla consectetur duis. Vel do eiusmod esse interdum incididunt posuere posuere ex neque quis ullamco vel pariatur ipsum exercitation molestie laborum lorem. Ex pulvinar do ad in sagittis elementum enim sagittis laboris nunc leo posuere. Deserunt ex proident duis excepteur commodo vitae. [[1]]",
+     "Dolor aute leo interdum non commodo duis tincidunt suspendisse anim in porta nunc id et egestas. At at duis consectetur turpis elementum veniam at lacus in sunt quis pulvinar eiusmod esse exercitation cillum reprehenderit. Nunc est incididunt suspendisse faucibus et nostrud ultricies voluptate ac. Fugiat aliquip turpis enim in consectetur sed incididunt ultricies. Libero pretium duis in lacus at ac cillum ex nunc duis tincidunt cupidatat leo nulla ultricies nostrud."
+    ],
+    "risks": [
+     "Neque voluptate ullamco amet sagittis interdum enim cillum cupidatat cupidatat enim pariatur tempor nisi mollit consectetur sed est. Dolore urna exercitation pulvinar at proident nostrud elementum sagittis. Consequat enim pretium ipsum at veniam posuere pulvinar pariatur laboris nunc eu. Sunt vitae proident magna qui nulla ipsum aute neque cupidatat consequat ad veniam vehicula. Ut tincidunt deserunt fugiat laoreet ad cillum eu consectetur velit consectetur egestas id anim posuere aute leo. Duis esse ac pretium morbi.",
+     "Quis labore pharetra cillum fringilla urna ipsum qui leo pretium et incididunt ex curabitur magna morbi. Deserunt proident consectetur reprehenderit ultricies est at curabitur nulla vitae ullamco duis morbi. Id duis nisi irure veniam vehicula sit duis neque aliquip enim. Incididunt consectetur eiusmod nulla et maecenas eu maecenas cillum sit cupidatat leo pulvinar incididunt et. Suspendisse ultricies qui dolore suspendisse curabitur deserunt convallis laborum leo commodo fugiat leo. [[2]]"
+    ],
+    "bites": [
+     "Officia ac est elit laboris duis aliqua duis fugiat sagittis consectetur nostrud urna et officia faucibus vel duis. Et duis libero turpis leo convallis et morbi amet fringilla id at. Consequat anim velit sed proident irure id at interdum ut. Officia et consequat sed esse in laboris exercitation pretium do consectetur fringilla curabitur amet proident leo. Ultricies officia pulvinar curabitur proident leo dolore laborum nunc incididunt laboris ipsum suspendisse laoreet faucibus id convallis eu cillum. [[3]]",
+     "Ad interdum irure velit libero non fugiat ut proident esse est sagittis. Commodo enim leo mauris anim ad sunt sunt vitae. Mollit in nostrud exercitation interdum ex vehicula labore interdum leo fringilla pharetra sagittis vel faucibus leo adipiscing. Laoreet ipsum vitae in elementum ullamco consectetur reprehenderit et occaecat est duis suspendisse leo. Elit id porta lorem suspendisse faucibus at vitae morbi tempor consectetur morbi occaecat integer libero."
+    ],
+    "prepare": [
+     "Est velit proident suspendisse culpa voluptate exercitation consequat adipiscing cillum do laoreet faucibus dolor integer convallis ut leo amet. Duis occaecat vel irure aliqua sed do cupidatat at id malesuada tempor. Convallis ac pulvinar maecenas pulvinar sed non elementum tempor mauris lorem. Ullamco id morbi dolore reprehenderit laoreet et cillum non non sit esse neque malesuada cillum aute duis. Leo consequat integer laoreet pulvinar porta est ultricies culpa minim ea incididunt aute.",
+     "Morbi reprehenderit ultricies nunc quis sit voluptate vitae officia interdum laborum cupidatat magna ullamco nostrud morbi libero ea leo. Lorem pretium vitae vehicula fringilla cupidatat nulla labore consectetur sint lorem nisi. Veniam fames commodo faucibus sit nostrud sed sit excepteur nunc pariatur do sed neque morbi. Curabitur labore qui nisi leo interdum neque eiusmod et. Nulla ea deserunt morbi leo irure turpis consectetur tempor cillum dolor aliqua ea laboris mollit neque nostrud sunt. [[4]]"
+    ],
+    "partners": [
+     "At vitae reprehenderit nunc sunt mollit cupidatat sed turpis consectetur sit officia vitae posuere morbi. Molestie nostrud aute at laoreet tincidunt et lorem aute leo. Molestie egestas irure labore culpa commodo malesuada in duis reprehenderit amet cillum pharetra. Nostrud consequat neque mollit excepteur incididunt laborum pretium leo maecenas vel vel maecenas. Eu consequat lacus posuere laborum deserunt libero veniam culpa nisi commodo in voluptate ultricies. Ipsum elit est velit cillum laoreet incididunt sagittis consectetur. [[5]]",
+     "Et exercitation vitae eu tincidunt ultricies lorem ultricies laborum tempor amet et consectetur pharetra quis consectetur. Libero velit non veniam ultricies ullamco consectetur tincidunt est nunc lorem labore mollit vitae ultricies. Porta sed pulvinar leo sit vitae sit lacus esse tincidunt deserunt mauris id nostrud proident. Reprehenderit commodo ullamco aliquip vitae fringilla at sit sed eu lorem et vitae duis. Maecenas sed laborum leo quis laborum dolor libero urna ex exercitation vitae."
+    ]
+   },
+   "data": [
+    {
+     "type": "Chokepoint anatomy",
+     "value": "< 3 km",
+     "label": "Narrowest point (Phillip Channel)"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "~25%",
+     "label": "Share of global seaborne trade (indicative)"
+    },
+    {
+     "type": "Alternatives",
+     "value": "Sunda, Lombok",
+     "label": "Longer detours with limited capacity"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Cupidatat laborum laborum consequat labore morbi dolore laborum leo eu incididunt aliquip pharetra sagittis ut pariatur sint fames. Magna nisi convallis mauris pretium mauris adipiscing."
+    },
+    {
+     "n": 2,
+     "text": "Interdum cillum sint id ad minim fringilla do et ultricies vitae est elementum reprehenderit mollit. Incididunt aliqua tincidunt consectetur aute anim."
+    },
+    {
+     "n": 3,
+     "text": "Urna enim fames duis pretium cupidatat laoreet ea duis sagittis egestas elementum. Fringilla leo culpa ea aute sed."
+    },
+    {
+     "n": 4,
+     "text": "Sit ac tincidunt aute vitae proident aute turpis sagittis esse porta vehicula. Amet ad leo reprehenderit pharetra laoreet in vitae eiusmod excepteur."
+    },
+    {
+     "n": 5,
+     "text": "Adipiscing commodo pulvinar non malesuada ad convallis pariatur leo cupidatat curabitur tempor culpa leo cillum reprehenderit egestas ad incididunt faucibus."
+    }
+   ]
+  },
+  {
+   "id": "c_luzon",
+   "theatre": "scs",
+   "name": "Luzon Strait",
+   "kind": "Strait",
+   "lat": 20.2,
+   "lon": 121.1,
+   "angle": 0,
+   "blurb": "Leo pariatur integer nulla quis esse voluptate laborum.",
+   "sections": {
+    "stake": [
+     "Sunt egestas elit velit integer adipiscing morbi anim fames. Deserunt convallis nisi cupidatat aliquip ad sit mollit laborum exercitation et aute consectetur adipiscing leo porta. Aute ipsum faucibus lorem adipiscing tincidunt do duis ac excepteur dolor sit posuere consectetur excepteur do fames anim officia. Laboris consequat ultricies cupidatat pulvinar turpis leo consectetur est anim vehicula. Dolore molestie leo ac interdum velit suspendisse eiusmod est ex libero dolor officia eiusmod tempor laoreet. [[1]]",
+     "Consectetur nisi sagittis eiusmod fames id proident id quis. Officia laboris labore sagittis molestie labore anim adipiscing cupidatat. Ac ullamco ullamco ullamco minim cupidatat veniam nisi sunt anim dolor do sit vel cupidatat eiusmod. Anim cillum sunt proident sit culpa urna nulla laoreet mollit elementum suspendisse excepteur nisi laborum elit neque. Sunt curabitur elementum sint faucibus aute ac leo leo excepteur vitae. Do laborum nulla aute ad ea cillum enim culpa."
+    ],
+    "risks": [
+     "Proident malesuada leo vitae fugiat do vehicula proident do officia culpa ut officia. Egestas mauris commodo lorem pharetra proident nisi ad vehicula in leo commodo molestie do. Laboris in occaecat velit urna sed velit sagittis urna vehicula aliqua laboris exercitation et in et tincidunt faucibus duis. Vitae tempor pulvinar occaecat mauris ea curabitur magna molestie ipsum dolor. Et exercitation vitae duis neque id at urna nulla id velit dolore labore quis veniam libero.",
+     "Incididunt magna mollit ea consectetur elementum consequat molestie nunc velit vitae occaecat tempor tempor officia. Reprehenderit curabitur commodo ac consequat convallis proident veniam interdum lorem nisi id molestie curabitur. Porta porta consequat sagittis duis aliquip reprehenderit consectetur est non lorem do non est quis labore et et cupidatat. Posuere vel reprehenderit nunc minim eiusmod fugiat cupidatat duis officia lorem est ex id molestie commodo magna libero. Incididunt libero proident consectetur magna fringilla ea duis. [[2]]"
+    ],
+    "bites": [
+     "Leo pulvinar pariatur incididunt non nulla in nisi proident leo vitae ut mollit leo sit ullamco leo culpa. Excepteur excepteur suspendisse esse excepteur vehicula excepteur consectetur molestie. Lacus occaecat est culpa amet libero exercitation consectetur mollit sunt ut elit laborum consectetur faucibus consequat pretium. Molestie irure veniam velit pariatur turpis culpa sagittis pulvinar molestie veniam convallis nunc pariatur in adipiscing morbi. Do ut exercitation faucibus in aute lacus convallis mollit qui aute tincidunt duis qui. [[3]]",
+     "Laboris culpa aliquip morbi exercitation ac ullamco culpa est duis consequat. Velit libero fringilla lacus faucibus cillum eiusmod egestas duis incididunt excepteur leo et sint mauris leo consectetur. Posuere vitae nunc leo vitae tempor neque non nunc enim fringilla nunc ac. Reprehenderit turpis deserunt in aliquip consectetur turpis commodo excepteur qui minim. Esse in adipiscing id aute deserunt ea laboris faucibus molestie vel cupidatat pariatur morbi. Consectetur nisi ut elementum ex amet."
+    ],
+    "prepare": [
+     "Labore laborum leo turpis cillum interdum magna libero ullamco leo est quis non leo cupidatat. Turpis nisi consectetur labore et porta morbi pharetra occaecat. Integer leo elit excepteur occaecat occaecat convallis pulvinar sunt lacus eiusmod nisi. Nisi do et posuere minim pretium consectetur ea esse lorem convallis. Et pulvinar dolor incididunt morbi posuere nulla egestas culpa suspendisse elementum excepteur vehicula enim fringilla faucibus. Eu dolore pariatur convallis deserunt elementum vehicula.",
+     "Sed mauris eu officia sed mauris pariatur anim libero irure posuere. Laoreet sed aute ex excepteur proident vitae sint esse deserunt dolor urna morbi. Fugiat morbi fames fugiat non do mollit lorem do. Nostrud sit laborum leo labore qui ex ex sint sagittis reprehenderit voluptate duis lorem fames. Fringilla amet elit laboris consectetur neque et vehicula molestie neque lorem convallis sed morbi. Ultricies ea id ea incididunt fringilla ipsum incididunt convallis tincidunt sagittis nunc. [[4]]"
+    ],
+    "partners": [
+     "Magna eu ac sit sed eiusmod laoreet lacus elementum duis laoreet duis dolor cillum duis et lacus. Sint amet laboris mauris ex at deserunt leo malesuada tempor aliqua turpis nisi culpa. Duis aliquip tempor culpa sed eu cupidatat nulla est eiusmod vitae ad elementum. Mollit lorem sunt ipsum id et tincidunt morbi id occaecat. Dolore aute pariatur mollit consectetur culpa faucibus ad deserunt turpis nisi consectetur est voluptate interdum dolor ipsum maecenas et tempor sed. [[5]]",
+     "Ea tempor vel reprehenderit exercitation proident et ipsum esse enim velit. Proident integer fugiat elementum consequat deserunt mauris velit enim sagittis anim duis dolore fames faucibus officia. Ac fringilla consequat leo commodo enim lacus ea sed exercitation nunc officia turpis ipsum excepteur cillum excepteur nunc. Id duis elit leo morbi curabitur et suspendisse aliquip in leo pharetra. Excepteur molestie ut leo tempor elementum pulvinar labore commodo."
+    ]
+   },
+   "data": [
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Bashi Channel",
+     "label": "Main deep passage"
+    },
+    {
+     "type": "Military presence",
+     "value": "Watched",
+     "label": "Naval and air presence to collect"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Japan, US",
+     "label": "Positions to collect"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Pariatur exercitation duis deserunt laborum eu nulla ut fugiat consequat velit dolore mollit curabitur aliquip fringilla sit. Pharetra laboris fames fames molestie."
+    },
+    {
+     "n": 2,
+     "text": "Nunc magna nunc sagittis anim at ullamco lorem convallis nostrud urna pharetra. Vel sed laboris sagittis sed amet excepteur excepteur pretium anim."
+    },
+    {
+     "n": 3,
+     "text": "Vel lacus sit cillum sed turpis vitae vitae sint quis nulla pharetra labore commodo cillum. Vel irure maecenas dolor irure ex sunt porta consectetur cillum voluptate."
+    },
+    {
+     "n": 4,
+     "text": "Eiusmod duis lacus proident qui elit pariatur culpa ac leo elementum laboris mollit incididunt aliquip do. Laboris duis nisi molestie eu sunt mauris."
+    },
+    {
+     "n": 5,
+     "text": "Exercitation elementum sagittis morbi curabitur ad sagittis sagittis anim convallis cillum vel id duis culpa do et laboris deserunt."
+    }
+   ]
+  },
+  {
+   "id": "c_taiwan",
+   "theatre": "taiwan",
+   "name": "Taiwan Strait",
+   "kind": "Strait",
+   "lat": 25.3,
+   "lon": 119.7,
+   "angle": -70,
+   "blurb": "Fugiat id dolor do faucibus pretium nostrud cupidatat lorem.",
+   "sections": {
+    "stake": [
+     "Ut sit consectetur et officia qui ex irure elementum elit sunt. Eu sed mauris mauris mollit consectetur quis aliqua magna sit malesuada commodo elementum excepteur fringilla nulla leo consectetur. Commodo convallis molestie magna aute minim ultricies duis reprehenderit ut consectetur ultricies voluptate veniam at. Voluptate pharetra magna quis irure leo aute pulvinar est laboris vitae egestas pharetra quis maecenas est vehicula. Malesuada id vehicula culpa do deserunt cillum ea ut pretium laoreet. [[1]]",
+     "Minim at consectetur molestie posuere laoreet sunt proident do nunc pulvinar velit laboris proident maecenas. Voluptate consectetur neque leo molestie elit est quis duis tempor lorem minim at tincidunt leo molestie. Lorem qui ut aliquip vel fugiat occaecat excepteur at. Id lorem convallis aliqua dolor id sagittis sed morbi consectetur aliquip sagittis commodo laoreet eu vehicula consequat. Sagittis duis aute laborum enim do minim fringilla nostrud pharetra libero neque curabitur."
+    ],
+    "risks": [
+     "Sit sagittis pretium laborum adipiscing cupidatat et minim nulla velit duis voluptate interdum integer fames consectetur porta leo ad. Excepteur fugiat integer duis nisi elementum faucibus at turpis. Lorem lorem consectetur fugiat neque enim pharetra maecenas incididunt neque at vehicula mauris neque consectetur magna ea. Id malesuada minim ex et sed veniam et ex consequat dolore minim pretium minim et commodo posuere est duis. Neque pharetra elit consequat eiusmod amet interdum duis do interdum duis.",
+     "Adipiscing molestie nostrud lacus adipiscing neque nisi nulla consectetur molestie consectetur est at. Exercitation suspendisse integer fugiat eu deserunt ad minim labore ea ac egestas pulvinar in labore leo tincidunt. Anim at eu ultricies duis consectetur pharetra sit deserunt leo. Non fugiat culpa ad malesuada posuere neque id tempor ad. At morbi commodo urna veniam deserunt elit vehicula nulla morbi cillum aliqua malesuada tempor malesuada. Sed exercitation ultricies tempor exercitation turpis molestie ad. [[2]]"
+    ],
+    "bites": [
+     "Integer integer ullamco reprehenderit consequat anim aliquip integer fringilla. Sit malesuada officia convallis magna at laboris enim amet. Consectetur duis ullamco vitae do vel exercitation vel mollit tincidunt vel vitae mauris aute reprehenderit leo maecenas non mollit. Convallis reprehenderit et id neque duis posuere cupidatat est lacus qui duis in. Voluptate vitae non dolore ex ea nulla ut incididunt. Pariatur consectetur id et elementum morbi ullamco do sagittis id. [[3]]",
+     "Convallis libero sunt egestas consectetur esse mauris occaecat quis maecenas mollit ea non. Consectetur at exercitation lorem officia sint veniam in tincidunt sunt mollit non sed nulla culpa aute officia. Duis convallis incididunt sed commodo vel deserunt ac esse pulvinar. Aliquip ea cupidatat pharetra pharetra velit duis posuere fames quis leo fringilla. Lacus nisi quis dolore et ea esse malesuada leo. Leo molestie incididunt laoreet amet nisi convallis cillum ac duis aute."
+    ],
+    "prepare": [
+     "Laoreet integer incididunt morbi ac laborum urna non pariatur nulla eu curabitur veniam. Dolore sunt mauris id eu et vehicula ultricies vel excepteur pretium quis id molestie convallis urna duis tempor. Neque suspendisse duis nisi pharetra lacus malesuada aliquip consectetur libero qui aliquip sit ea vehicula reprehenderit dolore cillum. Pharetra sunt lacus nostrud velit fames libero eu mauris maecenas ipsum pariatur lacus. At consectetur aliquip aute aute eiusmod.",
+     "Libero nulla commodo ad porta dolore tempor fugiat magna sit vitae laoreet vehicula. Molestie pulvinar dolore ultricies aliquip do pulvinar exercitation sint eu fugiat voluptate duis sunt curabitur. Malesuada laborum mauris amet dolore enim leo officia et fames nisi id commodo. Ipsum curabitur pulvinar convallis laboris amet porta elit elementum sint pariatur elementum irure veniam reprehenderit deserunt curabitur leo nunc. Curabitur lorem ut voluptate fugiat aute fringilla occaecat aute dolore urna qui aliquip consectetur. [[4]]"
+    ],
+    "partners": [
+     "Lorem et suspendisse fugiat adipiscing tincidunt do aliqua magna non enim minim vehicula sagittis posuere sint suspendisse nostrud vel. Do fugiat aliqua id turpis lacus egestas do id cupidatat velit vitae reprehenderit qui ut morbi. Posuere ut porta et est ac voluptate labore voluptate. Enim officia id ultricies fringilla neque ea ultricies fugiat. Leo vitae nulla cupidatat et id posuere cillum morbi qui anim sit sed convallis laboris. [[5]]",
+     "Nulla tempor tincidunt irure dolor consequat posuere egestas nostrud leo faucibus ullamco labore eu ac elit laoreet faucibus. Ex sagittis mollit excepteur ullamco exercitation ullamco cupidatat at porta sint lorem do culpa adipiscing. Id irure vehicula sunt ac sunt quis eiusmod fugiat anim convallis labore. Ultricies consequat interdum lorem sit aliquip minim interdum maecenas. Exercitation irure duis morbi anim sunt molestie vehicula incididunt proident convallis velit pharetra at."
+    ]
+   },
+   "data": [
+    {
+     "type": "Chokepoint anatomy",
+     "value": "~130–180 km",
+     "label": "Width of the strait"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "Leading-edge",
+     "label": "Chips; volumes and EU exposure to quantify"
+    },
+    {
+     "type": "Military presence",
+     "value": "Transits",
+     "label": "EU-member navy passages (list to verify)"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Duis ex anim ultricies elementum labore sint nulla leo commodo nunc labore duis non labore. Lacus tempor non quis neque elementum ipsum libero minim."
+    },
+    {
+     "n": 2,
+     "text": "Culpa posuere aliquip minim urna leo exercitation pharetra integer ac laboris maecenas culpa vitae nulla exercitation nostrud convallis dolor elementum pariatur cillum."
+    },
+    {
+     "n": 3,
+     "text": "Porta cupidatat ut aliquip dolore voluptate pariatur vitae id veniam lorem et. Exercitation vel laborum do culpa mauris reprehenderit integer mollit leo fames voluptate."
+    },
+    {
+     "n": 4,
+     "text": "Fugiat integer tempor elementum fringilla proident morbi integer fames consectetur voluptate maecenas at. Irure eiusmod dolor vel lacus dolore integer molestie sagittis ad in pharetra."
+    },
+    {
+     "n": 5,
+     "text": "Integer duis faucibus id ipsum non excepteur duis ad exercitation quis turpis est at id. Elit occaecat veniam ut cillum ad pulvinar id in interdum malesuada."
+    }
+   ]
+  },
+  {
+   "id": "c_hormuz",
+   "theatre": "hormuz",
+   "name": "Strait of Hormuz",
+   "kind": "Strait",
+   "lat": 26.5,
+   "lon": 56.3,
+   "angle": 30,
+   "blurb": "Duis leo egestas adipiscing interdum amet vitae ex dolor.",
+   "sections": {
+    "stake": [
+     "Curabitur consectetur cillum minim cillum neque sed id ullamco pharetra tempor pulvinar excepteur mauris egestas. Anim eu integer dolore egestas enim vitae pretium dolore quis eu cillum sint elementum aliqua veniam. Labore adipiscing interdum quis velit deserunt veniam vel ac maecenas laborum suspendisse laborum maecenas. Malesuada consectetur aute dolor turpis ex minim est elit tempor laborum. Lorem duis amet suspendisse ex neque eiusmod do elit eu egestas. [[1]]",
+     "Pretium mauris irure mauris pretium sed voluptate leo mauris nulla sed reprehenderit adipiscing ipsum exercitation vitae. Porta egestas integer duis eiusmod pharetra esse dolor cupidatat laborum. Mauris neque suspendisse porta laborum laborum tincidunt et fringilla duis ipsum exercitation magna at fames id nunc libero. Aliqua est sed leo id culpa excepteur do fringilla dolor fugiat cillum amet. Excepteur occaecat vel consectetur fugiat leo duis neque integer nisi."
+    ],
+    "risks": [
+     "Ex malesuada esse vitae ac posuere tincidunt dolor lacus do qui tempor convallis anim consectetur convallis interdum. Minim sed sint id aliqua leo ex et faucibus veniam elementum convallis est. Duis laoreet pulvinar nunc voluptate minim dolore in tincidunt vehicula nostrud non ex sint neque. Ac officia est irure vel aliqua ipsum posuere curabitur exercitation ac faucibus irure. Commodo cupidatat est duis consectetur vel ullamco molestie nunc ad pulvinar aliqua occaecat.",
+     "Posuere molestie leo faucibus pulvinar cillum incididunt id vitae egestas aliqua. Lacus lacus integer vehicula nunc convallis tempor sed ullamco ullamco laoreet convallis sed do aliquip do posuere mauris excepteur. Lorem incididunt anim ut leo laoreet officia nunc elit cillum aliqua. Neque nulla fames est vitae qui posuere culpa aliqua fames elementum pulvinar officia laoreet fugiat vehicula. Minim sed morbi porta tempor aute nostrud deserunt consequat. [[2]]"
+    ],
+    "bites": [
+     "Esse esse do vel pretium at esse vel ipsum est nostrud aute consectetur nunc malesuada laboris ultricies. Lacus amet mauris veniam vehicula vel pulvinar culpa vehicula vitae velit. Tempor vehicula reprehenderit aliqua nulla quis leo molestie at pharetra anim sunt sed nulla enim neque aliquip minim cupidatat. Tempor libero eu neque leo velit incididunt elit sed et ipsum non do mollit. Incididunt mauris urna neque vitae laborum eiusmod sunt eiusmod. [[3]]",
+     "Ipsum lorem exercitation sunt curabitur consectetur pretium do elementum cillum maecenas id vehicula sed porta. Et consectetur magna velit ullamco eu quis occaecat qui laborum pariatur porta. Fugiat egestas leo enim reprehenderit occaecat aliquip convallis convallis non dolore urna fringilla. Cupidatat eiusmod cupidatat sagittis est id esse excepteur id amet turpis. Ullamco aliquip integer urna turpis minim incididunt nisi curabitur voluptate minim sed esse aliquip qui laboris id libero tempor."
+    ],
+    "prepare": [
+     "Sagittis reprehenderit laoreet do sed fringilla cupidatat et veniam suspendisse laoreet consectetur pulvinar laoreet ut quis nisi. Anim proident leo nisi vehicula cupidatat qui faucibus urna qui irure ex. Elementum commodo excepteur esse libero voluptate vehicula non laborum. Tempor id molestie sint officia proident fugiat suspendisse pharetra labore commodo ut tempor ultricies. Leo morbi elementum lorem eu vitae egestas sed consectetur convallis laboris consectetur id cillum enim esse magna.",
+     "Minim incididunt incididunt veniam ullamco lacus vehicula mollit leo aliqua ex ad sit neque. Integer ipsum cillum curabitur leo leo cillum proident eu molestie ultricies leo molestie fringilla qui vel tempor. Et neque do laborum ex leo irure aliqua libero ex turpis est morbi labore posuere. Leo eu maecenas aliqua lacus id et sit leo occaecat fugiat adipiscing sint leo ad porta irure veniam sit turpis. [[4]]"
+    ],
+    "partners": [
+     "Et excepteur ac amet laborum sed minim lacus duis proident. Sagittis convallis sint enim amet culpa eu leo culpa. Vitae voluptate libero laoreet in sit adipiscing et vitae interdum reprehenderit turpis tincidunt consequat reprehenderit labore nisi tincidunt non. Ea irure labore egestas sagittis eiusmod pariatur ea turpis cillum aute vitae consectetur qui pretium. Pulvinar id laborum malesuada nulla magna esse ultricies do lorem deserunt et lorem. [[5]]",
+     "Fames molestie ad vehicula anim nisi sint egestas sed mollit dolore mauris sunt et ac. Non ullamco neque aute ad faucibus sint sunt cillum turpis consectetur exercitation ipsum sed et. Tincidunt lorem lorem qui id dolore ullamco cillum mauris morbi tincidunt. Urna adipiscing cillum neque pretium minim suspendisse ullamco fringilla cillum. Adipiscing do ultricies laborum laboris vitae ad integer qui turpis sed sit vitae cillum pretium sit tincidunt."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~20%",
+     "label": "Share of global oil consumption (indicative)"
+    },
+    {
+     "type": "Military presence",
+     "value": "Agenor",
+     "label": "European-led maritime awareness mission"
+    },
+    {
+     "type": "Alternatives",
+     "value": "Pipelines",
+     "label": "Bypass capacity to verify"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Ex laboris leo suspendisse voluptate ea id id aliquip sed. Enim occaecat faucibus sed vehicula sint mollit libero ac ullamco."
+    },
+    {
+     "n": 2,
+     "text": "Pariatur id nulla ad ultricies adipiscing ut deserunt est ut lacus cillum ullamco anim pharetra consectetur elementum. Fames mollit malesuada suspendisse faucibus minim cillum ultricies deserunt."
+    },
+    {
+     "n": 3,
+     "text": "Ut dolor occaecat ullamco id lorem mollit qui aute dolore dolore duis pharetra sit ex consectetur ad. Posuere consectetur aliquip porta sunt sunt."
+    },
+    {
+     "n": 4,
+     "text": "Malesuada aliquip aute sunt in labore veniam enim amet irure malesuada proident. Consequat leo non nisi mollit ultricies occaecat lorem aute. Do occaecat tincidunt ut non molestie."
+    },
+    {
+     "n": 5,
+     "text": "Qui duis commodo eu sed vehicula consectetur minim pretium elit consectetur mauris ad turpis pharetra. Minim consequat consectetur voluptate urna enim esse eiusmod."
+    }
+   ]
+  },
+  {
+   "id": "c_bab",
+   "theatre": "aden",
+   "name": "Bab-el-Mandeb",
+   "kind": "Strait",
+   "lat": 12.6,
+   "lon": 43.4,
+   "angle": 45,
+   "blurb": "Duis sagittis fringilla commodo fames commodo veniam.",
+   "sections": {
+    "stake": [
+     "Duis anim reprehenderit anim ex at consequat dolor fugiat. In elementum nulla vitae consectetur vitae turpis in excepteur. Urna nostrud cupidatat ultricies occaecat tempor vitae laboris amet vehicula leo eu fames cupidatat leo. Fringilla vitae interdum tempor ipsum duis duis dolor anim pretium libero commodo fames incididunt. Anim enim fugiat sit eu excepteur magna neque id. Sed lacus sunt et faucibus enim velit elit sunt qui ultricies nunc fringilla minim consectetur consectetur. [[1]]",
+     "Leo mollit integer lorem fames et sed laoreet voluptate veniam exercitation laoreet turpis deserunt integer aute pariatur. Consectetur nisi vitae id qui pretium occaecat reprehenderit irure. Curabitur pharetra lacus vehicula vehicula posuere mollit deserunt voluptate dolore porta. Tincidunt ac occaecat proident libero lorem est consectetur sed ea libero enim ex vitae do occaecat. Ut vel tincidunt et id do fames amet ad voluptate nostrud egestas faucibus eiusmod."
+    ],
+    "risks": [
+     "Culpa veniam id integer integer interdum quis vel fames id in. Fames ad eu dolore esse exercitation lorem officia fugiat sed leo elit duis lorem fringilla adipiscing. Elit laborum egestas nostrud sed est lorem fugiat curabitur anim ac dolor excepteur suspendisse maecenas. Minim libero ut in officia fringilla maecenas culpa in et eu egestas faucibus ultricies pharetra duis velit mollit id. Do qui turpis pharetra neque urna egestas anim laoreet labore urna sunt mollit quis.",
+     "Tincidunt eu lacus culpa nunc duis amet laoreet tempor excepteur leo. Egestas ex libero leo non sunt veniam ad malesuada aliqua voluptate. At excepteur in officia eiusmod quis voluptate maecenas proident porta in vitae sed fames consectetur mauris ullamco eiusmod. Nunc fames elementum pariatur molestie anim dolore vehicula minim. Consequat fringilla veniam aute enim nisi nostrud magna cupidatat culpa cillum magna nisi dolor. Elementum veniam elementum morbi in nisi fames. [[2]]"
+    ],
+    "bites": [
+     "Vehicula et lacus posuere integer eu magna fames consectetur. Eu sagittis non ultricies mauris do duis lacus posuere integer enim cillum do sed minim. Aute laoreet ea cupidatat faucibus reprehenderit nunc mollit duis. Sed ac esse neque lorem ullamco dolor sed leo vitae lacus id proident pretium fringilla. Consectetur incididunt mauris ex leo pharetra ad consectetur proident sed eiusmod ultricies. Faucibus ac proident et non et elementum vehicula sed. [[3]]",
+     "Porta porta nostrud ut pretium sagittis in ac convallis ipsum fugiat libero proident officia laoreet morbi. Irure culpa vehicula turpis amet suspendisse ac id sed esse qui laoreet et. Consectetur minim laoreet libero ipsum id anim voluptate laoreet sint commodo id cupidatat anim pulvinar ut leo. Leo fringilla in veniam dolore sint id ut posuere. Vel malesuada ac duis pariatur leo pharetra aute laboris labore voluptate aliquip minim. Commodo malesuada incididunt velit ipsum consectetur."
+    ],
+    "prepare": [
+     "Ut tincidunt aute id fames malesuada nostrud ultricies exercitation cupidatat curabitur duis do eiusmod morbi consectetur. Pulvinar ullamco lacus ex consequat sunt aute aliquip duis sed suspendisse turpis fugiat pulvinar. Tempor proident labore fames neque amet interdum elit officia sunt. Pharetra aute id laborum sed faucibus ex fames aute urna nulla leo ex fringilla ad pulvinar consectetur sint vitae. Aliqua in et ullamco vehicula cupidatat maecenas morbi commodo nulla.",
+     "Nisi ut eiusmod magna consequat integer integer sagittis adipiscing cupidatat mauris reprehenderit. Morbi fringilla duis dolore mollit commodo curabitur leo do excepteur malesuada posuere aliqua amet est ea. Leo et fringilla adipiscing convallis mauris convallis enim nostrud libero aliqua interdum laboris sint libero irure vehicula. Ex cillum nulla vehicula non id sint anim laboris leo incididunt in velit ea aute. Sed posuere malesuada sed id laboris pulvinar aliquip. [[4]]"
+    ],
+    "partners": [
+     "Leo labore elit commodo lacus amet porta incididunt pharetra sit convallis est sed. Aute aute at anim magna at lacus fames anim et leo morbi fugiat leo pharetra posuere ipsum consequat ut. Libero eu nunc consectetur nulla convallis velit qui esse nisi ac faucibus. Pulvinar sagittis aute ea ut minim non incididunt pulvinar leo. Turpis laborum duis vehicula pharetra vel laborum vitae elementum elementum irure minim vel esse libero enim egestas. [[5]]",
+     "Aute voluptate mauris ad adipiscing consectetur posuere sed aute aliqua duis laoreet malesuada ea laborum et excepteur dolor morbi. Commodo pretium ullamco lorem duis malesuada pharetra vel quis consectetur quis turpis. At occaecat in id suspendisse laboris consequat velit sed libero proident malesuada eu sed minim pariatur id. Laoreet do consectetur reprehenderit posuere libero occaecat maecenas culpa. Proident laoreet pretium mauris curabitur occaecat fames velit id fringilla amet pulvinar."
+    ]
+   },
+   "data": [
+    {
+     "type": "Chokepoint anatomy",
+     "value": "~30 km",
+     "label": "Width at the narrowest point"
+    },
+    {
+     "type": "Military presence",
+     "value": "Djibouti",
+     "label": "Foreign bases, including EU-member states"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "+~10 days",
+     "label": "Added time via the Cape (indicative)"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Pretium enim suspendisse incididunt non integer duis vel ullamco morbi et reprehenderit id pharetra mollit velit laoreet vehicula sed consequat."
+    },
+    {
+     "n": 2,
+     "text": "Commodo amet ullamco maecenas tempor vel lorem laboris commodo dolor vitae elementum vitae. Cillum nostrud sint non faucibus."
+    },
+    {
+     "n": 3,
+     "text": "Consequat sagittis magna elit integer ad labore labore sed ultricies vitae magna commodo minim egestas lacus elit vehicula irure quis."
+    },
+    {
+     "n": 4,
+     "text": "Veniam voluptate vel ultricies laboris adipiscing lorem sed ipsum non minim veniam elit turpis aliqua pulvinar ipsum. Occaecat sagittis interdum malesuada exercitation eu libero."
+    },
+    {
+     "n": 5,
+     "text": "Nulla voluptate integer duis in vehicula pariatur irure nunc vitae veniam magna. Suspendisse occaecat laoreet fugiat duis velit pariatur lacus."
+    }
+   ]
+  },
+  {
+   "id": "c_suez",
+   "theatre": "redsea",
+   "name": "Suez Canal",
+   "kind": "Canal",
+   "lat": 30.3,
+   "lon": 32.4,
+   "angle": 90,
+   "blurb": "Culpa deserunt tincidunt urna sed excepteur consectetur eiusmod amet posuere.",
+   "sections": {
+    "stake": [
+     "Sint morbi integer consectetur vehicula do ac tincidunt fugiat et labore pariatur esse fugiat adipiscing. Lorem ea mollit magna sint neque qui aute integer non sint suspendisse. Elementum lorem eiusmod porta integer officia molestie minim eiusmod mollit leo excepteur. Excepteur mauris do faucibus nisi officia pariatur labore leo ex elementum esse et. Irure irure aute adipiscing non molestie culpa nostrud consequat posuere consequat ad id fringilla sint eiusmod aliquip. [[1]]",
+     "Molestie consectetur reprehenderit sagittis vitae magna occaecat amet pharetra vehicula. Consectetur est posuere nulla anim deserunt magna anim quis adipiscing reprehenderit. Aute exercitation integer eiusmod nisi velit nulla et ipsum labore urna molestie fames lorem laoreet suspendisse. Enim fugiat voluptate magna pretium enim pharetra lorem faucibus occaecat nulla irure tempor nisi. Laboris dolore fugiat fugiat porta occaecat eu convallis duis id officia sunt sagittis sed vel."
+    ],
+    "risks": [
+     "At reprehenderit sed neque integer duis sed libero laborum sit. Pariatur porta dolor neque minim sint malesuada faucibus vitae in sunt morbi. Laborum ad lorem culpa reprehenderit neque consectetur irure occaecat adipiscing nostrud nunc officia cupidatat vehicula. Quis enim velit sit proident esse integer fames incididunt fringilla duis magna ex reprehenderit consectetur egestas porta. Velit molestie lorem duis commodo amet vel eu est do integer. Cillum laboris irure elit proident neque occaecat fugiat sed sed.",
+     "Magna urna veniam leo aliqua ad labore consequat malesuada nulla libero vel fringilla. Qui cillum tempor pretium dolor molestie malesuada ea pretium nulla consequat ullamco. Urna morbi veniam dolor neque sit sed vel eu aliqua labore est voluptate dolore esse leo. Sit voluptate at sagittis fringilla fringilla fringilla mollit leo et exercitation incididunt aute ex interdum veniam duis. Est id lorem ultricies dolore in laborum ullamco elit. [[2]]"
+    ],
+    "bites": [
+     "Ad cupidatat minim pretium in irure elementum amet posuere adipiscing turpis labore consectetur. Irure id lorem leo integer leo duis deserunt posuere non ullamco id magna commodo pulvinar eu non reprehenderit. Aliqua maecenas dolor lorem duis leo tincidunt nunc id cillum nisi elit curabitur reprehenderit libero ullamco sed mollit duis. Qui amet consectetur nostrud irure ex proident interdum id pulvinar aute maecenas consequat. Elementum sunt suspendisse culpa eu sit vehicula quis vitae leo. [[3]]",
+     "Integer in aliquip vitae curabitur labore malesuada do lorem pariatur cupidatat. Lacus nulla in sagittis ex fringilla excepteur sint sunt velit laborum nostrud in leo. Consectetur faucibus deserunt molestie lorem pharetra occaecat adipiscing ullamco leo ullamco et aliquip molestie suspendisse fames ultricies. Tempor eiusmod vitae reprehenderit mollit elit leo cillum commodo interdum aliquip dolor culpa occaecat. Adipiscing aliquip maecenas ac culpa molestie vitae voluptate tincidunt ut. Aute qui turpis culpa et vitae quis occaecat."
+    ],
+    "prepare": [
+     "Sunt vel nostrud nunc nunc nunc curabitur mauris ullamco posuere faucibus ac pretium egestas leo lacus. Vehicula mauris ac in non ullamco curabitur vitae amet egestas convallis velit. Consectetur duis at aliqua mollit adipiscing sagittis nisi maecenas malesuada. Amet consectetur et duis fringilla reprehenderit sed maecenas nunc et duis incididunt. Pulvinar curabitur convallis minim consectetur pretium elit laborum adipiscing ad duis deserunt nulla in pharetra. Ullamco aliqua ac pharetra egestas interdum at.",
+     "Sed anim fringilla minim integer duis exercitation mollit id consectetur ac convallis elementum laoreet laboris anim. Et nunc turpis occaecat pretium aute magna cillum enim elementum enim esse. Fringilla minim posuere magna eu incididunt turpis officia pretium ac nostrud commodo posuere egestas laoreet malesuada et. Leo neque exercitation sed reprehenderit non aute adipiscing dolore maecenas convallis aute adipiscing quis adipiscing magna turpis quis. Sit aliquip minim laborum nulla pretium labore non exercitation pharetra fugiat eu. [[4]]"
+    ],
+    "partners": [
+     "Lorem dolor et aute curabitur velit eu magna sit sint egestas laborum ea ipsum lacus aute porta dolore aliqua. Deserunt pharetra veniam quis malesuada sunt sagittis ex leo ullamco consectetur posuere sed nunc qui eiusmod duis irure incididunt. Do ea convallis consectetur sunt egestas vitae in vehicula pariatur nostrud aliqua. Labore vitae eu sint morbi lorem duis sint non porta turpis excepteur fugiat. Ipsum consequat turpis id at ipsum. [[5]]",
+     "Fugiat officia proident cupidatat duis ac elementum molestie pariatur faucibus sagittis nunc id et duis. Sed convallis interdum eiusmod mauris ea est quis vehicula vitae ipsum laboris fringilla duis faucibus proident cupidatat morbi. Ea leo ipsum sint consequat maecenas laboris turpis posuere ex sunt cillum. Vitae ut enim consectetur nisi in nunc integer convallis lacus. Malesuada malesuada consectetur vehicula laboris urna in voluptate nunc suspendisse leo molestie at dolor nostrud adipiscing aliqua pulvinar."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~12%",
+     "label": "Share of global trade (commonly cited, to verify)"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "~190 km",
+     "label": "Length of the canal"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Egypt",
+     "label": "EU–Egypt partnership (2024)"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Tempor occaecat duis vehicula pharetra culpa sed do pariatur nunc nostrud quis id vitae cillum exercitation leo. Commodo porta sed nisi nostrud."
+    },
+    {
+     "n": 2,
+     "text": "Et suspendisse sed tempor neque nunc turpis adipiscing posuere occaecat fames sed sagittis neque laboris leo. Libero vel velit ad consectetur."
+    },
+    {
+     "n": 3,
+     "text": "Veniam adipiscing exercitation amet pariatur cillum nunc amet officia integer labore ultricies est porta vel eiusmod proident elementum."
+    },
+    {
+     "n": 4,
+     "text": "Tincidunt irure commodo interdum lacus ullamco nisi molestie sed voluptate velit leo turpis culpa proident molestie. Qui posuere id exercitation maecenas aute leo tincidunt anim consectetur lorem."
+    },
+    {
+     "n": 5,
+     "text": "Interdum pharetra at id vitae nostrud pretium nunc sint anim vitae ex commodo nulla. Aliqua elit ultricies officia do consectetur suspendisse irure pariatur."
+    }
+   ]
+  },
+  {
+   "id": "c_nsr",
+   "theatre": "arctic",
+   "name": "Northern Sea Route",
+   "kind": "Sea lane",
+   "lat": 76,
+   "lon": 100,
+   "angle": 0,
+   "blurb": "Nunc ea in mauris convallis eiusmod tempor.",
+   "sections": {
+    "stake": [
+     "Maecenas vitae libero commodo adipiscing leo enim nisi ultricies sagittis pariatur ad fugiat ut culpa excepteur laoreet consequat culpa. Sagittis excepteur laborum fringilla sed fames culpa cillum laboris tempor duis aute consequat consectetur duis eiusmod vehicula proident. Molestie ut occaecat est consequat consectetur tempor magna interdum duis. Laborum duis convallis malesuada faucibus leo sed vehicula sunt ullamco consectetur exercitation id. Pulvinar leo integer sit interdum enim anim convallis leo duis dolor id sint ut. [[1]]",
+     "Leo amet proident leo nostrud laoreet leo commodo egestas pharetra et minim minim amet. Commodo reprehenderit aliquip occaecat faucibus fugiat ut id velit cupidatat pretium cillum dolor mauris suspendisse turpis. Id integer at lacus occaecat cillum aliquip sed aute. Duis minim esse nulla laboris pharetra duis laborum culpa. Officia interdum molestie voluptate excepteur at irure curabitur sed neque dolore libero turpis. Urna leo porta sagittis tempor enim at pulvinar tincidunt nunc nunc leo duis."
+    ],
+    "risks": [
+     "Sed eu morbi nulla voluptate pretium ultricies esse laborum. Maecenas voluptate ullamco sed nisi morbi aliquip cupidatat ad id eiusmod laoreet sit sed vitae aliqua tincidunt turpis. Pharetra enim vehicula in magna leo integer vel ultricies qui incididunt tincidunt eiusmod elit. Non minim voluptate reprehenderit fugiat faucibus veniam excepteur cupidatat cupidatat faucibus quis mauris ullamco sunt turpis officia. Neque laborum maecenas quis lorem molestie cupidatat reprehenderit proident sagittis.",
+     "Lacus id tempor nisi neque minim maecenas ultricies maecenas est curabitur deserunt est. Neque magna sed morbi velit at anim leo vitae amet nisi occaecat anim pulvinar maecenas non consectetur reprehenderit laboris. Mollit irure vel voluptate anim ad vehicula consectetur elit do esse maecenas porta mauris molestie. Egestas ut dolore pulvinar incididunt reprehenderit urna urna convallis anim nostrud lacus. Officia consectetur ultricies mauris mauris ultricies et curabitur. [[2]]"
+    ],
+    "bites": [
+     "Enim in dolor leo lorem pariatur ac mauris sagittis occaecat adipiscing laboris nostrud. Fames pretium cupidatat lorem deserunt turpis pharetra consequat cupidatat sed sunt dolor. Proident molestie do officia porta laboris commodo ipsum vehicula dolore minim pharetra leo maecenas cillum culpa. Neque id est consectetur et ut faucibus amet exercitation interdum egestas veniam leo officia dolore mauris. Vel incididunt sint enim eiusmod excepteur morbi ex sit enim convallis exercitation. [[3]]",
+     "Adipiscing mauris tempor exercitation labore nulla sunt non porta. Sint vehicula enim morbi fames tempor leo vel tempor id ipsum est mauris integer. Cupidatat dolor ipsum laboris malesuada veniam et qui pariatur ut eiusmod libero tempor pulvinar. Quis eu labore urna posuere fugiat sagittis molestie aliqua eu fames do interdum fugiat faucibus laboris irure. Ac veniam sunt sed elementum nostrud eu deserunt ac et neque proident mauris."
+    ],
+    "prepare": [
+     "Pharetra libero consectetur irure fringilla nunc dolore leo sit. Adipiscing enim at reprehenderit laoreet malesuada lorem dolore leo egestas sint ultricies libero. Urna malesuada id adipiscing pretium aute ad qui est sunt interdum ex integer laborum consectetur eiusmod interdum tempor. Ad pulvinar consequat consequat tincidunt integer lorem urna magna nisi. Duis pretium irure id elit elit egestas laoreet id commodo et molestie eu neque non in.",
+     "Consectetur officia turpis posuere elementum sit sit est porta fugiat interdum reprehenderit lacus. Tincidunt consequat excepteur consectetur egestas occaecat elit pretium leo mollit at ea amet minim cillum. Commodo suspendisse qui sagittis neque cupidatat vehicula sagittis cupidatat laborum. Commodo dolore qui vehicula nunc vitae neque porta sed sint nostrud do faucibus sed. Commodo et ultricies ullamco exercitation nostrud ullamco irure incididunt. Adipiscing nunc vitae id incididunt. [[4]]"
+    ],
+    "partners": [
+     "Fames enim turpis labore consectetur commodo exercitation cupidatat eu. Sed eiusmod posuere porta veniam ex ea ac deserunt dolor. Id cupidatat id magna posuere consequat duis anim voluptate anim laboris in. Sunt ex leo aliqua vitae occaecat faucibus excepteur molestie fames at est. Neque anim nulla convallis labore malesuada lacus vitae laboris ut quis enim faucibus ipsum sed aute. Curabitur malesuada aute amet dolor qui veniam vitae aliqua nostrud pariatur labore nisi vitae do laboris. [[5]]",
+     "Eu irure cupidatat mollit maecenas morbi cupidatat id cillum sed laboris molestie sit magna tempor esse cillum do culpa. Maecenas adipiscing culpa molestie aliquip elementum malesuada curabitur deserunt exercitation ultricies fames pharetra aliquip. Id consectetur cillum enim officia ut reprehenderit excepteur cillum do. Sed sunt aute voluptate nulla laborum sunt pharetra dolore ex cupidatat porta maecenas duis pretium proident eu. Maecenas elit minim exercitation ac egestas tempor enim vitae leo labore curabitur labore."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "LNG",
+     "label": "Russian LNG shipments (volumes to verify)"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Ice-bound",
+     "label": "Seasonal, ice-dependent"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Contested",
+     "label": "Legal status disputed"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Cupidatat elit est nulla maecenas labore porta consequat enim sunt commodo interdum laoreet qui interdum at et exercitation fames fugiat elementum integer."
+    },
+    {
+     "n": 2,
+     "text": "Sed et libero interdum est occaecat fugiat sit esse aliqua consectetur velit ea convallis curabitur. Veniam occaecat sint exercitation posuere."
+    },
+    {
+     "n": 3,
+     "text": "Irure id in dolor qui sint leo molestie sed. Duis lacus velit consectetur veniam molestie aliqua leo vehicula."
+    },
+    {
+     "n": 4,
+     "text": "Culpa curabitur integer labore occaecat labore interdum fames sint dolore officia commodo ea vehicula quis suspendisse aliquip consequat lorem. Consequat anim esse qui interdum consequat vitae."
+    },
+    {
+     "n": 5,
+     "text": "Neque ut sint sit ipsum ultricies porta sit leo convallis pharetra sagittis curabitur fringilla officia pharetra. Quis fringilla id vitae enim in."
+    }
+   ]
+  },
+  {
+   "id": "c_guinea",
+   "theatre": "guinea",
+   "name": "Niger Delta terminals",
+   "kind": "Port and terminal cluster",
+   "lat": 4.4,
+   "lon": 6.9,
+   "angle": 0,
+   "blurb": "Amet ipsum leo vehicula consequat duis dolor aute ea laoreet et fugiat vitae.",
+   "sections": {
+    "stake": [
+     "Ex vehicula duis labore consequat ipsum leo malesuada ut urna excepteur posuere consectetur nunc ultricies maecenas. Vel lorem tempor morbi vel porta sint nunc turpis duis. Libero ea duis cillum aute ea voluptate faucibus sint laboris dolore faucibus cillum tincidunt sunt vel. Adipiscing aute leo fames elementum dolor proident sed excepteur ad lorem nostrud ad. Elit consectetur vitae neque eu do est sint ad ut vehicula id esse nostrud mollit nulla posuere aute est aute. [[1]]",
+     "Minim nostrud eu aliqua urna pharetra labore laoreet interdum vehicula anim. Curabitur ullamco ultricies laoreet ea ad esse culpa suspendisse ad ut. Cillum lorem anim ipsum ad cillum ultricies minim fames elit fringilla excepteur dolor incididunt molestie fringilla. Et irure aute laboris mauris nisi ex fames pariatur do pariatur enim tempor velit incididunt nulla nulla velit. Aute labore aute dolore sagittis egestas et lorem ut ultricies. Laoreet libero pariatur duis dolore porta convallis."
+    ],
+    "risks": [
+     "Dolore consequat suspendisse anim fames pariatur eiusmod nisi pariatur sagittis ex dolore dolore voluptate pariatur leo id fugiat posuere. Eu laoreet vel ullamco curabitur malesuada laoreet suspendisse ut libero mollit nostrud est integer aliqua posuere porta sagittis faucibus. Sagittis reprehenderit ad proident laboris dolor et porta excepteur integer qui leo. Leo magna maecenas maecenas amet reprehenderit enim sint at. Officia et egestas est vitae non tempor aliquip proident id.",
+     "Anim id maecenas urna consectetur labore leo sed sed id dolore mollit tincidunt id duis minim id. Sed sed vehicula at minim laboris incididunt excepteur neque curabitur fugiat cupidatat quis reprehenderit integer quis egestas. Morbi lorem elit cupidatat sagittis amet laborum elementum tempor sunt. Lorem qui magna vel labore posuere exercitation duis neque culpa enim duis sed. Esse laborum pharetra pulvinar ad esse sunt tincidunt non in id duis nostrud pretium. [[2]]"
+    ],
+    "bites": [
+     "Laoreet et tempor sed pretium dolore minim laoreet interdum consectetur pariatur amet faucibus. Labore posuere et reprehenderit egestas duis eu qui nulla laoreet elementum amet. Integer labore molestie vehicula ut fugiat ea fringilla sint cupidatat fringilla convallis nisi. Velit eiusmod eu anim magna sed magna nunc suspendisse mauris eiusmod sed minim cillum. Pariatur ex sunt occaecat dolor in irure amet et eu anim leo irure et. Exercitation leo id egestas pulvinar. [[3]]",
+     "Consectetur pulvinar fugiat leo pretium convallis voluptate quis ultricies amet molestie sed pretium et neque malesuada. Officia commodo culpa laborum pharetra in excepteur porta fringilla elementum laborum molestie esse fames reprehenderit. Lacus duis leo excepteur duis ut exercitation aliquip velit et fugiat voluptate morbi quis aliquip ea. Ipsum aliquip libero irure dolore nostrud ultricies fringilla laboris. Velit anim sagittis enim commodo ullamco interdum mollit pulvinar. Sed voluptate commodo ea non aute ullamco et id libero."
+    ],
+    "prepare": [
+     "Reprehenderit et labore voluptate officia ac leo est cupidatat et morbi occaecat est consectetur vitae ut do. Faucibus nunc sunt sed pretium ipsum turpis suspendisse integer ut duis libero et sunt ex pharetra fringilla adipiscing. Fringilla occaecat posuere pulvinar laborum et integer mauris porta molestie lacus reprehenderit leo. Nulla incididunt nostrud occaecat interdum vel amet pulvinar eiusmod turpis pariatur. Pharetra non officia laborum deserunt occaecat dolor posuere laboris nulla deserunt labore.",
+     "Laborum incididunt curabitur id tincidunt id vitae convallis at sed enim. Pariatur malesuada vitae elit minim nunc dolor turpis id est integer ea ut molestie irure vitae. Deserunt velit dolore veniam labore officia elementum consectetur vehicula nostrud. Occaecat id adipiscing adipiscing laborum est exercitation et laoreet cupidatat ea nostrud cupidatat. Elementum voluptate leo officia officia exercitation suspendisse labore dolor sit sit ipsum culpa duis deserunt culpa pharetra. Fringilla nulla fringilla laboris at qui nostrud. [[4]]"
+    ],
+    "partners": [
+     "Qui suspendisse ultricies neque nulla magna id irure ipsum labore vehicula enim adipiscing sagittis tincidunt laoreet sint qui aliqua. Consectetur libero do ac aute vel exercitation neque cupidatat anim. Ut sed laborum urna duis deserunt leo tincidunt fringilla aliqua officia nunc elit ea proident id mauris neque. Excepteur vitae laoreet fames malesuada id vel curabitur ultricies duis suspendisse. Turpis eiusmod lorem neque laborum dolore nostrud irure. [[5]]",
+     "Velit incididunt pharetra sed sint labore leo faucibus culpa nunc laborum neque vel laborum. Mauris dolore porta qui lacus duis maecenas aliquip ullamco ex maecenas sunt officia sint id et. Eiusmod esse leo pulvinar fames aute suspendisse curabitur vitae proident neque leo sint id magna. Vehicula non dolore duis deserunt urna adipiscing pretium lorem excepteur nostrud elit posuere cillum enim eu sint ipsum elementum do enim leo leo."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Crude, LNG",
+     "label": "EU imports from Nigeria (to quantify)"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Terminals",
+     "label": "Offshore and coastal cluster"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Yaoundé",
+     "label": "Regional code of conduct on maritime security"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Tempor consectetur quis libero at sed reprehenderit suspendisse in posuere commodo id non. Id vehicula aliquip cillum cupidatat irure faucibus."
+    },
+    {
+     "n": 2,
+     "text": "Egestas eiusmod posuere eu pretium sed dolore dolor magna et deserunt consectetur vitae nostrud in urna. Vel urna in at ea cupidatat fringilla."
+    },
+    {
+     "n": 3,
+     "text": "Elementum consequat mauris do cillum dolor cupidatat esse fringilla aliqua. Irure malesuada laoreet dolor vitae non id sit integer ad elit exercitation vitae posuere."
+    },
+    {
+     "n": 4,
+     "text": "Vitae amet cupidatat integer ad duis duis irure nunc labore nunc. Egestas ipsum duis consectetur suspendisse aliquip mollit."
+    },
+    {
+     "n": 5,
+     "text": "Sagittis fringilla pariatur sed ipsum laborum et posuere deserunt proident qui anim egestas elit minim. Dolor ullamco duis maecenas est reprehenderit laboris vel sagittis."
+    }
+   ]
+  },
+  {
+   "id": "c_panama",
+   "theatre": "latam",
+   "name": "Panama Canal",
+   "kind": "Canal",
+   "lat": 9.1,
+   "lon": -79.8,
+   "angle": 70,
+   "blurb": "Consectetur molestie fames.",
+   "sections": {
+    "stake": [
+     "Cillum occaecat fringilla cillum esse cillum cupidatat vitae interdum anim. Non commodo nostrud maecenas duis minim consectetur voluptate egestas. Velit qui commodo urna turpis consectetur vitae faucibus nisi leo urna do dolor consectetur interdum interdum anim. Maecenas vitae commodo culpa porta labore et laboris faucibus dolore pharetra. Ut quis nulla minim sagittis commodo sed pulvinar et nunc ad curabitur anim malesuada magna. Ipsum ultricies nunc cillum enim ea duis consectetur egestas nunc fringilla fringilla ipsum. [[1]]",
+     "Anim irure tempor laboris fames morbi proident consectetur anim ultricies ullamco aute mollit deserunt adipiscing. Et malesuada esse magna vel morbi ea ipsum sed reprehenderit tempor dolor curabitur consectetur fringilla voluptate. Dolore suspendisse aliqua vitae malesuada turpis vitae egestas occaecat voluptate duis lacus. Esse aliqua ea consectetur aliquip nulla urna vel nulla. Elementum est tempor excepteur laborum exercitation adipiscing consectetur occaecat adipiscing duis mauris laborum eu consequat. Anim veniam proident pulvinar convallis cupidatat."
+    ],
+    "risks": [
+     "Tincidunt pulvinar leo aute consectetur ultricies curabitur at dolor fames leo vitae ut tincidunt laborum. Adipiscing ut elementum elementum integer id leo posuere cillum urna aliquip leo leo sit consectetur posuere. Id in cupidatat consectetur integer laboris malesuada mauris mollit. Ullamco ac in cillum at curabitur dolor cupidatat fames proident sed aliquip enim ad irure labore. Aliqua dolore ultricies interdum curabitur sit reprehenderit reprehenderit in maecenas. Duis aliquip non fames sit.",
+     "Et aliqua consectetur suspendisse consectetur commodo vitae sunt vitae esse vehicula laborum. Leo pharetra labore adipiscing quis posuere eiusmod id adipiscing nostrud laoreet esse integer sed eiusmod interdum ac leo excepteur. Ea pretium est velit exercitation sed fames libero fugiat egestas. Dolor nostrud aute fames ultricies consectetur dolor sed mauris eiusmod in fugiat turpis elit culpa neque aliqua mollit vitae. Curabitur cillum elit pretium interdum lacus cupidatat dolor id porta. [[2]]"
+    ],
+    "bites": [
+     "Nunc neque amet sed culpa velit porta occaecat mollit magna sunt ut. Vitae cupidatat morbi veniam laborum laborum ipsum molestie nostrud fringilla esse cillum cillum ipsum ullamco. Voluptate et integer suspendisse culpa deserunt consectetur officia fugiat ipsum id officia esse. Ex tincidunt vel proident nunc vel ullamco labore veniam egestas do qui excepteur sed consectetur aliqua ex. Consequat occaecat nostrud nulla sed dolore consectetur labore ipsum fringilla. [[3]]",
+     "Eiusmod consequat consectetur esse suspendisse pulvinar suspendisse incididunt ex enim ipsum posuere interdum culpa libero proident nulla proident eu. Non morbi proident consequat lacus fringilla morbi nostrud fames cupidatat leo interdum aliquip veniam pariatur incididunt sint. Duis pariatur lacus posuere aliquip nostrud labore exercitation consectetur laborum et leo. Dolore labore laboris laborum consectetur exercitation consequat amet incididunt mauris posuere molestie laboris ea. Sagittis pharetra interdum officia laoreet fringilla morbi cupidatat id."
+    ],
+    "prepare": [
+     "Veniam in tempor sint anim ullamco aliquip laboris consectetur convallis. Dolore occaecat nunc convallis id malesuada lacus leo officia. Egestas lorem aliquip amet lacus elit aliqua in molestie fames duis nunc vitae laboris elit lorem cupidatat dolore eiusmod. Do fugiat pulvinar maecenas sunt neque laborum dolor posuere vitae. Esse nunc sagittis at nostrud ac consequat porta sed interdum ac officia lorem adipiscing lorem pharetra eu posuere. Mauris integer nisi excepteur laborum integer molestie.",
+     "Leo ex in leo dolore officia velit vitae ullamco do aute elementum elit nisi. Qui tincidunt sint fugiat minim occaecat tempor amet tempor. Vitae commodo nulla nostrud maecenas molestie culpa sunt qui vitae lorem ac. Veniam curabitur duis sit ultricies quis minim lacus vehicula pretium est amet ac lacus egestas mollit cupidatat reprehenderit veniam. Et consequat est maecenas suspendisse tincidunt aliqua excepteur in enim ullamco vitae pretium. [[4]]"
+    ],
+    "partners": [
+     "Libero ex reprehenderit curabitur duis velit at anim aliqua enim molestie labore fames consectetur molestie turpis. Nulla pulvinar esse fames elit cillum ullamco eu voluptate at mollit velit et. Cupidatat irure tempor exercitation nulla nunc do est dolore labore fames morbi. Neque pulvinar fames duis quis aliquip eu eiusmod duis mauris fugiat interdum ea culpa pulvinar turpis nostrud adipiscing fames. Consectetur porta et est id nulla non laoreet. [[5]]",
+     "Adipiscing eu pulvinar pulvinar sed elit sed vel urna duis. Est morbi magna anim vel officia veniam ac ad commodo ea turpis cillum. Sed enim sed urna mauris fames elit cillum convallis. Aliquip curabitur ultricies laborum malesuada pulvinar deserunt consequat deserunt commodo fringilla pharetra. Lacus occaecat leo elit turpis laborum amet tempor ipsum consectetur vel duis interdum laboris aliquip. Convallis dolor officia cillum pariatur morbi ex."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~5%",
+     "label": "Share of global maritime trade (commonly cited, to verify)"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Locks",
+     "label": "Water-dependent system"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Open",
+     "label": "EU, US and China positions to collect"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Sit nisi eu at labore consectetur enim dolor enim. Culpa pharetra occaecat at officia quis at est vel tempor proident esse occaecat nostrud."
+    },
+    {
+     "n": 2,
+     "text": "Ex turpis ad tempor excepteur ad cupidatat ullamco curabitur ultricies consequat. Ex faucibus at id amet vel at ac consectetur. Curabitur ex tempor exercitation sed et faucibus."
+    },
+    {
+     "n": 3,
+     "text": "Egestas convallis vitae pariatur nulla ex esse sed nisi enim sed ut velit do. Duis anim tincidunt morbi dolor sit reprehenderit."
+    },
+    {
+     "n": 4,
+     "text": "Ex lorem proident adipiscing irure vel sunt minim turpis. Magna mauris pulvinar do irure nunc fringilla occaecat eiusmod sit nostrud."
+    },
+    {
+     "n": 5,
+     "text": "Mollit morbi urna commodo duis aliqua officia mauris leo vitae urna curabitur pariatur interdum. Enim eiusmod cillum fugiat magna tincidunt."
+    }
+   ]
+  },
+  {
+   "id": "c_pipelines",
+   "theme": "gas",
+   "name": "Pipeline chokepoints",
+   "kind": "Pipeline network",
+   "lat": 48.6,
+   "lon": 22.3,
+   "angle": 20,
+   "blurb": "Nulla officia sed quis integer faucibus et maecenas convallis urna pulvinar consectetur consequat voluptate mollit ipsum convallis deserunt.",
+   "sections": {
+    "stake": [
+     "Fugiat pretium neque vitae dolore maecenas interdum elit pharetra. Sagittis cillum magna egestas reprehenderit labore dolore eu maecenas ac libero turpis interdum nunc do convallis veniam pariatur enim. Consectetur dolor nostrud commodo malesuada mollit excepteur culpa consequat et quis integer minim sint cillum leo ad adipiscing. Elementum fames pariatur duis sagittis turpis proident id vitae leo et porta. Malesuada pretium suspendisse id excepteur laoreet maecenas excepteur elit dolore. [[1]]",
+     "Aute dolore voluptate amet consequat fringilla eu ipsum id consectetur do pulvinar anim reprehenderit. Minim lorem vitae at morbi commodo incididunt interdum nisi consectetur labore malesuada eiusmod irure tincidunt vitae lorem veniam irure. Nisi quis et elementum leo cupidatat pariatur nostrud consectetur cupidatat tincidunt suspendisse. Laboris vitae excepteur exercitation est dolor irure ipsum commodo id minim excepteur amet voluptate. Et leo et sagittis aliquip ac duis veniam leo sunt reprehenderit sit ex velit labore."
+    ],
+    "risks": [
+     "In libero deserunt sunt sagittis sit incididunt exercitation dolor non nisi. Nisi duis consectetur leo leo pulvinar anim interdum vehicula anim irure faucibus. Mollit nunc occaecat officia leo in urna reprehenderit ut culpa culpa amet fames fugiat tincidunt fames nostrud. Ipsum morbi laoreet proident integer lacus tempor tincidunt in in velit est velit laboris morbi adipiscing irure leo sed. Cupidatat incididunt convallis velit enim consectetur integer ex qui urna ipsum sint leo curabitur ut.",
+     "Voluptate sagittis vitae excepteur quis cillum tempor irure turpis duis nostrud velit labore pariatur lacus lacus excepteur. Incididunt pariatur ea non pretium nisi egestas pulvinar enim culpa cillum laoreet. Cupidatat enim nulla vitae turpis posuere adipiscing id eu urna vehicula dolor in ut. Eiusmod duis fames do consequat voluptate et sagittis amet. Sit vel malesuada tempor magna eiusmod eiusmod laboris cupidatat duis egestas ullamco libero fames interdum. [[2]]"
+    ],
+    "bites": [
+     "Vehicula do ad sit quis enim dolore suspendisse sunt pretium nisi anim maecenas occaecat pharetra velit. Id libero et pulvinar nostrud ea faucibus malesuada interdum ullamco sit reprehenderit urna ex laborum minim proident non. Consectetur ea consequat aliquip sed et urna cupidatat urna tincidunt. Nunc est porta culpa tincidunt faucibus culpa non commodo egestas incididunt at. Elementum tincidunt aliqua amet sed lorem labore sed vehicula integer adipiscing amet magna reprehenderit enim duis id. [[3]]",
+     "Culpa curabitur proident tempor curabitur posuere cupidatat dolor leo laborum vitae interdum faucibus occaecat lacus ullamco. Voluptate labore fugiat nostrud est vel et consectetur aute pretium sagittis aute. Sagittis ea pariatur lorem turpis labore ullamco enim nostrud integer sagittis reprehenderit fringilla turpis occaecat sed elit. Pretium ipsum id libero malesuada fugiat pariatur leo integer integer pharetra duis dolore consectetur ipsum reprehenderit ullamco id. Excepteur integer porta tincidunt laborum faucibus nostrud ex nisi vitae vitae neque."
+    ],
+    "prepare": [
+     "Amet egestas culpa duis malesuada ea convallis nunc id interdum fames. Elementum reprehenderit mollit sed aliqua ipsum aliqua esse pharetra aliqua duis adipiscing laborum reprehenderit ac cupidatat fringilla porta. Consectetur ut adipiscing curabitur mauris esse mauris vel pharetra non labore nostrud duis do eiusmod ut eu et dolore. Velit cillum egestas anim convallis et molestie occaecat eiusmod nostrud leo. Adipiscing elit eiusmod leo tincidunt elit eu cillum molestie do dolor.",
+     "Elit eiusmod vitae incididunt sit sunt vitae fames pretium leo deserunt libero proident enim. Molestie aute dolor pulvinar enim leo commodo laborum eu at nulla. Mauris quis convallis posuere dolore esse esse id nostrud morbi pretium laborum egestas pharetra vitae sint. Sit interdum sed integer posuere duis duis tempor in curabitur pariatur enim velit laoreet ullamco ipsum elementum esse elit. Neque vel ex ultricies sunt nostrud laoreet sed pharetra occaecat eiusmod integer. [[4]]"
+    ],
+    "partners": [
+     "Veniam pharetra laoreet excepteur qui proident nunc consectetur lacus lorem est eiusmod maecenas. Esse ac amet consectetur anim velit nulla mollit cillum. Aliquip aliqua egestas consectetur duis id sed faucibus malesuada labore at officia anim. Reprehenderit pariatur do aliquip sagittis proident leo interdum tincidunt. Exercitation ipsum vel nunc magna veniam turpis exercitation sint ex. Laboris deserunt porta sint vehicula convallis curabitur anim lorem fames vitae qui sed officia. Dolor cupidatat voluptate laoreet laborum. [[5]]",
+     "Anim qui exercitation nisi ullamco quis tincidunt sit lorem. Egestas ex sed ex pharetra ac sunt proident commodo irure nisi urna ex sunt. Anim aute porta voluptate laborum aute occaecat porta molestie ullamco nulla. Convallis enim sit excepteur est faucibus libero lorem non duis curabitur urna sint. Molestie culpa anim ut et sed proident quis convallis. Ex culpa laborum culpa convallis integer voluptate eiusmod vehicula aliqua."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Pipeline gas",
+     "label": "Share of EU gas by route to compile"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Fixed capacity",
+     "label": "No rerouting once a line is shut"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Transit states",
+     "label": "Ukraine, Turkey and others; terms to collect"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Morbi consectetur quis at id aute laboris tempor sed anim cupidatat ipsum magna aliquip. Occaecat curabitur exercitation amet mauris veniam veniam consequat."
+    },
+    {
+     "n": 2,
+     "text": "At id elit id suspendisse vel anim veniam ex. Amet consectetur non enim officia et egestas officia nisi convallis nisi pretium magna."
+    },
+    {
+     "n": 3,
+     "text": "Posuere faucibus libero incididunt pharetra leo est pulvinar culpa. Velit excepteur minim do leo ex ullamco sit aliquip."
+    },
+    {
+     "n": 4,
+     "text": "Suspendisse leo laboris excepteur mollit leo leo esse labore fugiat. Leo laoreet aute faucibus minim proident consectetur vehicula ullamco eu deserunt tincidunt."
+    },
+    {
+     "n": 5,
+     "text": "Porta in id leo tincidunt integer id esse tempor esse pulvinar ipsum. Officia sed curabitur urna est mollit reprehenderit."
+    }
+   ],
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "c_landings",
+   "theme": "subcon",
+   "name": "Cable landing stations",
+   "kind": "Landing station network",
+   "lat": 43.3,
+   "lon": 5.4,
+   "angle": 0,
+   "blurb": "Leo non elit velit voluptate commodo veniam aliqua pariatur sed pharetra lorem id nulla fringilla laoreet leo non tempor posuere excepteur fames leo.",
+   "sections": {
+    "stake": [
+     "Excepteur sed sunt vehicula leo elit culpa sunt sed sint incididunt integer. Leo enim occaecat tincidunt duis esse enim dolore commodo. Ipsum ex veniam leo anim proident elit elit ad laborum occaecat. Amet aliquip nunc mauris ipsum laborum reprehenderit pulvinar laborum veniam lorem lacus. Egestas esse elementum tincidunt leo enim culpa est ac fames commodo fringilla magna id veniam ad leo mollit. Culpa ex dolore sunt id laborum do officia morbi pariatur. [[1]]",
+     "Veniam vitae neque occaecat excepteur nunc eiusmod veniam aliqua laoreet turpis ipsum libero urna. Morbi maecenas egestas ultricies amet tincidunt incididunt in cupidatat urna pariatur pretium at consectetur ut faucibus. Ac morbi voluptate ut posuere leo aliquip ultricies sunt turpis curabitur magna egestas minim nostrud ut non. Duis adipiscing laborum pulvinar esse amet consectetur aliqua vitae labore vel pulvinar laborum. Laborum lorem pariatur fames pharetra consectetur laborum convallis egestas consectetur ex."
+    ],
+    "risks": [
+     "Laboris labore magna ad pretium laboris leo nostrud tincidunt ac id dolor. Leo in vitae lacus enim velit vitae duis pulvinar laboris ad vitae libero sagittis laoreet amet neque. Sed non ipsum ea id proident culpa pulvinar turpis tempor tempor urna. Fugiat ex exercitation egestas convallis non convallis sagittis mauris id egestas aliqua officia at malesuada egestas. Officia adipiscing morbi ut molestie adipiscing nisi fugiat et vehicula tincidunt lacus ac.",
+     "Sint quis do laoreet labore irure fugiat eu enim dolore reprehenderit. Consequat pulvinar ut tempor fringilla occaecat pariatur occaecat porta sint molestie ea laborum laboris sed convallis adipiscing. Lorem id et dolor proident commodo proident morbi non fames aliquip cupidatat morbi aute occaecat morbi nunc. Mollit libero eiusmod malesuada interdum magna enim velit lorem convallis pariatur pretium nunc cupidatat leo aliquip consequat maecenas. Fames occaecat laoreet malesuada lorem veniam vitae eiusmod sed deserunt. [[2]]"
+    ],
+    "bites": [
+     "Aute egestas veniam ultricies ac in veniam enim labore exercitation do et. Sed ad porta amet nunc non ut vel aute cillum sed voluptate qui deserunt. Eu et deserunt sint turpis minim aliquip elit ex morbi sagittis adipiscing laborum dolore turpis duis sed excepteur proident. Aute irure quis commodo laoreet nunc urna ut laoreet sed ut sunt reprehenderit ac. Ac nulla dolor ad vel vel duis duis mauris molestie reprehenderit. [[3]]",
+     "Exercitation do vel leo egestas fames velit maecenas excepteur reprehenderit amet. Vitae labore aute voluptate labore malesuada reprehenderit pariatur aliquip fames. Sint magna pariatur cupidatat leo sed duis fugiat sunt nisi ad. Neque dolor aliquip dolore posuere pariatur morbi vitae do convallis libero esse turpis dolore. Cupidatat pariatur amet neque suspendisse leo curabitur velit posuere pretium et officia et egestas molestie leo. Et at non vitae non velit nulla quis."
+    ],
+    "prepare": [
+     "Adipiscing non quis laborum nisi in esse vel sint mollit sunt fringilla suspendisse vitae minim deserunt lorem cupidatat. Qui consectetur nisi reprehenderit elit malesuada leo do posuere maecenas id officia. Et convallis elit urna sagittis enim vel nostrud culpa. Pharetra in vel aliquip proident commodo vehicula et elit. Eu leo culpa id malesuada id exercitation minim excepteur fringilla ac turpis consequat irure. Laborum neque fringilla excepteur lacus ullamco tempor maecenas fugiat anim sit turpis.",
+     "Esse ultricies velit officia pharetra ut mauris sagittis velit exercitation incididunt deserunt. Irure officia vehicula magna neque dolore maecenas elit eiusmod. Enim ut laboris posuere magna occaecat turpis deserunt id pharetra sed. Ex ac non curabitur vitae ac vel proident do duis id quis amet fugiat laborum cillum tempor esse. Dolor leo ultricies minim porta do urna do sagittis. Culpa labore fames pharetra occaecat incididunt commodo at pretium fames nostrud molestie porta laoreet leo. [[4]]"
+    ],
+    "partners": [
+     "Incididunt nulla veniam leo nostrud non ex mauris leo integer. Leo ipsum vehicula non incididunt turpis lorem id laborum elit voluptate libero consectetur veniam. Nostrud dolor est ea in quis sed proident commodo sed laoreet. Aliquip libero ullamco elementum pulvinar enim veniam id consequat laborum anim anim fugiat maecenas aliqua suspendisse in in ea. Tincidunt libero nisi curabitur duis et turpis molestie duis ultricies leo excepteur vel fugiat urna malesuada. [[5]]",
+     "Consectetur vitae quis consectetur elit posuere tempor posuere duis turpis integer leo convallis pretium labore lorem adipiscing enim turpis. Dolore lacus ac vitae ullamco lacus anim occaecat id ut aute vitae sint. Fugiat sed anim labore maecenas fames minim irure leo vehicula posuere. Porta non suspendisse pharetra nunc voluptate lacus duis consectetur occaecat pretium tempor aliquip suspendisse. Minim enim amet duis tincidunt non aute ac sed."
+    ]
+   },
+   "data": [
+    {
+     "type": "Chokepoint anatomy",
+     "value": "~15",
+     "label": "Major European landing stations (indicative, to verify)"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "Data",
+     "label": "Share of EU intercontinental traffic via these stations, to compile"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "NIS2",
+     "label": "EU infrastructure security rules"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Vel laboris ea proident anim ipsum ac morbi exercitation in leo velit neque molestie elit excepteur. Libero sed anim leo curabitur pharetra pariatur."
+    },
+    {
+     "n": 2,
+     "text": "Dolore laborum ultricies interdum sint pretium ad nisi elementum libero malesuada leo consequat irure. Cillum curabitur sunt aliquip fringilla reprehenderit pulvinar pretium ac leo laboris."
+    },
+    {
+     "n": 3,
+     "text": "Ut ex leo culpa laborum enim anim malesuada anim laboris mauris. Elementum sunt mollit pretium suspendisse pariatur nisi pharetra pretium leo. Aliquip do magna duis velit magna."
+    },
+    {
+     "n": 4,
+     "text": "Convallis leo ex laborum pretium laoreet lacus mauris exercitation cillum sunt veniam ea fringilla interdum nulla tincidunt lacus consequat. Sunt aute voluptate morbi voluptate do."
+    },
+    {
+     "n": 5,
+     "text": "Convallis occaecat faucibus egestas vehicula morbi leo consequat anim tincidunt mauris laboris. Posuere neque adipiscing id proident eiusmod lacus fringilla leo."
+    }
+   ],
+   "author": "Author to be confirmed"
+  }
+ ],
+ "shockwaves": [
+  {
+   "id": "s_malacca",
+   "theatre": "malacca",
+   "name": "Spillover from an Indo-Pacific crisis",
+   "status": "Potential",
+   "scope": "regional",
+   "lat": 0.8,
+   "lon": 105.4,
+   "blurb": "Suspendisse eiusmod tincidunt do proident in et minim duis dolore duis vitae ut convallis.",
+   "spread": [
+    "Officia excepteur adipiscing laboris fugiat",
+    "Aute et exercitation aute laoreet lorem integer",
+    "Pariatur commodo pretium nostrud tincidunt aute pretium",
+    "Magna elit consectetur qui sit nostrud"
+   ],
+   "reach": [
+    [
+     6.9,
+     79.9,
+     "Indian Ocean ports"
+    ],
+    [
+     31.2,
+     121.5,
+     "East Asian factories"
+    ],
+    [
+     26.6,
+     50.2,
+     "Gulf energy exporters"
+    ],
+    [
+     51.9,
+     4.4,
+     "European supply chains"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Enim ut duis cillum consectetur sed officia leo laboris dolor. Leo interdum mauris culpa fringilla anim ad leo leo molestie consectetur adipiscing. Amet et est exercitation qui elementum tempor pulvinar turpis nunc egestas morbi labore commodo do est elit minim. Id consequat fugiat deserunt cillum at labore sint neque aliquip morbi sint elit voluptate aute in maecenas nulla. Morbi eiusmod laborum officia leo mollit mollit turpis non anim id laoreet. [[1]]",
+     "Nulla veniam laboris velit est fringilla urna laoreet ex ultricies dolor sunt ad curabitur ad leo adipiscing. Interdum consectetur cupidatat nulla in egestas porta eu qui libero aute sunt velit sint curabitur. Ad ultricies convallis vitae magna urna fames aliquip molestie velit ac duis irure et fames. Adipiscing vehicula occaecat suspendisse neque fugiat tincidunt excepteur mollit anim consectetur. Malesuada fames pretium dolore pretium consectetur enim porta fames sagittis fames fames."
+    ],
+    "risks": [
+     "Interdum ea molestie libero incididunt ac libero velit est turpis lacus ullamco magna duis. Duis quis fringilla consectetur at dolor lorem ex pharetra neque ipsum faucibus. Veniam sagittis amet pariatur ullamco vel ut irure consequat aliquip dolor lorem magna laboris mollit posuere laborum pariatur id. Pharetra faucibus magna duis fugiat deserunt egestas morbi ipsum. Incididunt veniam at ex laboris leo leo nunc consectetur vitae libero duis vitae aliquip laoreet consectetur laoreet.",
+     "Consectetur sit ex quis ad dolor commodo adipiscing reprehenderit irure consectetur duis ut libero lacus sed tincidunt turpis. Sed velit tincidunt dolore irure fugiat faucibus in exercitation malesuada incididunt malesuada consectetur ultricies cillum leo interdum dolor. Ad sunt anim ad pharetra malesuada do libero qui occaecat quis vitae id. Ipsum excepteur officia quis nunc cupidatat qui tempor incididunt veniam excepteur sunt ex vitae porta dolore sed. [[2]]"
+    ],
+    "bites": [
+     "Magna dolore nunc cupidatat non incididunt pulvinar vitae quis et in aliqua id eu. At posuere ex molestie elit irure urna dolor vehicula proident urna dolor amet. Turpis tempor id ac mauris pulvinar fugiat at porta eu. Suspendisse laborum incididunt enim quis non ea egestas sit occaecat lacus velit ullamco consectetur adipiscing duis. Est sed neque qui incididunt sunt interdum convallis incididunt faucibus. Ullamco dolor consequat mollit non leo. [[3]]",
+     "Velit do mollit id et labore malesuada urna dolore ipsum. Urna vel ut duis occaecat turpis amet ex sagittis lacus laborum. Duis reprehenderit quis enim irure incididunt aliqua deserunt cupidatat voluptate molestie. Curabitur pulvinar aliquip proident pariatur leo ut excepteur integer libero urna tempor dolore est sed mauris egestas ipsum. Integer sit cupidatat leo leo enim pharetra mollit ex sit duis adipiscing voluptate ad. Ut irure leo laborum id."
+    ],
+    "prepare": [
+     "Consectetur elit fringilla enim labore eiusmod turpis esse malesuada nisi. Ipsum fugiat libero integer mauris aliquip commodo maecenas sagittis ut pariatur. Sint ac aliqua neque incididunt fugiat cupidatat leo et. Lacus officia urna pulvinar vel pulvinar fames nulla interdum posuere molestie pharetra aliquip amet reprehenderit. Exercitation duis vehicula turpis suspendisse labore lacus morbi enim. Quis ultricies non vehicula ullamco egestas velit ex ultricies eiusmod consectetur vitae vehicula malesuada.",
+     "Consectetur commodo at commodo incididunt id excepteur fringilla at consectetur vitae sit aliquip tincidunt fugiat suspendisse vehicula aliquip aliqua. Egestas laboris porta eu urna occaecat turpis culpa irure libero cillum veniam nunc consequat. Elit aliqua posuere vehicula laborum sagittis dolor id mollit suspendisse interdum. Pharetra pariatur suspendisse neque et fringilla do laborum consectetur. Sit ultricies vitae curabitur voluptate non fames reprehenderit aliqua est consectetur mollit pariatur ac esse integer. Adipiscing sed libero amet interdum. [[4]]"
+    ],
+    "partners": [
+     "Sed consequat neque at turpis commodo laborum nulla aliqua fugiat nulla morbi eu voluptate laborum duis esse. At sed aliqua at enim non nulla ullamco est sunt exercitation. Incididunt vitae magna ea laoreet suspendisse lorem do proident mollit. Duis ultricies vehicula consectetur pariatur in esse nostrud excepteur ex commodo officia eu fames curabitur. At interdum culpa mollit velit fringilla do est vitae laoreet vel tincidunt ea ex sint ut. [[5]]",
+     "Vitae eu curabitur molestie culpa laoreet commodo id laborum eu duis laboris nisi duis turpis curabitur et ullamco pharetra. Sit curabitur curabitur laboris consectetur malesuada quis culpa at maecenas pariatur. Malesuada cillum occaecat tempor fugiat proident ex suspendisse do porta amet sint quis posuere laboris culpa convallis. Pulvinar ad id nisi esse ac pretium pharetra urna aliquip elit mauris vehicula. Magna irure libero porta cupidatat maecenas integer amet ea sint turpis ac."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Asia–Europe",
+     "label": "Container flows affected"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "+ days",
+     "label": "Rerouting via Sunda or Lombok"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Singapore",
+     "label": "Port and trade hub partner"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Exercitation ipsum pharetra pretium libero cillum morbi at sint excepteur cupidatat cupidatat et occaecat nisi. Nisi consequat voluptate pretium ullamco vitae."
+    },
+    {
+     "n": 2,
+     "text": "Egestas nunc aliqua commodo fames leo sed fames veniam. Lacus laboris libero et cupidatat non duis sed fames turpis porta magna consequat fames pulvinar."
+    },
+    {
+     "n": 3,
+     "text": "Posuere tempor in pariatur duis quis cillum vitae cupidatat voluptate aute nulla. Occaecat pretium elit consequat adipiscing egestas anim pretium libero in incididunt culpa."
+    },
+    {
+     "n": 4,
+     "text": "Lorem labore nunc velit molestie egestas aliqua occaecat sagittis leo mauris consectetur. Velit lacus et molestie irure fames lorem est irure."
+    },
+    {
+     "n": 5,
+     "text": "Faucibus consectetur convallis deserunt leo nisi voluptate laborum duis mauris et reprehenderit leo culpa eiusmod nunc occaecat culpa. Officia id do exercitation culpa ut sunt dolor."
+    }
+   ]
+  },
+  {
+   "id": "s_scs",
+   "theatre": "scs",
+   "name": "Standoffs at contested features",
+   "status": "Recurring",
+   "scope": "regional",
+   "lat": 10.8,
+   "lon": 115.9,
+   "blurb": "Sed consectetur suspendisse pharetra sit sed libero consectetur vitae commodo.",
+   "spread": [
+    "Urna amet dolor consectetur curabitur pulvinar",
+    "Duis non labore occaecat aliqua anim ex proident magna",
+    "Elit vel consectetur ultricies molestie quis",
+    "Duis elementum vel curabitur sed urna porta consectetur consectetur"
+   ],
+   "reach": [
+    [
+     14.6,
+     121,
+     "Philippine ports"
+    ],
+    [
+     10.8,
+     106.7,
+     "Vietnamese ports"
+    ],
+    [
+     1.3,
+     103.8,
+     "Malacca approaches"
+    ],
+    [
+     51.9,
+     4.4,
+     "European ports"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Faucibus eiusmod posuere in consectetur ex id curabitur pharetra suspendisse occaecat neque integer anim labore labore. Suspendisse leo morbi leo id leo voluptate incididunt eu nisi posuere non cillum reprehenderit neque maecenas urna malesuada. Curabitur qui sagittis lorem leo quis exercitation incididunt velit ac tincidunt duis exercitation officia et vitae urna. Esse tincidunt veniam sagittis dolor sit pharetra nostrud pharetra turpis et at. Posuere sunt suspendisse aliqua quis non aliqua ad proident. [[1]]",
+     "Commodo fames officia consectetur exercitation leo est aliqua aliqua velit anim non labore. Sit commodo ipsum voluptate turpis sit ipsum cupidatat veniam non nunc culpa esse fringilla. Tincidunt voluptate aute cupidatat ea incididunt qui vel morbi et. Adipiscing curabitur vehicula amet turpis vehicula dolore duis elementum consectetur occaecat. Molestie veniam quis tempor elementum do non ipsum ultricies tincidunt commodo. Enim anim aliqua do velit lacus irure labore veniam esse faucibus sed consequat."
+    ],
+    "risks": [
+     "Nulla fringilla deserunt nisi lorem eu officia reprehenderit ipsum laoreet elit vitae irure et at suspendisse consectetur. Laboris vehicula porta nisi vitae eu sit nulla sagittis laboris commodo. Pulvinar leo dolor id fugiat fugiat consequat commodo sint maecenas curabitur officia neque pharetra sed incididunt qui ultricies leo. Dolore convallis fringilla id ut cupidatat vitae cupidatat nostrud fugiat culpa neque nostrud non. Est duis exercitation fringilla consectetur urna pariatur duis.",
+     "Lorem reprehenderit vel quis excepteur irure consequat laborum et cupidatat aliquip esse aute mauris. Ex laoreet commodo urna magna posuere libero consectetur ut ad fugiat. In ac sed officia sunt nulla tincidunt fugiat mollit dolor malesuada qui sunt. Ullamco consectetur ipsum duis velit sunt in urna eu morbi. Cillum morbi consectetur dolor sunt mauris dolor leo culpa laboris pariatur. Occaecat do dolor aute sed ad non fringilla proident nisi do. [[2]]"
+    ],
+    "bites": [
+     "Id elit sint eu at deserunt exercitation ac turpis veniam vel consectetur velit deserunt sint. Eu enim posuere sed vel consequat ac reprehenderit aliquip nulla porta integer ultricies ex fugiat. Consequat suspendisse vitae in consequat lacus vitae fringilla et non. Fames nunc pariatur voluptate morbi amet fames nostrud et leo esse tempor duis minim. Interdum consectetur duis amet posuere labore enim veniam porta at urna proident fames. [[3]]",
+     "Ipsum integer pariatur suspendisse pretium ex minim sunt urna aute amet leo elementum sit. Egestas urna at ad ex ad ad maecenas irure turpis irure ipsum tempor duis libero curabitur malesuada aute. Id sed nisi nostrud libero egestas ac fames vehicula at ullamco nisi nulla mauris est dolor egestas interdum. Sagittis et interdum fringilla velit molestie lacus at incididunt vitae. Deserunt pretium et integer qui suspendisse consequat exercitation laoreet deserunt."
+    ],
+    "prepare": [
+     "Tempor in nunc ipsum ipsum et cillum duis vehicula consectetur dolore pulvinar molestie duis convallis. Laborum elit sunt minim aute anim do sagittis duis pharetra cupidatat occaecat laoreet id egestas. Malesuada commodo magna do velit consectetur duis vitae malesuada labore curabitur integer eiusmod. Curabitur dolor duis duis aute voluptate ad laborum tempor morbi. Vehicula laoreet eu ex nulla tincidunt anim mollit at leo convallis ad. Enim adipiscing fringilla vel deserunt.",
+     "Nostrud nostrud suspendisse do vehicula laboris ea posuere velit exercitation faucibus. Et duis ac egestas convallis ad vitae labore deserunt lorem deserunt molestie tempor. Cupidatat minim tempor consectetur cillum pulvinar in vitae lorem adipiscing cupidatat esse maecenas. Irure ullamco mauris ullamco ipsum cillum libero tempor at. Nunc proident nunc id porta elit leo exercitation curabitur nunc elit ac magna. Elit ea nulla eu officia aute leo ac ea pulvinar pariatur vitae duis qui. [[4]]"
+    ],
+    "partners": [
+     "Pharetra leo voluptate aute morbi pretium est sed malesuada lacus consequat cillum laboris anim laboris in. Duis consequat id vel duis laborum lorem voluptate incididunt integer esse morbi anim curabitur ultricies laoreet aliquip nisi nunc. Do fugiat at proident qui consectetur aute laoreet elementum do duis. Sunt excepteur eiusmod sit eu sed aliqua cupidatat suspendisse ut lorem leo aliqua laborum sit leo. Ultricies vehicula laoreet deserunt voluptate malesuada duis ut cupidatat esse. [[5]]",
+     "Mauris eiusmod ac elementum id ultricies nulla et aliqua ut curabitur malesuada elit. Leo aute fames fringilla in incididunt laboris elementum integer. Ipsum voluptate sagittis eu laoreet laborum eu voluptate lorem mauris aliquip leo fringilla. Tempor sint velit pretium nunc minim libero mauris nunc laboris convallis ullamco eu sit velit commodo. Cillum veniam vel consectetur vel urna veniam malesuada pharetra at. Cillum lorem est at irure nostrud qui laoreet reprehenderit id reprehenderit sagittis pharetra mollit."
+    ]
+   },
+   "data": [
+    {
+     "type": "Alignment of interests",
+     "value": "Statements",
+     "label": "EU, Japan, Australia positions (to collect)"
+    },
+    {
+     "type": "Military presence",
+     "value": "Coast guards",
+     "label": "Incidents log to compile"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "Regional",
+     "label": "EU trade with Southeast Asia"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "At laoreet deserunt mollit faucibus in nulla ad sed leo. Vitae ac sit do amet leo nulla dolore consectetur cillum libero consequat pulvinar consectetur."
+    },
+    {
+     "n": 2,
+     "text": "Leo pulvinar officia egestas vehicula integer quis occaecat deserunt vehicula. Ea ex integer adipiscing malesuada id leo do sit."
+    },
+    {
+     "n": 3,
+     "text": "Aute mollit interdum velit sunt sed ut duis incididunt do egestas. Sit dolor fringilla vitae malesuada sed interdum."
+    },
+    {
+     "n": 4,
+     "text": "Pharetra sit esse culpa vel ipsum sit nunc veniam quis officia libero id incididunt aute anim quis in. Maecenas deserunt elementum excepteur sint porta."
+    },
+    {
+     "n": 5,
+     "text": "Id integer laoreet sint elementum lorem culpa duis pretium irure id interdum culpa leo cillum sunt. Aute consectetur aliquip nostrud irure duis pharetra."
+    }
+   ]
+  },
+  {
+   "id": "s_taiwan",
+   "theatre": "taiwan",
+   "name": "Blockade or quarantine",
+   "status": "Potential",
+   "scope": "global",
+   "lat": 24.6,
+   "lon": 126.6,
+   "blurb": "Minim at excepteur minim irure labore curabitur pariatur elementum morbi.",
+   "spread": [
+    "Officia lacus libero minim posuere",
+    "Eiusmod vehicula est urna in fringilla",
+    "Incididunt minim elit turpis molestie pulvinar voluptate laborum",
+    "Ultricies minim pulvinar reprehenderit neque lorem et"
+   ],
+   "reach": [
+    [
+     35.5,
+     135,
+     "Japanese and Korean industry"
+    ],
+    [
+     37.4,
+     -122.2,
+     "US tech supply chains"
+    ],
+    [
+     50.1,
+     8.7,
+     "European car and machinery plants"
+    ],
+    [
+     31.2,
+     121.5,
+     "Chinese assembly hubs",
+     18
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Duis turpis egestas id fringilla dolor fringilla et vel ex ut lorem enim elit. Pretium tempor eu occaecat occaecat aute pulvinar nulla voluptate labore voluptate id convallis et. Pulvinar dolor labore vehicula quis vitae consequat curabitur sint consequat sit amet. Ac mauris ipsum interdum sint vehicula deserunt leo molestie pariatur ea. Integer aliqua velit integer posuere cillum integer libero morbi interdum elit porta eiusmod aute enim. Commodo incididunt maecenas elit nisi sed tempor voluptate. [[1]]",
+     "Pariatur reprehenderit integer posuere dolor ullamco qui vel consequat ultricies deserunt nunc sunt velit leo molestie aliqua vel elit. Ac elit aute tincidunt est laboris maecenas exercitation leo sint nostrud labore libero velit. Laborum convallis mollit pulvinar faucibus non laborum dolor interdum. Lorem ea ut id malesuada reprehenderit duis pulvinar enim ea in aliquip in adipiscing et mollit. Consectetur pulvinar nostrud id laoreet excepteur et elementum dolor. Tincidunt vehicula integer mauris sunt."
+    ],
+    "risks": [
+     "Laboris excepteur mollit quis pariatur libero leo cillum pulvinar dolor vitae maecenas labore proident ipsum sed pariatur cupidatat do. Commodo et occaecat id duis suspendisse et ex duis et. Nunc leo eiusmod ut laborum vel lorem leo morbi ea ac. Veniam cupidatat consectetur neque curabitur anim esse officia curabitur culpa consequat leo pulvinar ultricies exercitation pulvinar vitae id. Leo qui malesuada nunc integer interdum ut in sed ad et faucibus et in.",
+     "Laoreet amet posuere in vitae consequat exercitation leo esse duis convallis nunc cupidatat commodo malesuada duis veniam quis. Vitae voluptate consectetur et integer consectetur vitae ultricies culpa adipiscing exercitation morbi nulla. Duis occaecat aliqua aliquip lacus adipiscing libero vitae aute porta ex pulvinar lacus fugiat neque tincidunt interdum maecenas. Mollit culpa curabitur anim leo ex deserunt magna duis urna deserunt vel mauris laoreet consectetur culpa aliqua. [[2]]"
+    ],
+    "bites": [
+     "Dolor molestie anim adipiscing leo laboris elit lorem officia et nostrud minim enim. Curabitur pariatur sint dolor elit elit interdum duis laoreet tincidunt id consequat nunc dolor laborum deserunt faucibus aliqua proident. Non integer integer laborum ad in turpis dolor at lorem. Porta fames fames incididunt consectetur egestas urna libero tempor esse tempor sagittis. Leo pulvinar pharetra leo morbi irure consectetur ullamco elementum et malesuada sit turpis suspendisse reprehenderit nulla maecenas nulla ipsum. [[3]]",
+     "Veniam pharetra velit excepteur consectetur morbi faucibus posuere porta neque veniam leo adipiscing elit voluptate. Laoreet laborum egestas nulla culpa turpis excepteur neque posuere sed aliqua leo sint leo ad duis. Culpa occaecat laboris exercitation est malesuada libero interdum elit. Nunc suspendisse proident consectetur reprehenderit ut porta lacus commodo pharetra proident porta in nunc commodo mauris. Vitae in vehicula occaecat fringilla esse pariatur vel irure fames neque commodo deserunt mollit elit eu."
+    ],
+    "prepare": [
+     "Excepteur morbi pretium pharetra non occaecat cupidatat anim sit non aute adipiscing. Leo urna mollit cillum leo aute commodo ac at id consectetur. Est pretium exercitation laboris egestas libero qui laboris incididunt dolore irure. Sint labore fugiat aliqua do morbi incididunt suspendisse enim consectetur sagittis laborum suspendisse veniam. Leo ullamco leo malesuada quis leo laboris amet integer culpa mollit vel do curabitur convallis adipiscing sed aute cupidatat.",
+     "Ac fringilla suspendisse pulvinar sit amet turpis minim magna porta duis mollit proident. Non lorem incididunt laoreet sed enim ultricies cupidatat adipiscing curabitur veniam. Non ac fames ullamco labore suspendisse at vehicula faucibus at malesuada id ac adipiscing posuere excepteur. Vitae officia mollit pariatur non ea aliquip malesuada eu anim interdum ultricies. Aliquip convallis minim laborum in laoreet ultricies dolor posuere velit eu laborum consectetur pariatur excepteur incididunt. [[4]]"
+    ],
+    "partners": [
+     "Sit laoreet mauris deserunt nostrud excepteur proident sit velit. Vehicula integer adipiscing maecenas cillum morbi veniam dolor laboris. Enim molestie aute laborum do porta est quis commodo interdum. Elit neque id eiusmod velit labore maecenas ipsum pariatur sint vel pariatur elit esse duis convallis fringilla. Leo lacus anim at elementum curabitur qui lorem do labore leo egestas leo sed incididunt ad sit tempor nostrud. Non maecenas incididunt ad laborum interdum dolor lorem. [[5]]",
+     "Ut aute maecenas est ullamco commodo mauris porta labore fames proident malesuada non laoreet incididunt ac porta interdum molestie. Curabitur in magna ipsum proident ullamco pretium mollit consectetur morbi labore. Nostrud at egestas non qui non reprehenderit labore ad leo dolor sunt eiusmod ea. Adipiscing enim pariatur fames excepteur exercitation sed excepteur dolor laborum. Leo aliquip egestas urna sagittis proident et excepteur ac ipsum. Enim et ea duis fringilla laoreet."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Chips",
+     "label": "EU exposure to quantify"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "G7",
+     "label": "Statements on peace across the strait"
+    },
+    {
+     "type": "Military presence",
+     "value": "Exercises",
+     "label": "Frequency and scale to compile"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Integer ea labore faucibus id cupidatat turpis vitae pretium ea voluptate fames fringilla suspendisse nisi laboris aliquip veniam laoreet egestas pulvinar."
+    },
+    {
+     "n": 2,
+     "text": "Cupidatat dolor amet ipsum amet consectetur aliqua veniam eu elementum leo malesuada pariatur aliquip sed minim interdum occaecat."
+    },
+    {
+     "n": 3,
+     "text": "Et pharetra fames eu enim irure ac non esse lacus ultricies mollit. Quis commodo vehicula excepteur occaecat pariatur."
+    },
+    {
+     "n": 4,
+     "text": "Pharetra laboris fames vitae ipsum curabitur morbi tincidunt at vehicula id magna sint irure sint. Vitae cillum pharetra aliqua ex interdum quis."
+    },
+    {
+     "n": 5,
+     "text": "Adipiscing sit ad est excepteur velit ea sint nulla laborum minim molestie fringilla exercitation. Cupidatat labore nisi quis laborum tincidunt ad enim commodo convallis incididunt."
+    }
+   ]
+  },
+  {
+   "id": "s_hormuz",
+   "theatre": "hormuz",
+   "at": "c_hormuz",
+   "name": "Tanker seizures and closure threats",
+   "status": "Recurring",
+   "scope": "global",
+   "blurb": "Pariatur fringilla neque non do cupidatat tempor vehicula officia.",
+   "spread": [
+    "Maecenas nostrud eu sit",
+    "Enim leo pulvinar suspendisse et",
+    "Eu vitae elementum velit vitae interdum",
+    "Excepteur et aliqua ad leo"
+   ],
+   "reach": [
+    [
+     19.1,
+     72.9,
+     "Indian refiners"
+    ],
+    [
+     31.2,
+     121.5,
+     "East Asian importers"
+    ],
+    [
+     25.9,
+     51.5,
+     "Qatari LNG terminals"
+    ],
+    [
+     51.9,
+     4.4,
+     "European energy markets"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Culpa leo in malesuada excepteur ac qui magna anim fringilla vehicula elit id sint. Dolore velit do quis consectetur elit fames labore consectetur convallis malesuada at. Morbi lacus commodo aute leo anim consequat laboris esse ad cillum voluptate convallis. Neque aute pretium nunc enim lorem magna turpis libero et ipsum amet adipiscing ullamco elit deserunt incididunt lacus. Excepteur nulla officia esse morbi integer ultricies nisi vitae suspendisse dolor leo turpis interdum elementum in consectetur. [[1]]",
+     "Consequat molestie aliquip tincidunt duis eiusmod leo vel qui. Vitae et deserunt elementum amet velit reprehenderit maecenas vel et nunc. Fugiat occaecat est reprehenderit anim cillum malesuada dolor nisi leo aliquip porta anim. Interdum mauris convallis convallis dolore minim proident fames neque ullamco laboris cupidatat. Libero ipsum pariatur minim egestas duis pharetra lacus leo suspendisse ullamco consequat deserunt tincidunt id pretium interdum ea. Nulla aliqua nostrud sed id convallis ad consectetur lorem aliqua."
+    ],
+    "risks": [
+     "Irure est sed in nulla lorem amet reprehenderit amet eiusmod laboris consectetur sint. Velit vitae deserunt fames ipsum eiusmod sit vehicula eiusmod aute molestie eu at laoreet urna. Lacus aliquip at vehicula turpis vehicula in velit cillum fugiat reprehenderit deserunt veniam eiusmod labore. Enim in amet nunc veniam vitae mollit esse id porta et pretium sint. Culpa lacus neque et in sit nunc do maecenas et enim urna.",
+     "Proident duis nisi duis sed laborum lacus ex fringilla exercitation vitae mauris pariatur. Maecenas pharetra cillum eiusmod id vitae tincidunt leo pretium convallis pulvinar cupidatat morbi do pariatur excepteur. Dolore ac ipsum maecenas proident amet leo id molestie leo veniam id tincidunt magna ullamco ut et. At cillum voluptate non at tempor est in vitae. Malesuada vel nulla quis maecenas quis laboris duis vel. Vitae sed pariatur consectetur pariatur consectetur aliquip. [[2]]"
+    ],
+    "bites": [
+     "Excepteur consectetur maecenas at vitae nunc occaecat vitae ultricies excepteur. Cupidatat elementum et magna exercitation minim sed turpis fugiat elementum tempor posuere vehicula fugiat aliquip pretium consectetur. Sed ipsum sint faucibus non convallis lorem porta aliquip adipiscing deserunt. Fugiat leo faucibus officia turpis minim laoreet nisi mauris. Lacus at cillum leo non fugiat urna consectetur dolor egestas. Mauris ea fugiat maecenas cupidatat neque minim leo pulvinar quis ac libero laborum duis. [[3]]",
+     "Eiusmod pariatur consequat posuere exercitation consequat pharetra eu sunt sint turpis officia suspendisse. Deserunt amet veniam id cillum in velit pharetra deserunt curabitur consectetur qui libero esse et pulvinar lacus. Vitae nulla faucibus posuere egestas leo incididunt proident suspendisse convallis laoreet do lacus. Velit labore mollit consectetur qui suspendisse qui dolore duis velit leo. Minim aute dolore sagittis consequat cupidatat incididunt officia eu ipsum nisi occaecat at faucibus."
+    ],
+    "prepare": [
+     "Leo cillum proident sed ad maecenas posuere nulla sed veniam. Ex ac maecenas adipiscing consectetur consequat urna neque vehicula ea voluptate. In ac commodo et curabitur convallis urna sed id et. Pharetra eiusmod reprehenderit pariatur labore occaecat deserunt fringilla aute irure nostrud malesuada molestie vel pulvinar excepteur. Amet eiusmod cupidatat nulla urna laboris leo consectetur et magna libero convallis amet ex occaecat vitae ac aliqua veniam.",
+     "Deserunt labore libero est turpis lacus elit sagittis ad vel integer dolor maecenas. Tempor maecenas fugiat ullamco mollit fames aliquip fringilla amet sit elementum sunt aute. Ut tempor faucibus pulvinar do laoreet reprehenderit est eu eu do ipsum sint dolore morbi. Ac ac et fugiat voluptate duis id laboris dolore veniam ad at proident. Eiusmod elit nulla commodo et id in at quis neque commodo non eu. Do sint et id culpa sunt ac anim. [[4]]"
+    ],
+    "partners": [
+     "Elit in consequat velit ac laborum curabitur sed esse pretium sagittis. Qui vitae anim ut vehicula pulvinar porta veniam sagittis enim. Leo consectetur turpis occaecat in aute nisi duis culpa reprehenderit curabitur veniam fugiat interdum urna reprehenderit curabitur reprehenderit in. Leo vel integer mollit labore exercitation adipiscing culpa nisi vitae egestas curabitur convallis cillum fugiat vitae. Faucibus mauris aute nostrud voluptate turpis voluptate fames pulvinar. Turpis tincidunt egestas elementum ex magna sunt. [[5]]",
+     "Libero nostrud quis interdum sagittis tincidunt elementum sagittis pretium aliquip sit morbi urna cupidatat id aliquip in. Est ipsum labore maecenas fringilla sed laboris velit in exercitation pulvinar excepteur molestie irure et anim sagittis. Cupidatat vitae morbi consectetur enim pariatur in dolor enim sint pretium magna tempor. Vitae nulla deserunt veniam amet maecenas porta tempor tincidunt esse porta ultricies et dolor sit morbi leo consectetur. Minim pariatur leo maecenas at sint faucibus et."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~20%",
+     "label": "Share of global oil consumption (indicative)"
+    },
+    {
+     "type": "Military presence",
+     "value": "Agenor",
+     "label": "European-led mission"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Shared",
+     "label": "Joint statements with Gulf and Asian partners"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Enim duis quis id sint vitae convallis aliqua lacus nostrud vehicula sed elit porta laboris interdum. Fringilla vitae maecenas mauris lacus leo."
+    },
+    {
+     "n": 2,
+     "text": "In tincidunt ad fringilla elementum vitae aliqua ultricies elementum fugiat qui porta esse exercitation consequat irure suspendisse. Irure excepteur occaecat excepteur leo consectetur eu."
+    },
+    {
+     "n": 3,
+     "text": "Leo vel leo exercitation maecenas leo pariatur nulla ad. Ex reprehenderit integer mauris do sed nunc elementum exercitation deserunt."
+    },
+    {
+     "n": 4,
+     "text": "Nisi id neque ea fames laboris tincidunt dolore malesuada. Sagittis tincidunt culpa in minim tincidunt consectetur minim et ut consectetur dolore duis molestie consectetur molestie amet."
+    },
+    {
+     "n": 5,
+     "text": "Magna curabitur qui egestas leo sunt consequat velit et ex urna nunc ea do. Laborum lorem neque dolor excepteur et adipiscing."
+    }
+   ]
+  },
+  {
+   "id": "s_bab",
+   "theatre": "aden",
+   "at": "c_bab",
+   "name": "Attacks on merchant shipping",
+   "status": "Recent",
+   "scope": "global",
+   "blurb": "Laoreet incididunt leo suspendisse at qui sed consequat eiusmod do culpa. Curabitur vitae nulla ad interdum adipiscing leo.",
+   "spread": [
+    "Turpis vel ullamco dolor",
+    "Pulvinar tincidunt mauris culpa nulla",
+    "Sagittis aute aliqua duis ultricies turpis",
+    "Eiusmod duis duis neque nulla nisi amet ultricies ullamco suspendisse"
+   ],
+   "reach": [
+    [
+     -34.4,
+     18.5,
+     "Cape rerouting"
+    ],
+    [
+     37.9,
+     23.6,
+     "Mediterranean ports"
+    ],
+    [
+     31.2,
+     121.5,
+     "Asian exporters"
+    ],
+    [
+     51.9,
+     4.4,
+     "European importers"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Ut ullamco labore interdum interdum est adipiscing cupidatat at nunc posuere laboris tincidunt. Laoreet ultricies vehicula ea interdum cillum urna integer esse urna mollit do qui sunt molestie molestie fringilla pariatur. Sed mollit est leo sed voluptate porta velit vitae nunc. Aliqua amet suspendisse ex amet duis molestie tincidunt pariatur malesuada incididunt fringilla vel commodo. Aliqua vitae laborum ea cillum neque curabitur exercitation tincidunt mollit minim vitae sunt qui est. Dolore commodo ex mollit sed. [[1]]",
+     "Leo duis magna turpis ea ad anim vehicula eu integer lorem in pretium neque sint veniam veniam posuere morbi. Aliquip interdum interdum urna proident nunc fugiat occaecat aliquip leo et integer. Do neque suspendisse fringilla commodo est aliqua leo fringilla convallis veniam nisi. Leo pretium vel elit aliquip lacus sunt duis aute eu qui libero in urna exercitation sed deserunt. Aute maecenas convallis id leo cupidatat fringilla sunt id eiusmod."
+    ],
+    "risks": [
+     "Mollit adipiscing irure posuere occaecat neque pharetra leo et laoreet. Consectetur vel proident cillum mauris consectetur id reprehenderit ad eu egestas amet. Exercitation sunt ad adipiscing at duis tincidunt vitae dolore sunt elementum anim suspendisse duis ac. Tincidunt urna reprehenderit cillum culpa amet amet veniam curabitur enim ac culpa. Culpa pretium et tincidunt officia pariatur aliqua mauris pulvinar lorem neque anim veniam fugiat pulvinar. Elementum eu laoreet pulvinar aliquip lorem fringilla aliquip adipiscing in.",
+     "Faucibus sed pharetra qui amet elit duis at minim mollit sunt amet sunt minim laoreet sagittis ullamco maecenas quis. Vehicula at at lacus maecenas curabitur tempor nulla dolore maecenas laboris veniam vel reprehenderit posuere. Nunc fames dolor pretium eu et id pretium cupidatat porta morbi vitae ultricies do. Sagittis fames pharetra nulla pulvinar proident elementum adipiscing faucibus minim turpis id velit neque mollit consectetur lorem. Est sagittis non aliqua vitae leo faucibus. [[2]]"
+    ],
+    "bites": [
+     "Qui elementum sit veniam et porta elementum et urna pretium suspendisse minim. Pariatur veniam esse anim fames consequat fringilla aliquip vitae est in proident fames interdum aute. Dolore nulla leo laboris elit fugiat tempor culpa pulvinar reprehenderit adipiscing libero magna laoreet integer. Aliquip sed eiusmod nisi neque fringilla do pharetra excepteur tempor fringilla consectetur irure eu ea quis. Velit suspendisse posuere cillum elit fringilla dolore at posuere duis. [[3]]",
+     "Id lacus laboris convallis adipiscing qui mollit pharetra convallis pariatur neque. Leo ex consequat vel duis dolor eiusmod consequat leo leo. Ullamco eiusmod fugiat voluptate est ex enim fringilla et. Consectetur sint ex aliqua sit aliquip faucibus at turpis sit. Sed vel aute magna suspendisse velit et et non libero veniam. Proident officia integer qui sed ullamco malesuada laboris occaecat at sit lacus. Et mollit aute in suspendisse."
+    ],
+    "prepare": [
+     "Dolor ac duis non et ultricies vehicula tincidunt ut elementum aute laoreet veniam deserunt egestas leo ullamco velit nulla. Aliqua duis tincidunt leo consequat pariatur commodo pariatur ea culpa officia ad lorem maecenas adipiscing eiusmod. Vel ullamco lacus neque duis sunt ac adipiscing ipsum in. Duis eu et do elementum libero lorem incididunt maecenas sed incididunt elementum in quis. Eiusmod non vel fringilla pariatur officia leo pariatur veniam sagittis ad reprehenderit tincidunt egestas lacus.",
+     "Aliquip nunc amet ullamco integer leo sit deserunt pariatur id. Irure ultricies adipiscing convallis vitae aliquip est labore veniam incididunt id sit sed fames exercitation do. Molestie laoreet ut commodo sed aute labore leo ad labore fringilla. Tempor vel ipsum labore suspendisse sint nostrud pulvinar cillum urna pharetra occaecat. Id et elementum eiusmod pulvinar amet labore vitae pulvinar commodo magna integer sint et qui fringilla consectetur. [[4]]"
+    ],
+    "partners": [
+     "Ea integer exercitation fringilla tincidunt porta elementum pharetra nunc. Elit suspendisse lorem nostrud et aliquip posuere turpis vitae eu consectetur excepteur pulvinar aliqua amet sed deserunt egestas deserunt. Cupidatat faucibus fringilla faucibus pulvinar pretium vitae quis duis quis adipiscing cillum dolore tincidunt. Cupidatat vel sed ex exercitation labore enim molestie fames mauris. Labore pharetra faucibus egestas nulla lacus duis amet ipsum pariatur leo sit irure leo exercitation. [[5]]",
+     "Ex tincidunt anim nostrud sed vitae vitae interdum et ad morbi aliquip nisi fugiat officia. Egestas minim suspendisse eu aute at culpa veniam do lorem aliqua do id posuere quis ea. Minim labore aliquip elementum nunc ipsum vel adipiscing officia posuere neque commodo aliquip leo. Nisi mollit aliquip est nulla irure aliqua libero ea pretium consectetur neque ad. Elementum turpis suspendisse pulvinar convallis dolor eiusmod posuere laborum."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "+~10 days",
+     "label": "Added Asia–Europe transit (indicative)"
+    },
+    {
+     "type": "Military presence",
+     "value": "Aspides, Atalanta",
+     "label": "EU naval operations in the area"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Djibouti",
+     "label": "Host of foreign bases"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Mollit dolore in amet velit quis tempor duis curabitur ea proident proident ac sint adipiscing. Exercitation deserunt qui dolore libero curabitur libero ullamco esse."
+    },
+    {
+     "n": 2,
+     "text": "Laborum aliquip laboris in laborum reprehenderit labore libero amet velit tempor aliquip lacus eiusmod sit cupidatat ut ultricies. Culpa reprehenderit mollit laoreet labore neque."
+    },
+    {
+     "n": 3,
+     "text": "Proident veniam sunt malesuada cupidatat eiusmod laoreet sed nulla incididunt interdum quis adipiscing laoreet culpa aliquip aliqua fames pulvinar. Tincidunt tincidunt reprehenderit ad urna laoreet."
+    },
+    {
+     "n": 4,
+     "text": "Molestie quis vel ipsum consectetur velit vitae reprehenderit pharetra leo amet maecenas excepteur proident. Laboris interdum non pariatur faucibus consectetur."
+    },
+    {
+     "n": 5,
+     "text": "Proident pariatur ultricies posuere consequat voluptate convallis leo id nulla fames leo nunc curabitur vitae sed morbi commodo tincidunt. Laborum elit urna excepteur leo ipsum in porta."
+    }
+   ]
+  },
+  {
+   "id": "s_cables",
+   "theatre": "redsea",
+   "name": "Subsea cable damage",
+   "status": "Recent",
+   "scope": "regional",
+   "lat": 20.4,
+   "lon": 38.6,
+   "blurb": "Eiusmod commodo amet turpis sagittis laoreet reprehenderit sit morbi tincidunt ipsum.",
+   "spread": [
+    "Lacus turpis esse convallis consequat culpa sint",
+    "Quis sed irure consequat tempor vitae aliquip amet lorem",
+    "Tempor elit pulvinar exercitation qui fringilla integer voluptate",
+    "Qui leo ex consectetur cupidatat quis proident vel esse"
+   ],
+   "reach": [
+    [
+     25.2,
+     55.3,
+     "Gulf data hubs"
+    ],
+    [
+     19.1,
+     72.9,
+     "Indian landing stations"
+    ],
+    [
+     43.3,
+     5.4,
+     "Mediterranean landings"
+    ],
+    [
+     -4,
+     39.7,
+     "East African networks"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Integer sagittis leo enim sagittis sed consectetur do duis posuere labore labore porta proident leo sagittis id turpis. Laoreet mollit ac ad curabitur consectetur magna proident leo mollit eiusmod consequat leo duis. Vitae aliqua non nisi voluptate pharetra commodo lacus velit aliquip nostrud duis lacus pariatur malesuada ac. Lorem ex incididunt minim amet tempor molestie interdum integer nunc at pharetra laboris veniam pharetra aute turpis. Tincidunt reprehenderit suspendisse suspendisse incididunt ac elementum. [[1]]",
+     "Porta ullamco ad tempor id leo aliqua ultricies cupidatat sed eiusmod aute dolor id ex id. Lorem veniam enim esse fames convallis dolore esse pretium elementum duis magna incididunt eu posuere veniam fames turpis non. Libero pariatur minim convallis nulla neque mauris leo sint do elementum. Fames et labore aliqua eu duis aute leo amet labore. Labore tempor eu id tincidunt morbi lorem sed vehicula reprehenderit malesuada."
+    ],
+    "risks": [
+     "Aliquip irure minim dolore ex consequat suspendisse sed id malesuada at irure ipsum veniam. Aute aute do magna deserunt voluptate at exercitation maecenas suspendisse mauris culpa malesuada incididunt adipiscing suspendisse nisi malesuada. Vehicula vehicula suspendisse vel non est posuere leo cillum pharetra cupidatat enim sunt eu mollit minim neque tempor. Eiusmod mauris cillum ac duis mollit elit aliquip voluptate et mauris morbi lacus cupidatat adipiscing ultricies.",
+     "Ac commodo id ullamco dolore consectetur labore exercitation eiusmod sint voluptate dolore fames. Anim ut tincidunt ac consectetur interdum aliquip exercitation aliquip eu excepteur aliquip ullamco egestas pulvinar. Elit et tempor magna turpis sed urna dolore tempor in porta mollit enim laoreet leo egestas amet. Lacus anim aute excepteur non porta ipsum vehicula id aliquip morbi nisi eiusmod tincidunt dolore officia. Mollit nostrud urna tempor incididunt cupidatat fugiat vel laoreet malesuada ex sint. [[2]]"
+    ],
+    "bites": [
+     "Egestas et morbi egestas eu sagittis sit amet laoreet duis sit laboris leo convallis. Pariatur dolore laoreet enim voluptate nunc sit nulla pulvinar reprehenderit tempor eu consectetur irure fames. Porta vel nisi labore maecenas excepteur suspendisse interdum aliquip ut at nunc laoreet. Leo eiusmod reprehenderit neque leo velit nisi mollit mollit dolore adipiscing maecenas aute est consectetur consectetur ea cupidatat fringilla. Magna ipsum excepteur libero pulvinar exercitation sit pharetra tempor sed nisi deserunt. [[3]]",
+     "Libero lacus integer anim qui elementum vitae duis consectetur elit sit dolore pulvinar ultricies. Culpa culpa vel integer anim lacus consectetur cillum pariatur sunt amet tincidunt velit libero id interdum ipsum. Magna id maecenas deserunt ut faucibus ullamco vitae tempor maecenas velit. Proident duis commodo eiusmod convallis consequat porta amet qui nulla et occaecat elementum labore adipiscing. Incididunt vitae mollit enim mauris eiusmod mauris egestas nisi vel occaecat interdum est labore porta."
+    ],
+    "prepare": [
+     "Lacus laoreet ut vitae reprehenderit nostrud laborum faucibus sagittis id pariatur enim ultricies amet. Malesuada pharetra id elit est urna suspendisse et vehicula ea leo proident fugiat egestas fugiat leo. Culpa convallis excepteur sint consectetur libero molestie ullamco pharetra voluptate eiusmod vitae. Duis tincidunt id porta irure consectetur at suspendisse neque egestas consectetur elementum consequat eiusmod. Faucibus porta minim ea interdum vitae ullamco pariatur leo esse nulla suspendisse in.",
+     "Irure officia qui aliqua ac ea turpis cillum consequat ex minim ultricies est duis curabitur dolor veniam vitae. Libero curabitur consectetur incididunt ultricies occaecat consectetur do do leo id ac neque ea quis ullamco. Reprehenderit laoreet enim voluptate lorem cupidatat elit sagittis maecenas sit consectetur cupidatat est elit. Nostrud at leo ac occaecat officia mollit libero laborum id maecenas. Lacus fringilla culpa fames amet pulvinar duis vitae sagittis sit tempor faucibus neque deserunt interdum ex. [[4]]"
+    ],
+    "partners": [
+     "Pulvinar magna faucibus vehicula turpis aute ex porta lorem aliquip sagittis est molestie vehicula fugiat ultricies aliquip. Sunt ad aliqua porta libero laboris laboris enim qui reprehenderit ut veniam ultricies vitae sint convallis sit laboris. Consectetur pulvinar quis ipsum posuere pariatur et culpa sed velit neque in magna cillum culpa ac dolore laboris. Morbi ac do occaecat ex nunc pharetra fringilla pretium. Labore molestie dolor anim egestas mollit duis. [[5]]",
+     "Commodo velit deserunt morbi anim ea tempor fugiat enim at consectetur faucibus. Mauris ad officia consectetur excepteur dolor egestas aute qui ex exercitation. Faucibus sed at turpis leo maecenas fringilla deserunt et proident. Do nulla pariatur turpis consectetur vitae ad turpis nostrud ex enim deserunt. Qui morbi proident tempor fringilla sed sed qui magna veniam consectetur aute laboris sed. Ut labore id eiusmod pulvinar sit sed pulvinar ut pulvinar egestas sint integer."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Data",
+     "label": "Share of Europe–Asia traffic to quantify"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Cables",
+     "label": "Damaged in 2024"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Repair fleet",
+     "label": "Vessels available, to compile"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Et consectetur minim aute libero duis ultricies nunc do malesuada neque officia dolor leo id porta voluptate reprehenderit. Sagittis elit sunt et sint ex sagittis commodo."
+    },
+    {
+     "n": 2,
+     "text": "Vitae eu leo aliqua at exercitation suspendisse excepteur anim occaecat laoreet. Turpis leo mauris in fringilla leo sed vitae mollit convallis consectetur."
+    },
+    {
+     "n": 3,
+     "text": "Exercitation labore nisi non tempor consectetur maecenas occaecat posuere turpis lacus. Tincidunt voluptate ea sed egestas irure culpa nostrud aliqua ipsum."
+    },
+    {
+     "n": 4,
+     "text": "Ea leo aliquip morbi occaecat pariatur cupidatat consectetur sunt ipsum nostrud. Mollit convallis eu laoreet vitae commodo pretium consectetur ullamco elementum lacus."
+    },
+    {
+     "n": 5,
+     "text": "Do leo culpa id enim ad morbi amet turpis quis consectetur ex maecenas laoreet. Urna non esse consequat aliquip sunt integer ex commodo fringilla maecenas nunc do."
+    }
+   ]
+  },
+  {
+   "id": "s_arctic",
+   "theatre": "arctic",
+   "name": "Route restrictions and GNSS interference",
+   "status": "Recurring",
+   "scope": "regional",
+   "lat": 71,
+   "lon": 30,
+   "blurb": "Sed ea elit reprehenderit minim et commodo elit morbi et ac.",
+   "spread": [
+    "Eu duis et sagittis curabitur nunc",
+    "Elementum consequat est in consequat suspendisse",
+    "Veniam tempor maecenas maecenas aute morbi",
+    "Fringilla dolore sed cillum incididunt eiusmod"
+   ],
+   "reach": [
+    [
+     58,
+     20,
+     "Baltic shipping and airspace"
+    ],
+    [
+     61,
+     3,
+     "Nordic energy platforms"
+    ],
+    [
+     69.1,
+     33.4,
+     "Northern fleet bases"
+    ],
+    [
+     69.6,
+     18.9,
+     "Northern Norway and Finland"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Minim minim est do posuere laboris qui consectetur egestas duis turpis egestas qui minim ex vehicula. Consectetur ea nulla sed consequat aute enim cupidatat laoreet. Sit est leo nostrud ullamco laborum sunt incididunt sunt. Malesuada urna duis leo magna porta sit velit leo do minim adipiscing dolore sed nunc. Magna leo quis lacus qui sed ipsum exercitation consectetur mollit nisi mauris cupidatat nulla consectetur laboris lorem ultricies id. [[1]]",
+     "Mollit veniam voluptate leo occaecat neque molestie vitae anim minim vitae et ex fames sit est. Eiusmod exercitation ex nunc sint dolore laoreet culpa exercitation consectetur. Pharetra est maecenas vehicula dolore ullamco at commodo laboris proident consectetur aute pharetra leo cupidatat officia aliquip. Et vel vel nunc amet at elit integer pretium velit sunt elementum labore fames ac tincidunt voluptate minim vehicula. Pulvinar integer ipsum duis esse integer exercitation enim laborum molestie id."
+    ],
+    "risks": [
+     "Consectetur sagittis eiusmod et aliquip consectetur lorem egestas ultricies ullamco tempor libero laborum laoreet suspendisse porta duis. Lacus lorem reprehenderit dolor proident lorem leo integer mauris integer veniam do eu reprehenderit do proident. Sagittis consectetur labore id occaecat quis occaecat quis laborum egestas id. Convallis laborum suspendisse ut faucibus id curabitur curabitur veniam magna molestie cillum mollit interdum. Suspendisse leo nulla labore anim velit tempor leo culpa urna reprehenderit sunt suspendisse duis labore amet leo.",
+     "Adipiscing duis excepteur laoreet nunc commodo curabitur cupidatat suspendisse occaecat. Ipsum interdum lorem aliqua cillum commodo fugiat do deserunt eu tempor. Maecenas at et et ut sed reprehenderit urna laboris convallis incididunt molestie non veniam lacus consectetur culpa suspendisse. Id sit incididunt fugiat laborum amet convallis egestas laboris porta ut proident adipiscing aliquip dolor commodo suspendisse. Magna aute consectetur exercitation posuere do sagittis duis adipiscing. Id voluptate malesuada ullamco faucibus. [[2]]"
+    ],
+    "bites": [
+     "Ullamco consequat pretium pretium suspendisse nunc proident culpa eu interdum nulla lorem. Morbi excepteur voluptate minim cillum lorem convallis ullamco egestas mauris integer. Quis porta posuere maecenas ipsum turpis consequat at consectetur eiusmod. Sed laboris malesuada lacus curabitur sed sint exercitation egestas sed culpa adipiscing. Consectetur vitae vehicula libero tempor est posuere duis tempor nunc in incididunt urna posuere ut voluptate integer elementum ea commodo in. [[3]]",
+     "Sed quis veniam minim amet egestas posuere consequat pulvinar occaecat irure commodo ullamco do id. Pretium anim faucibus sagittis ultricies do vitae leo pharetra non qui nunc. Curabitur mauris sagittis in minim at reprehenderit suspendisse deserunt neque ullamco vitae consequat. Interdum anim neque duis egestas et tempor in ipsum aliqua in libero. Veniam ullamco velit porta fugiat eu aute lorem ullamco do non laboris sit ea integer adipiscing eiusmod libero vitae."
+    ],
+    "prepare": [
+     "Aute quis irure magna sed dolore aliquip consectetur ac. Nunc sagittis labore eiusmod commodo est laborum turpis cillum culpa commodo leo minim eu exercitation posuere deserunt pharetra duis. Culpa qui commodo do ac eu magna ex pulvinar adipiscing ad consectetur officia maecenas sunt ut. Lacus posuere sagittis in ullamco id fringilla libero amet labore cupidatat velit sed adipiscing officia exercitation exercitation commodo fugiat. Sed velit molestie sed molestie consectetur officia aute tincidunt tempor molestie.",
+     "Id ultricies vitae interdum exercitation elementum laboris reprehenderit lorem. Consectetur laborum curabitur do urna sint aute excepteur sit enim incididunt dolore neque vitae suspendisse leo id elit. Anim convallis laoreet lacus sunt enim nunc curabitur pretium. Vel cillum maecenas ex incididunt molestie tempor laboris cillum in proident proident. Magna do maecenas cillum laoreet elit vitae neque qui irure qui molestie tempor leo sint egestas. Labore culpa integer nisi tempor duis proident veniam vehicula. [[4]]"
+    ],
+    "partners": [
+     "Elementum mollit sit est consequat posuere reprehenderit duis officia consequat faucibus lorem elit aute convallis. Malesuada veniam vel quis ac quis aliqua neque lorem adipiscing tempor consectetur porta magna laoreet aliqua aute. Leo laoreet anim et incididunt aliqua maecenas egestas aliquip occaecat molestie cillum libero qui sit incididunt morbi eiusmod qui. In ad duis ut leo posuere culpa excepteur proident consectetur sint laoreet turpis et adipiscing do lacus eiusmod. [[5]]",
+     "Vehicula sagittis enim qui suspendisse consectetur officia laoreet est. Tincidunt faucibus turpis lorem fugiat exercitation aute in integer. Voluptate magna cupidatat quis id aliquip interdum sunt ad sit aliquip ultricies cupidatat nostrud vel et pharetra ea. Pharetra pariatur officia voluptate nunc lorem nisi pulvinar mollit et laoreet sit lorem ullamco do neque amet. Mauris fringilla amet sagittis interdum integer nunc neque porta magna at eiusmod pulvinar leo cupidatat. Eu mollit tincidunt lorem ad laboris."
+    ]
+   },
+   "data": [
+    {
+     "type": "Military presence",
+     "value": "NATO",
+     "label": "Nordic deployments to compile"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Arctic policy",
+     "label": "EU and Nordic statements"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "GNSS",
+     "label": "Interference reports to collect"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Mollit leo consequat duis commodo vel adipiscing posuere turpis nulla vitae maecenas vehicula occaecat. Porta pulvinar maecenas et nunc vel exercitation ultricies aute turpis."
+    },
+    {
+     "n": 2,
+     "text": "Fames sagittis et porta porta voluptate morbi vitae interdum qui fringilla consequat aute proident morbi. Pulvinar leo sint leo ac irure elit ut suspendisse."
+    },
+    {
+     "n": 3,
+     "text": "Tempor fugiat non sint et cillum labore pretium vitae ipsum interdum neque labore libero reprehenderit minim interdum mauris cillum aliquip."
+    },
+    {
+     "n": 4,
+     "text": "Esse duis culpa laborum quis culpa ullamco ex elit lorem sit ac faucibus vel laboris ut curabitur do."
+    },
+    {
+     "n": 5,
+     "text": "Id anim ipsum amet consequat aute pariatur id duis ipsum ea neque. Duis duis fugiat nostrud consectetur curabitur sit anim officia."
+    }
+   ]
+  },
+  {
+   "id": "s_guinea",
+   "theatre": "guinea",
+   "name": "Piracy, illegal fishing and trafficking",
+   "status": "Recurring",
+   "scope": "regional",
+   "lat": 0,
+   "lon": -1,
+   "blurb": "Anim esse laborum proident sit at aute id sagittis ullamco eu commodo.",
+   "spread": [
+    "Ad occaecat anim enim laoreet officia",
+    "Occaecat tempor vitae mauris ad vitae tincidunt",
+    "Aute dolore faucibus aliquip",
+    "Reprehenderit sint interdum ut eu consectetur porta minim eu commodo"
+   ],
+   "reach": [
+    [
+     6.4,
+     3.4,
+     "Lagos and regional ports"
+    ],
+    [
+     28.1,
+     -15.4,
+     "Atlantic route to Europe"
+    ],
+    [
+     51.3,
+     4.4,
+     "Antwerp and Rotterdam"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Laoreet sed leo vel esse faucibus integer nostrud qui urna laborum porta minim leo velit laboris laoreet tincidunt. Reprehenderit ullamco vel sint anim eiusmod tempor aliquip nisi. Cillum mauris culpa dolor nisi quis commodo leo pretium aliqua laborum anim convallis. Curabitur commodo consectetur commodo deserunt ultricies posuere consectetur adipiscing dolor id integer est exercitation elit vitae. Libero libero sit interdum nostrud laoreet ea laborum ut urna urna excepteur fames vitae irure dolor pharetra mollit labore. [[1]]",
+     "Ea convallis sed mauris pariatur posuere lacus id laoreet fames consequat sint. Mauris sagittis incididunt occaecat sed anim nunc sed elit ullamco integer pariatur ipsum tempor quis. Ultricies elit et lacus malesuada proident veniam aliqua eiusmod. Fames eu quis molestie mauris tempor consectetur aute mauris dolore in leo nunc curabitur pretium anim. Est cupidatat nostrud labore morbi eiusmod leo labore id lacus sint integer posuere fames et labore pharetra quis irure."
+    ],
+    "risks": [
+     "Duis voluptate urna proident pretium commodo in lorem nostrud anim elit excepteur vitae curabitur culpa culpa reprehenderit. Pulvinar duis curabitur occaecat qui amet nostrud suspendisse cillum irure ex elementum turpis interdum ultricies. Leo leo porta quis mauris ullamco ut pharetra culpa consectetur lacus pariatur fringilla cillum pretium faucibus leo elementum. Nisi vitae sit enim occaecat incididunt sagittis reprehenderit aute. Cupidatat excepteur in ea pretium suspendisse ad dolor malesuada ullamco.",
+     "Libero libero porta duis sagittis elit voluptate non convallis quis mauris pharetra ipsum tincidunt irure. Laborum adipiscing vel tempor consequat ex fames morbi tincidunt eiusmod cillum turpis aliqua sed est consectetur officia. Integer pharetra cupidatat ea posuere ullamco nulla deserunt mollit interdum nulla fames deserunt fringilla suspendisse. Dolore nulla vel quis malesuada vitae id officia porta leo faucibus fugiat duis ut. Quis curabitur ac urna culpa labore incididunt malesuada pulvinar libero ultricies. [[2]]"
+    ],
+    "bites": [
+     "Posuere reprehenderit egestas sint dolor ipsum officia posuere duis lacus veniam eu faucibus duis. Duis pariatur officia consectetur sit in occaecat molestie leo pretium elementum voluptate lacus ut maecenas ad tempor suspendisse. Reprehenderit integer mauris ullamco pretium et dolore cupidatat nulla convallis fugiat integer porta pariatur vitae. Voluptate ex occaecat dolor nisi laoreet duis vehicula esse proident sed et nunc leo id. Convallis qui tincidunt enim sint curabitur pulvinar nostrud faucibus duis culpa nulla. [[3]]",
+     "Consequat fringilla vitae officia vitae magna ex ad faucibus nostrud. Lorem do lacus duis suspendisse aliqua mollit nisi leo consequat incididunt dolor veniam. Dolor nisi leo ea dolore laborum tempor libero ultricies leo maecenas id proident esse deserunt nulla curabitur in. Amet voluptate leo consectetur minim ea sed officia esse sint commodo est. Lacus aliquip leo libero duis curabitur sit mauris pretium porta. Officia ultricies eu leo commodo molestie lacus molestie aliquip et culpa deserunt."
+    ],
+    "prepare": [
+     "Molestie leo consequat occaecat occaecat fames ipsum et ultricies vitae ullamco vel est dolor vitae nostrud porta. Est pulvinar ea et cillum vehicula pharetra aliqua ac fugiat proident laborum. Sed libero leo lorem urna ullamco pharetra pulvinar convallis pariatur nunc leo cupidatat est ea excepteur. Veniam nisi elementum ea interdum consectetur ex tempor ut sed faucibus turpis elit dolore morbi molestie. Nunc sed tincidunt eu nostrud excepteur eu.",
+     "Vel leo leo pariatur pulvinar at suspendisse sed aute. Lacus sint eu lorem ut laoreet interdum magna consectetur ipsum. Dolor id tincidunt est velit velit excepteur sint egestas turpis veniam aliquip fringilla. Velit maecenas sit ullamco porta labore fringilla vehicula integer aute velit vehicula consequat eiusmod. Id cillum sint lacus cupidatat interdum vel tincidunt enim leo lorem molestie interdum egestas. Ultricies sint mauris nisi consectetur minim porta ut consectetur lorem fugiat fames ipsum laborum. [[4]]"
+    ],
+    "partners": [
+     "Et ipsum cillum sed adipiscing vel leo et id fames ut adipiscing minim duis posuere aute egestas nostrud leo. Dolore duis vitae mauris ultricies irure interdum est aliqua elementum id leo tempor nostrud egestas duis fugiat. Morbi in interdum incididunt integer aliqua suspendisse neque enim et cillum ex. Ullamco dolore libero excepteur integer sunt sed sit duis eu minim malesuada. Enim ad ea enim sint vehicula pulvinar integer convallis egestas. [[5]]",
+     "Ad ullamco neque et fugiat veniam id leo pretium fames leo faucibus elementum vitae nulla. Id in laoreet et interdum leo cillum do aliquip dolore culpa. Culpa sit nisi mollit ea fringilla officia fugiat laoreet tincidunt excepteur elementum pretium pariatur. Sint aliquip amet lacus aliqua excepteur ut non tincidunt nisi fugiat maecenas leo tincidunt amet sint turpis. Ea sed molestie aliqua labore voluptate ac lacus mauris exercitation morbi do. Nisi maecenas in ullamco consequat dolor."
+    ]
+   },
+   "data": [
+    {
+     "type": "Strategic partnership",
+     "value": "Yaoundé",
+     "label": "Regional code of conduct"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "Fisheries",
+     "label": "Losses to illegal fishing to quantify"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "AU",
+     "label": "African Union strategies"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Pretium labore velit leo interdum leo maecenas esse id exercitation incididunt quis elementum. Suspendisse exercitation tempor turpis adipiscing sunt vehicula interdum nostrud."
+    },
+    {
+     "n": 2,
+     "text": "Fringilla non sed turpis sagittis tempor sagittis commodo velit ipsum nostrud dolore nostrud. Nulla id vitae integer molestie excepteur convallis faucibus."
+    },
+    {
+     "n": 3,
+     "text": "Elementum esse voluptate at laboris laboris dolore elit non integer egestas officia. Nulla duis libero sit culpa egestas pariatur deserunt."
+    },
+    {
+     "n": 4,
+     "text": "Cupidatat ea veniam lorem tempor enim urna in libero cillum. Labore aliqua exercitation sunt cupidatat in reprehenderit elementum veniam."
+    },
+    {
+     "n": 5,
+     "text": "Id sunt et sed ac morbi commodo molestie duis. Turpis amet duis turpis pharetra mollit elit enim consequat vehicula."
+    }
+   ]
+  },
+  {
+   "id": "s_latam",
+   "theatre": "latam",
+   "name": "Cocaine flows to European ports",
+   "status": "Structural",
+   "scope": "regional",
+   "lat": 10.4,
+   "lon": -75.5,
+   "blurb": "Urna ad ac commodo pharetra fames dolore aute.",
+   "spread": [
+    "Id exercitation convallis aute",
+    "Veniam nunc tempor nisi ad fugiat reprehenderit sed",
+    "Proident magna integer lorem tincidunt vel minim",
+    "Do vel cupidatat vitae morbi laoreet"
+   ],
+   "reach": [
+    [
+     14.7,
+     -17.4,
+     "West African transit hubs"
+    ],
+    [
+     36.1,
+     -5.4,
+     "Iberian ports"
+    ],
+    [
+     51.3,
+     4.4,
+     "Antwerp and Rotterdam"
+    ],
+    [
+     12.1,
+     -68.9,
+     "Caribbean transhipment"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Exercitation pretium nostrud urna vehicula suspendisse consequat curabitur convallis aliqua neque culpa quis lacus ad convallis tincidunt. Et quis sint sint nunc posuere veniam eiusmod consectetur. Quis non eu leo labore et reprehenderit fugiat pariatur integer lorem suspendisse suspendisse pariatur elementum proident elit non. Velit elit convallis at posuere ultricies ex excepteur fames amet molestie dolor. Sed ultricies sunt consectetur culpa velit faucibus ipsum leo posuere egestas dolore. Integer vel interdum leo cillum lorem vehicula. [[1]]",
+     "Ad fugiat minim occaecat incididunt lacus consequat culpa eu malesuada officia morbi vehicula mollit at. Quis proident fringilla sunt laborum mauris do leo suspendisse leo minim ullamco eu esse irure egestas incididunt aliquip. Libero officia mauris porta tincidunt vitae ultricies mollit consequat convallis culpa. Labore neque exercitation non occaecat tincidunt dolor amet elementum fringilla sint dolor. Ex malesuada maecenas do fugiat consequat duis ut consectetur lacus sagittis ad duis pharetra laborum magna ac id."
+    ],
+    "risks": [
+     "Voluptate elit neque voluptate consectetur excepteur laoreet nisi officia molestie pariatur. Suspendisse non qui excepteur laoreet aliqua leo et officia nunc suspendisse ac ad culpa laboris excepteur deserunt. Labore esse pariatur convallis in sed molestie pariatur culpa enim dolore pulvinar leo. Minim nisi deserunt ullamco magna mollit pariatur ex pulvinar. Consectetur ut neque esse id proident fames consequat nisi laborum lorem magna. Neque deserunt leo labore elementum.",
+     "Cillum faucibus pharetra laborum nisi excepteur posuere maecenas aliquip dolor pharetra urna turpis culpa pharetra nostrud adipiscing morbi. Nulla fames consectetur ullamco cillum laoreet malesuada veniam malesuada duis lorem adipiscing. Tincidunt ex magna lacus sagittis in excepteur qui lorem officia amet curabitur lorem veniam. Incididunt proident aliqua aliqua ad deserunt fames proident leo vehicula aute ea sit consequat ad officia sit reprehenderit id. Laoreet elit duis adipiscing fringilla leo maecenas. [[2]]"
+    ],
+    "bites": [
+     "Amet id magna incididunt dolore deserunt ex sunt exercitation adipiscing maecenas commodo libero laoreet sunt libero excepteur. Leo elit sed commodo maecenas nostrud faucibus nisi eiusmod magna quis. Qui vehicula aute morbi magna tincidunt interdum fringilla excepteur. Vitae porta commodo pharetra sint non turpis sunt reprehenderit leo qui do ac vehicula sit neque. At sit officia mauris officia eu nunc adipiscing occaecat eu amet morbi. Duis laborum sint cupidatat ea excepteur. [[3]]",
+     "Enim sed curabitur dolor excepteur integer excepteur at sint sint reprehenderit pharetra. Est aliqua anim do turpis cillum fugiat suspendisse id officia minim sit voluptate cupidatat ex libero. Anim lorem fringilla at pharetra faucibus tempor labore nisi nunc sed dolor at pulvinar non pariatur. Faucibus pretium dolor mollit ac neque nisi consectetur adipiscing malesuada anim aliqua morbi integer ut. Quis id lacus officia dolor adipiscing cupidatat interdum eu porta."
+    ],
+    "prepare": [
+     "Do malesuada eiusmod consectetur ipsum consequat ipsum laoreet sed cillum posuere veniam in lacus egestas. Voluptate enim porta vitae pretium maecenas mauris neque et id ad vehicula nunc fames. Tempor vitae maecenas integer id lacus nostrud sit ipsum sagittis libero vel lorem nulla ac in do tincidunt velit. Magna mollit dolore eu nulla ultricies duis maecenas lorem ultricies. Pharetra urna enim nisi velit convallis vitae curabitur sed convallis reprehenderit in.",
+     "Non maecenas ut vel ex amet vehicula exercitation sagittis pharetra sunt in excepteur amet dolore adipiscing incididunt. Malesuada at laboris leo magna voluptate leo lorem porta nostrud integer ex. Laboris mauris turpis libero tincidunt maecenas pretium do vehicula. Convallis fames amet ut duis mollit in pretium mollit lacus nulla fames faucibus enim dolore adipiscing interdum integer. Nostrud proident labore elementum duis duis sint anim porta sed. [[4]]"
+    ],
+    "partners": [
+     "Dolore deserunt qui leo ut cillum et sagittis laborum minim. Officia molestie malesuada non integer ut curabitur pulvinar egestas ut leo sagittis. Interdum dolore exercitation id nisi veniam ultricies fugiat vitae sed consequat reprehenderit convallis tincidunt anim turpis laborum mauris incididunt. Deserunt pariatur est qui incididunt aliquip morbi eiusmod leo. Et laborum id aute suspendisse consectetur occaecat nulla fringilla qui. Laoreet vitae fringilla officia integer maecenas laoreet et malesuada leo. [[5]]",
+     "Laboris incididunt ac cillum nisi leo egestas fames minim quis et. Aliqua fugiat veniam pretium nulla exercitation cupidatat ullamco maecenas enim minim tincidunt sagittis velit egestas aliquip fugiat. Irure exercitation nulla incididunt adipiscing sed faucibus do porta suspendisse elit tincidunt et fames. Ultricies posuere velit posuere reprehenderit nunc posuere reprehenderit consectetur dolore in vehicula libero sagittis. Ut libero laborum leo esse sit voluptate urna nunc tempor."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Containers",
+     "label": "Seizure volumes to compile"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Port alliance",
+     "label": "Customs cooperation to map"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Regional",
+     "label": "Latin American positions"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Urna commodo molestie proident enim sunt libero officia ex quis duis leo consectetur fames laboris pulvinar aliqua et ex. Porta elit ut do ultricies."
+    },
+    {
+     "n": 2,
+     "text": "Libero ad lorem ea dolore egestas pulvinar faucibus elit aute eiusmod quis esse. Egestas cillum maecenas id anim consequat deserunt occaecat amet vehicula neque excepteur."
+    },
+    {
+     "n": 3,
+     "text": "Sagittis eu cupidatat voluptate ultricies duis lacus neque ut magna sed dolor proident libero. Commodo vitae consectetur qui eiusmod magna tincidunt ex laborum proident leo ut."
+    },
+    {
+     "n": 4,
+     "text": "Nisi incididunt leo nunc reprehenderit at magna et elementum. Leo voluptate leo vel ut culpa morbi vitae leo pharetra magna."
+    },
+    {
+     "n": 5,
+     "text": "Occaecat proident laborum elementum irure adipiscing lorem in ultricies. Irure vitae duis cupidatat laborum do vehicula vel sed. Libero vitae deserunt integer ex incididunt."
+    }
+   ]
+  },
+  {
+   "id": "s_panama",
+   "theatre": "latam",
+   "at": "c_panama",
+   "name": "Drought and transit restrictions",
+   "status": "Recent",
+   "scope": "regional",
+   "blurb": "Adipiscing vehicula aliquip pariatur et anim in pariatur irure.",
+   "spread": [
+    "Consectetur dolor minim duis do",
+    "Suspendisse laborum minim curabitur ea ad lacus",
+    "Pharetra suspendisse ac voluptate ultricies",
+    "Posuere nostrud do id anim vitae libero veniam"
+   ],
+   "reach": [
+    [
+     29.7,
+     -93.9,
+     "US Gulf LNG terminals"
+    ],
+    [
+     35.6,
+     139.7,
+     "Japanese and Korean LNG buyers"
+    ],
+    [
+     -12.1,
+     -77.1,
+     "Latin American Pacific exporters"
+    ],
+    [
+     51.9,
+     4.4,
+     "European shippers"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Sit pariatur ac maecenas vehicula suspendisse mollit est ad consectetur nulla neque ea consectetur quis leo egestas sed sagittis. Nostrud sed mollit nisi leo pariatur morbi mollit aliqua. Interdum duis integer integer faucibus molestie maecenas sit nulla sunt reprehenderit. Lorem at egestas proident ea in pulvinar occaecat anim sagittis pulvinar labore esse labore sunt ultricies ipsum laborum. Egestas ipsum id pulvinar ea exercitation adipiscing dolor id qui convallis laborum consectetur aliqua. [[1]]",
+     "Pharetra officia malesuada duis ipsum dolore molestie integer ut. Aliquip commodo dolor fugiat duis veniam cillum occaecat egestas qui malesuada molestie eiusmod consequat vehicula. Molestie nostrud aliqua minim at exercitation laoreet officia culpa id vitae sit. Et aliquip commodo sunt cupidatat fringilla proident enim id non at consectetur voluptate. Nostrud do et interdum ipsum tempor esse eiusmod esse ultricies suspendisse convallis vitae culpa quis integer magna. Sint morbi consequat aliquip adipiscing magna tempor."
+    ],
+    "risks": [
+     "Magna vel vel sit vehicula id quis sagittis fugiat tincidunt. Suspendisse mauris consequat vitae pretium non sit fringilla maecenas proident curabitur irure laborum ipsum consectetur duis. Culpa sit leo id exercitation laoreet pharetra nulla nulla anim turpis id consectetur pulvinar suspendisse at adipiscing. Ut minim deserunt laboris nulla qui labore eiusmod molestie sunt interdum egestas deserunt eu fames faucibus ex magna. Libero curabitur pulvinar sagittis duis.",
+     "Maecenas mauris neque fames vitae cillum nulla tempor amet pariatur id pulvinar convallis. Nunc morbi labore id ac in labore ut sit egestas officia fringilla minim. Ipsum ex aliqua duis excepteur magna nisi leo duis maecenas cillum. Ultricies et pharetra quis est sint sed et egestas eu culpa reprehenderit pariatur turpis aliqua proident integer id esse. Faucibus aliquip duis posuere ex laoreet duis fringilla posuere ea exercitation nunc minim et ullamco laboris laboris fugiat. [[2]]"
+    ],
+    "bites": [
+     "Adipiscing irure convallis sed pharetra sit mauris at mollit officia quis integer elit aute id. Tincidunt commodo velit non reprehenderit neque curabitur pretium aliquip. Deserunt veniam sint nunc cillum ut commodo culpa leo est qui ut vehicula esse elementum aliquip sed. Leo fames in nulla molestie incididunt vitae ac porta at pharetra lorem nisi eu. At veniam leo veniam fringilla esse nulla anim proident duis duis aute. [[3]]",
+     "Officia eiusmod consectetur laboris est fringilla do veniam minim nostrud do. Molestie malesuada lacus id morbi laborum adipiscing excepteur sit pharetra elementum. Ex sagittis at elementum anim exercitation ut pariatur lacus. Vitae urna culpa id sagittis do ac elit cupidatat aliquip proident nostrud. Officia irure mauris vitae cillum lorem libero magna tincidunt. Pretium magna vel lorem officia molestie interdum adipiscing aliqua porta anim fringilla sagittis maecenas quis sagittis nisi. Tincidunt vel faucibus fringilla leo."
+    ],
+    "prepare": [
+     "Elit quis vel sint est porta non aliqua vitae ipsum anim lacus porta qui. Fugiat neque esse leo commodo malesuada urna vitae amet fugiat vitae maecenas voluptate ullamco maecenas. Eiusmod curabitur nunc turpis cupidatat ipsum occaecat voluptate egestas tempor magna veniam curabitur suspendisse consequat nunc aute esse id. Dolor excepteur exercitation interdum fames dolor do morbi suspendisse consequat duis consequat ultricies ad mollit. Duis amet consequat quis id eiusmod non pulvinar vehicula sed excepteur esse.",
+     "Suspendisse reprehenderit do nisi leo elit commodo neque irure leo sint convallis labore leo ipsum ullamco amet sit vitae. Lorem et interdum elementum turpis deserunt culpa reprehenderit ipsum mauris cillum malesuada pharetra leo pretium duis sagittis officia. Turpis curabitur ullamco sint mauris posuere pharetra sed id. At libero culpa at pretium id interdum consectetur exercitation. Fugiat dolore ultricies leo consectetur maecenas exercitation enim leo pariatur pretium. Faucibus suspendisse dolore eiusmod maecenas pariatur elit. [[4]]"
+    ],
+    "partners": [
+     "Vitae egestas voluptate vitae minim lacus neque anim eiusmod officia consequat elit porta cupidatat. Molestie reprehenderit esse integer exercitation ac leo elit posuere aliqua commodo voluptate cupidatat elit pharetra libero aute. Leo ullamco at culpa id est aliquip at interdum ac ipsum nisi. Sint sed urna consequat leo consectetur enim voluptate integer culpa nunc egestas qui ullamco laborum id elementum pharetra occaecat. Ex dolor et ipsum porta et ad quis amet id est culpa. [[5]]",
+     "Laborum sed ac exercitation irure sed sed occaecat excepteur qui culpa minim ad mauris convallis. Fugiat molestie vel et laoreet quis minim morbi sagittis malesuada irure non officia duis enim. Pulvinar minim in tempor deserunt cupidatat proident enim egestas. Dolor sagittis ipsum aliquip leo ad maecenas mauris veniam laborum excepteur ultricies veniam ut laboris vitae dolore dolor. Fringilla laboris nisi consectetur minim dolore laboris urna officia duis. Veniam nunc aliquip irure sint duis fringilla."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "Transits",
+     "label": "Daily transit caps in 2023–24"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Gatún",
+     "label": "Lake supplies the locks"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "Open",
+     "label": "Positions to collect"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Aliquip suspendisse laborum leo dolor convallis ea vitae fringilla non est. Elit cupidatat leo officia laboris eiusmod ea."
+    },
+    {
+     "n": 2,
+     "text": "Incididunt neque labore et in amet do pretium mollit amet posuere. Amet elementum labore ex urna ut leo et tempor aliquip."
+    },
+    {
+     "n": 3,
+     "text": "Laboris lacus esse voluptate voluptate ad veniam pulvinar convallis sunt enim pariatur irure vitae. Dolor consequat minim sunt laboris."
+    },
+    {
+     "n": 4,
+     "text": "Esse nunc integer lorem ad lacus proident pariatur id at anim turpis consectetur do turpis egestas fringilla ea."
+    },
+    {
+     "n": 5,
+     "text": "Quis laoreet ut laoreet integer leo sagittis molestie leo cupidatat vitae ac est. Consectetur id leo leo est enim sunt ad leo veniam lacus voluptate."
+    }
+   ]
+  },
+  {
+   "id": "s_natl",
+   "theatre": "natlantic",
+   "name": "Seabed sabotage and cable damage",
+   "status": "Potential",
+   "scope": "regional",
+   "lat": 56.5,
+   "lon": -8.5,
+   "blurb": "In libero enim fringilla urna posuere ut in sit sunt lorem.",
+   "spread": [
+    "Neque ullamco leo ea",
+    "Fringilla posuere leo est officia at",
+    "Cillum laoreet urna esse pretium",
+    "Deserunt quis tempor eiusmod et pretium consectetur sit suspendisse"
+   ],
+   "reach": [
+    [
+     40.7,
+     -74,
+     "US landing stations"
+    ],
+    [
+     50.1,
+     8.7,
+     "European cloud and finance hubs"
+    ],
+    [
+     57.7,
+     11.9,
+     "Nordic links"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Pharetra laboris non aliqua excepteur malesuada fugiat at nunc ad malesuada proident. Pulvinar anim nulla ac tempor sed dolore molestie ut nunc elementum sed sed esse exercitation lorem curabitur ipsum culpa. Deserunt sed ex interdum dolore ac vehicula elementum in. Aute fringilla tempor fringilla sed consequat deserunt id sed pulvinar vehicula vel elit convallis commodo lacus mollit eu. Urna turpis sit neque commodo mollit commodo consectetur est et laboris. [[1]]",
+     "Malesuada est voluptate ex do magna neque elementum esse lorem libero vel malesuada vel proident sed sunt. Cillum laoreet urna et lorem mauris ultricies consequat aute maecenas proident est molestie est. Velit posuere neque veniam adipiscing dolore nunc porta id excepteur pretium consectetur turpis cillum. Morbi nunc duis ea urna pharetra aute et aliqua ad labore vehicula leo voluptate leo lacus leo est nostrud dolor at vitae."
+    ],
+    "risks": [
+     "Fugiat eiusmod pulvinar exercitation proident officia amet pulvinar eiusmod ad lorem porta aliqua neque proident malesuada laborum irure consectetur. Laboris labore do nisi tincidunt eu excepteur qui lacus duis leo maecenas ad tincidunt. Aliqua id ut egestas cillum aliqua laboris qui incididunt mollit laoreet veniam ut aliqua faucibus ad vitae. Ea ullamco labore mauris amet convallis turpis eiusmod vel consectetur veniam voluptate maecenas. Interdum sed curabitur convallis pariatur leo in ad sint voluptate.",
+     "Id irure reprehenderit adipiscing vitae mollit nulla leo sed urna velit ac aute turpis vitae labore vitae morbi. Duis faucibus lorem deserunt mauris vitae leo eiusmod suspendisse ex posuere in fames integer exercitation. Leo curabitur duis non enim interdum laboris enim fringilla laoreet adipiscing amet leo fames anim occaecat elementum maecenas id. Incididunt proident maecenas sagittis lorem adipiscing magna elementum consequat. Amet amet elit commodo sunt duis consequat at dolore pariatur fringilla. [[2]]"
+    ],
+    "bites": [
+     "Interdum nulla maecenas ea ultricies commodo maecenas aute aute culpa libero interdum dolor. Id enim esse quis sed mollit amet do occaecat egestas convallis irure urna. Elementum consequat minim lacus elementum sint quis fames aliquip culpa malesuada libero sed in ad deserunt. Leo libero culpa quis id velit elit leo tincidunt egestas est cupidatat mauris vitae at fugiat eu vitae. Morbi consectetur dolor non posuere et ea excepteur vitae quis fugiat commodo nunc. [[3]]",
+     "Nunc consectetur exercitation amet morbi suspendisse et anim minim tincidunt in et proident id interdum consequat quis. Laborum interdum esse tincidunt lacus consequat ipsum cupidatat adipiscing id ultricies fringilla ut. Reprehenderit sunt voluptate reprehenderit neque vitae suspendisse non est culpa veniam. Pariatur pulvinar convallis morbi occaecat vehicula fugiat suspendisse sit officia sunt enim nunc vel sed quis duis ea. Convallis fugiat curabitur et tincidunt molestie pretium exercitation laboris incididunt interdum et porta."
+    ],
+    "prepare": [
+     "In lacus proident laoreet pharetra anim eiusmod elit duis pulvinar velit consectetur do ex. Ultricies reprehenderit fringilla libero est culpa consectetur nostrud interdum tempor integer leo suspendisse ut non qui aliquip. Sunt tincidunt laboris sunt nostrud incididunt ex fringilla excepteur. Mauris nisi est nunc in turpis sed sed et interdum fugiat velit egestas sed incididunt urna incididunt. Quis esse magna urna nostrud veniam integer sint integer qui posuere vitae mauris sint et.",
+     "Anim libero est curabitur pretium culpa suspendisse eu sagittis est irure duis magna tincidunt elementum cillum esse et. Laborum qui posuere veniam sint ut cupidatat leo laoreet id. Non ullamco irure fringilla laborum ac qui ea pulvinar anim fringilla sunt officia lorem ullamco fames. Elit ex at aute sint laborum integer proident non lorem. Tempor convallis anim laborum labore turpis eiusmod nunc malesuada nostrud sint pariatur est egestas veniam fames cillum ea vehicula in duis. [[4]]"
+    ],
+    "partners": [
+     "Ex duis molestie posuere pretium laborum morbi officia occaecat dolore leo. Deserunt nunc neque anim laborum qui qui dolor in aliquip nisi interdum turpis ad neque. Ea qui dolore at lacus minim non ac dolor vitae. Ex vel leo curabitur voluptate leo eu urna duis urna. Cupidatat lacus magna vitae enim ipsum molestie ut labore sint. Sunt anim quis leo deserunt ullamco id vel quis occaecat consequat nunc culpa. [[5]]",
+     "Qui aute elit leo egestas morbi eu laboris leo commodo neque incididunt mauris. Commodo qui sagittis sit culpa porta proident qui voluptate porta anim qui sit excepteur do eu incididunt duis ultricies. Sagittis id tincidunt pharetra qui anim sint laborum qui cupidatat sint faucibus fames tincidunt. Urna sunt sagittis ad id porta faucibus eiusmod neque. Malesuada neque velit laoreet laborum tempor cupidatat labore pariatur ut dolor."
+    ]
+   },
+   "data": [
+    {
+     "type": "Military presence",
+     "value": "NATO",
+     "label": "Seabed patrols to compile"
+    },
+    {
+     "type": "Trade dependency",
+     "value": "LNG, data",
+     "label": "Volumes to collect"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Outermost",
+     "label": "Azores, Madeira and the Canary Islands"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Fames neque sit reprehenderit pharetra elit consectetur do qui molestie. Egestas eiusmod nulla veniam magna duis enim ultricies."
+    },
+    {
+     "n": 2,
+     "text": "Labore id reprehenderit minim aliqua laboris eu esse nunc. Vehicula aute fames dolor mollit vitae duis ullamco nisi sint irure leo incididunt laboris duis nostrud mauris mollit."
+    },
+    {
+     "n": 3,
+     "text": "Exercitation velit lorem mollit sed reprehenderit et dolor fringilla faucibus eiusmod id ultricies. Eiusmod mauris ea magna leo aliquip nulla vehicula interdum."
+    },
+    {
+     "n": 4,
+     "text": "Id curabitur nunc malesuada maecenas sit veniam in aute sagittis elit. Consectetur reprehenderit faucibus sagittis aliqua interdum nostrud ex ipsum ea malesuada quis pharetra."
+    },
+    {
+     "n": 5,
+     "text": "Aliqua pariatur suspendisse et ac malesuada esse anim cillum in enim ac. Laborum suspendisse eiusmod suspendisse ut neque dolore veniam in duis."
+    }
+   ]
+  },
+  {
+   "id": "s_lng",
+   "theme": "gas",
+   "name": "LNG shockwave",
+   "status": "Recurring",
+   "scope": "global",
+   "lat": 19.5,
+   "lon": 60,
+   "blurb": "Aliquip pretium fugiat incididunt pretium do leo quis duis vehicula molestie sint cillum elit est lacus ea turpis sit laoreet.",
+   "spread": [
+    "Sunt suspendisse interdum ullamco urna",
+    "Eiusmod ac nunc et tempor dolore reprehenderit",
+    "Minim ipsum consequat ipsum ultricies qui in suspendisse ultricies",
+    "Suspendisse vel laboris laoreet urna occaecat"
+   ],
+   "reach": [
+    [
+     35.6,
+     139.7,
+     "Japanese and Korean buyers"
+    ],
+    [
+     51.9,
+     4.4,
+     "Rotterdam and Zeebrugge terminals"
+    ],
+    [
+     29.7,
+     -93.9,
+     "US Gulf export terminals"
+    ],
+    [
+     19.1,
+     72.9,
+     "Indian importers"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Elit consectetur maecenas et magna est aliqua id ea sunt fames commodo eu minim velit non. Integer cillum qui duis vel enim fugiat pulvinar ac minim nunc elit. In lorem incididunt sagittis leo dolor dolor malesuada sunt duis aliquip. Pretium nostrud quis elit leo voluptate leo sed duis tempor lacus ac officia suspendisse qui lacus aliquip. Posuere pariatur laboris curabitur exercitation ac deserunt mauris non est pretium ad tincidunt. [[1]]",
+     "Leo convallis labore anim pharetra nisi sagittis consectetur nisi sit sed sed molestie ipsum tincidunt lorem. Laoreet esse anim reprehenderit vel et magna occaecat pharetra amet. Minim fugiat irure do labore sit irure irure integer adipiscing nulla ut amet nulla velit sunt sint vitae. Egestas sed posuere fringilla aute tempor nisi occaecat maecenas posuere aliquip sed ipsum ea irure occaecat. Laboris et fames sed integer vitae ut lacus labore curabitur aliquip culpa."
+    ],
+    "risks": [
+     "Est dolore aliqua ultricies ex adipiscing deserunt minim nulla voluptate lorem vel. Magna mauris leo et do sed excepteur aliqua laborum sed ut id cupidatat. Duis eu porta culpa interdum voluptate leo ad lorem pharetra leo leo fringilla turpis. Cillum malesuada ultricies veniam incididunt enim vitae excepteur curabitur. Leo pulvinar suspendisse non interdum id nulla vitae esse convallis malesuada ea amet pulvinar suspendisse. Porta est ac lorem pharetra incididunt suspendisse qui minim sagittis vitae esse.",
+     "Incididunt egestas culpa adipiscing porta integer lacus nisi et ultricies. Pharetra amet enim leo leo eiusmod leo cupidatat porta excepteur dolore mauris laboris nulla nostrud anim ipsum. Ipsum integer consectetur vitae qui nostrud labore minim proident magna pretium ad pulvinar sed aliquip. Eiusmod eiusmod amet convallis sunt do proident sint dolore convallis quis pariatur quis laboris. Pariatur maecenas nostrud interdum occaecat elementum elit ipsum incididunt do sit. [[2]]"
+    ],
+    "bites": [
+     "Interdum ut est et pariatur occaecat pharetra elit deserunt enim duis et sed. Tincidunt nunc reprehenderit nulla consectetur fames minim leo ultricies velit pharetra fames vitae quis nunc ipsum. Nostrud pretium vel duis id qui ipsum lacus enim lorem qui dolore neque leo sed dolor porta. Lorem integer incididunt fames leo laoreet sed ipsum qui consectetur in ultricies officia ullamco faucibus duis. Deserunt occaecat et anim excepteur magna adipiscing nostrud neque reprehenderit posuere. [[3]]",
+     "Molestie voluptate exercitation ut sed in deserunt nisi neque vitae non aute aute lacus cillum pretium veniam sit. Nisi sagittis neque ullamco voluptate id et laoreet aliquip lorem velit vehicula incididunt convallis lacus consequat tincidunt occaecat. Excepteur libero adipiscing veniam et ac ipsum veniam minim. Tincidunt incididunt leo duis in occaecat sit pharetra incididunt adipiscing officia urna malesuada deserunt. Ea sit duis cupidatat ac lacus urna do excepteur lacus morbi porta ac qui et maecenas."
+    ],
+    "prepare": [
+     "Faucibus aute sint minim suspendisse sit proident curabitur officia consequat id minim mollit vitae nostrud et aliqua commodo sed. Convallis quis in maecenas nulla pretium vitae consectetur pretium duis. Sunt fames elit aute ex amet minim cupidatat ut nostrud vitae esse veniam egestas enim pharetra sagittis. Laboris leo egestas leo ad libero laoreet laborum laborum qui curabitur nostrud ad neque ullamco cupidatat consectetur proident sunt amet.",
+     "Maecenas at faucibus occaecat et est urna proident porta vitae fringilla tempor velit vel velit pulvinar excepteur qui adipiscing. Esse id id consectetur laborum fugiat sed veniam voluptate ac pharetra leo morbi vel minim fugiat. Pharetra maecenas reprehenderit incididunt adipiscing ad do consectetur maecenas non ea lacus posuere dolor nisi et officia. Libero leo ipsum pariatur sagittis fugiat qui ipsum reprehenderit veniam pretium faucibus maecenas turpis do incididunt sint incididunt est non. [[4]]"
+    ],
+    "partners": [
+     "Anim tempor labore non voluptate dolore pharetra integer neque laoreet id pariatur aute. Voluptate in veniam at exercitation vel ullamco ipsum proident commodo nunc occaecat urna velit nulla sagittis sed. Faucibus leo veniam sagittis ut incididunt ultricies consectetur laoreet elementum sed in. Nulla adipiscing porta elementum malesuada anim occaecat aliquip lorem turpis. Libero at faucibus labore ullamco anim sunt dolor eu ut. Ipsum eu aute ad enim morbi. [[5]]",
+     "Id laboris fames sagittis sagittis dolor ultricies veniam consectetur irure elementum qui et sed morbi veniam nunc sagittis ullamco. Vitae voluptate elementum ullamco reprehenderit libero eu et elit leo laoreet. Et quis labore ipsum pariatur elementum in pharetra exercitation lacus qui nunc elementum consectetur labore. Elit aute in aute fringilla mauris ipsum morbi leo officia proident vitae et et consectetur laboris aliqua cillum fugiat. Turpis exercitation curabitur suspendisse vitae officia id ad et maecenas."
+    ]
+   },
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~40%",
+     "label": "Share of EU gas imports arriving as LNG (indicative)"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "IEA",
+     "label": "Coordinated stock and demand-reduction rules"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Qatar, US",
+     "label": "Long-term supply contracts"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Integer est id ut sed cillum cupidatat et ullamco laboris irure mauris fringilla est ac proident mauris. Faucibus vitae officia ultricies voluptate nulla ea leo cupidatat adipiscing."
+    },
+    {
+     "n": 2,
+     "text": "Neque consectetur ut nisi tempor morbi porta egestas egestas faucibus porta urna vehicula sint. Magna aute elit veniam tincidunt id ipsum laborum ultricies egestas laborum libero."
+    },
+    {
+     "n": 3,
+     "text": "Aute tempor consectetur ad voluptate ipsum labore duis leo amet. Ea proident quis veniam eu nulla morbi sint adipiscing convallis laoreet laboris morbi elit."
+    },
+    {
+     "n": 4,
+     "text": "Excepteur non pariatur qui nisi elementum ipsum pariatur labore sagittis voluptate laborum id turpis neque sit tempor ipsum."
+    },
+    {
+     "n": 5,
+     "text": "Minim adipiscing urna malesuada esse aute eiusmod pariatur turpis. Et vel laboris sagittis officia qui vitae sed minim minim lorem neque nostrud elit sint dolor culpa."
+    }
+   ],
+   "author": "Author to be confirmed"
+  },
+  {
+   "id": "s_cablecut",
+   "theme": "subcon",
+   "name": "Cable-cut shockwave",
+   "status": "Recent",
+   "scope": "regional",
+   "lat": 60,
+   "lon": 26.5,
+   "blurb": "Adipiscing et nisi consectetur turpis urna vitae excepteur nostrud exercitation vehicula ea integer leo elit integer reprehenderit sint ea consectetur ea minim sed curabitur.",
+   "spread": [
+    "Occaecat adipiscing consectetur fames",
+    "Deserunt pretium adipiscing sagittis irure maecenas amet minim voluptate",
+    "Lorem aliquip sagittis faucibus sagittis non molestie et minim turpis aliqua",
+    "Fringilla egestas vitae occaecat elit ex magna egestas"
+   ],
+   "reach": [
+    [
+     60.2,
+     24.9,
+     "Helsinki data links"
+    ],
+    [
+     59.3,
+     18.1,
+     "Stockholm data links"
+    ],
+    [
+     52.5,
+     13.4,
+     "Berlin financial networks"
+    ],
+    [
+     51.9,
+     4.4,
+     "Rotterdam cloud infrastructure"
+    ]
+   ],
+   "sections": {
+    "stake": [
+     "Mollit nostrud sint dolore consequat mollit commodo officia pretium sunt ac deserunt fugiat convallis id curabitur ipsum. Amet egestas ultricies voluptate magna lorem neque eu vel est incididunt integer ipsum sed turpis sunt. Suspendisse commodo laborum ultricies labore tempor exercitation elit consectetur vitae commodo deserunt ex. Commodo aliquip velit tempor laborum libero elementum culpa culpa aliquip laborum pulvinar maecenas vitae at. Enim qui exercitation in pariatur nunc fugiat ultricies ad nunc labore duis molestie id. [[1]]",
+     "Ultricies ut lacus leo incididunt duis incididunt adipiscing qui neque esse. Ad sed sed curabitur sagittis leo aliquip cupidatat ad pretium. Laoreet ex maecenas sagittis maecenas adipiscing urna ea velit urna ut id. Fugiat ullamco leo pretium voluptate et in esse malesuada aliquip at excepteur proident commodo proident vitae officia laborum. Officia vitae sunt laborum pulvinar reprehenderit id fringilla molestie culpa culpa. Nulla non non eu vehicula sint fames."
+    ],
+    "risks": [
+     "Urna veniam consectetur ex et sed convallis sed ut urna est aliquip libero labore nostrud. Nunc sagittis minim est morbi malesuada consequat anim ex vitae adipiscing laboris mollit occaecat. Incididunt anim irure occaecat eu esse esse elementum fringilla nisi qui consequat ultricies. Libero duis reprehenderit suspendisse pariatur pulvinar est sit ultricies ac. Nulla fames est interdum posuere lorem irure anim ullamco nisi sint neque. Labore do mollit egestas cupidatat mauris curabitur leo.",
+     "In aute quis tempor pulvinar at voluptate nisi dolor pulvinar. Velit ac maecenas pharetra sunt libero ad esse ea eiusmod ultricies minim morbi. Duis neque sed urna nulla magna pharetra mollit vehicula fringilla fringilla sed et veniam tincidunt. Labore eu ut convallis amet anim vitae ipsum sed. Exercitation in id et veniam in minim ad elit lorem ea ultricies dolore morbi ac leo turpis cupidatat aliquip. Molestie curabitur cillum malesuada pharetra ultricies. [[2]]"
+    ],
+    "bites": [
+     "Aute ad turpis aliquip urna duis cupidatat sed maecenas urna posuere aliquip libero ut. Eiusmod velit nulla id adipiscing malesuada fugiat esse veniam ad et. Ullamco ut anim urna integer officia ex elit mauris pretium excepteur. In leo culpa amet pariatur elit egestas eu adipiscing pretium enim non enim duis consectetur at laboris proident neque. Ea convallis est occaecat et curabitur quis leo labore sint vitae. [[3]]",
+     "Adipiscing velit faucibus consectetur vitae lacus nisi lorem commodo sit leo vehicula maecenas duis velit consectetur. Tincidunt sit duis magna minim mauris tempor nunc non occaecat quis pretium dolor. Cupidatat laborum incididunt at commodo molestie quis deserunt laborum ipsum sed duis mauris labore ad. Pharetra velit at leo laoreet sint elementum lorem minim ullamco ex ut non morbi exercitation elementum urna sed. Ut aliqua vel tempor labore laoreet occaecat maecenas nulla malesuada elementum excepteur egestas."
+    ],
+    "prepare": [
+     "In qui id ut leo vitae ex leo consectetur maecenas. Id neque consectetur cupidatat molestie esse tincidunt aute commodo ad ac dolor cillum lacus enim convallis pretium. Aute anim nunc fringilla officia sed pretium adipiscing nulla. Cupidatat neque ut suspendisse do laoreet laoreet ex consequat ex tincidunt curabitur neque do leo ipsum nunc porta. Cupidatat reprehenderit vitae sit do ea esse tincidunt libero libero maecenas dolore. Sit fugiat irure consectetur egestas suspendisse fringilla sagittis vitae.",
+     "Consectetur amet morbi consectetur sed malesuada veniam id consectetur laboris aute laoreet cillum fringilla labore. Neque commodo adipiscing eiusmod sed exercitation incididunt voluptate ac molestie elementum suspendisse. Neque sit leo excepteur occaecat pretium sunt egestas adipiscing. Suspendisse reprehenderit velit nisi enim amet commodo aliqua in sint fringilla. Veniam dolor elit porta interdum veniam aliqua lacus leo maecenas nulla nisi leo non fames. Veniam culpa lacus et ullamco posuere porta esse suspendisse vel lorem sagittis. [[4]]"
+    ],
+    "partners": [
+     "Eu ac ut proident nisi cillum consectetur tincidunt elementum suspendisse qui nunc consectetur duis sint quis. Leo eu est elit magna ullamco ad nostrud aute consectetur ullamco elit. Culpa duis labore id aute vitae velit sunt magna enim at adipiscing sed nisi. Culpa id vitae nisi elementum aliquip et pulvinar magna. Sit nunc excepteur consectetur est nunc dolor at turpis nunc dolore consequat curabitur at morbi vitae mauris. Culpa cupidatat ex commodo urna sed. [[5]]",
+     "Magna excepteur suspendisse occaecat id anim ultricies aute laoreet curabitur cillum vehicula nunc id tincidunt. Turpis culpa id duis sed magna aliquip et tincidunt vel interdum aliquip incididunt dolore dolore tempor sagittis. Laborum excepteur sit fames adipiscing adipiscing libero cillum malesuada cillum posuere interdum exercitation fugiat cupidatat anim. Cupidatat malesuada ipsum pretium reprehenderit nostrud nunc do ut maecenas integer nostrud laoreet sint nisi. Aliquip non veniam quis ipsum convallis deserunt."
+    ]
+   },
+   "data": [
+    {
+     "type": "Military presence",
+     "value": "NATO patrols",
+     "label": "Baltic Sea maritime patrol mission announced in 2025 (name to confirm)"
+    },
+    {
+     "type": "Chokepoint anatomy",
+     "value": "Repair ships",
+     "label": "Specialised vessels available, to compile"
+    },
+    {
+     "type": "Strategic partnership",
+     "value": "Baltic states",
+     "label": "Coordination arrangements to detail"
+    }
+   ],
+   "refs": [
+    {
+     "n": 1,
+     "text": "Consequat aliqua convallis pariatur molestie laboris incididunt occaecat culpa ullamco excepteur id irure ultricies enim nisi ut integer est fames."
+    },
+    {
+     "n": 2,
+     "text": "Maecenas ut adipiscing tincidunt culpa minim fugiat in mauris neque integer ac consectetur nulla est ipsum irure. Pharetra mollit fames sagittis elementum fames lacus culpa ex duis."
+    },
+    {
+     "n": 3,
+     "text": "Maecenas in molestie qui at deserunt adipiscing reprehenderit consequat proident adipiscing laborum morbi consequat eu turpis malesuada. Ut adipiscing laoreet laborum pretium elementum fugiat fames in enim."
+    },
+    {
+     "n": 4,
+     "text": "Amet ex vehicula faucibus culpa pretium ultricies sagittis maecenas adipiscing ad mollit pretium. Laoreet ipsum ac voluptate anim nunc."
+    },
+    {
+     "n": 5,
+     "text": "Sed sed id sed lorem quis vitae ullamco ad proident quis consectetur aute sed ea ultricies vehicula pharetra molestie esse proident."
+    }
+   ],
+   "author": "Author to be confirmed"
+  }
+ ],
+ "themes": [
+  {
+   "id": "gas",
+   "name": "Gas Under Pressure",
+   "lede": "Qui mauris molestie aliquip proident porta nostrud consectetur neque morbi vitae sagittis veniam tincidunt enim leo egestas lorem vel ac vehicula labore.",
+   "overview": [
+    {
+     "h": "Two routes, one price",
+     "p": "Fugiat egestas aute labore irure sed neque sed nunc et duis leo posuere cupidatat nunc et cupidatat ipsum porta adipiscing maecenas suspendisse ipsum adipiscing malesuada vel proident. Irure pariatur nulla nulla excepteur est est non magna fugiat ex tincidunt cupidatat libero excepteur malesuada leo velit. Id deserunt consectetur nisi pharetra integer laborum eiusmod sagittis pulvinar elit consequat aliquip vitae cillum ea exercitation esse duis reprehenderit leo."
+    },
+    {
+     "h": "What can go wrong",
+     "p": "Duis amet maecenas sint ipsum duis urna faucibus excepteur velit egestas elit dolor pretium pulvinar laoreet pulvinar non irure pariatur irure excepteur labore vitae proident minim occaecat urna lorem ipsum et aute occaecat faucibus."
+    },
+    {
+     "h": "What Europe can do, and with whom",
+     "p": "Sed leo id proident sed esse minim turpis integer sunt maecenas turpis malesuada ad pariatur ea pharetra deserunt id malesuada nostrud occaecat. Sed non elit aliquip eiusmod occaecat deserunt minim voluptate malesuada incididunt curabitur id sunt cillum sint pulvinar duis leo interdum aute malesuada proident velit fugiat commodo minim consectetur."
+    }
+   ],
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~40%",
+     "label": "Share of EU gas imports arriving as LNG (indicative, to verify)"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "IEA",
+     "label": "Coordinated stock and demand-reduction rules"
+    }
+   ]
+  },
+  {
+   "id": "subcon",
+   "name": "Submarine connectivity",
+   "lede": "Laboris deserunt id consectetur egestas malesuada mollit amet duis dolore at quis ipsum interdum fringilla.",
+   "overview": [
+    {
+     "h": "Few cables, few landing points",
+     "p": "Egestas laboris aliqua non interdum sit qui ex interdum vitae integer leo ex cillum consectetur neque est laoreet urna dolor nulla sint leo posuere. Urna tempor non esse dolor minim officia nulla mollit fugiat porta sit occaecat duis vitae sit interdum proident consectetur pharetra exercitation irure convallis eu fames tincidunt."
+    },
+    {
+     "h": "What can go wrong",
+     "p": "Libero leo neque id posuere elementum at voluptate culpa esse ad posuere posuere ultricies nunc laboris faucibus suspendisse nunc sunt urna convallis consectetur vel. Consectetur vel officia anim enim leo curabitur ut excepteur et consequat commodo."
+    },
+    {
+     "h": "What Europe can do, and with whom",
+     "p": "Minim malesuada labore anim incididunt suspendisse nunc in mauris est ex ea morbi leo fames molestie pretium cillum malesuada maecenas consectetur. Leo id voluptate leo lacus quis est suspendisse mollit nunc in magna molestie id aliqua dolore sagittis aute tempor ea et faucibus morbi sed amet consequat minim veniam cillum convallis."
+    }
+   ],
+   "data": [
+    {
+     "type": "Trade dependency",
+     "value": "~95%",
+     "label": "Share of intercontinental data carried by submarine cables (commonly cited, to verify)"
+    },
+    {
+     "type": "Alignment of interests",
+     "value": "NIS2",
+     "label": "EU rules covering undersea infrastructure operators"
+    }
+   ]
+  }
+ ]
+}

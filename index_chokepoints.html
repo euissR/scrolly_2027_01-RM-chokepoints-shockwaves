@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev: chokepoints dashboard</title>
+  <style>
+    /* rough stand-in for the Drupal theme; not part of the build */
+    body { margin: 0; font: 18px/1.55 Georgia, serif; color: #1d1d1b; }
+    .content-main { max-width: 1680px; margin: 0 auto; }
+    .field--name-body .field__item { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .intro { max-width: 42rem; }
+    h2 { font: 700 1.75rem/1.2 Georgia, serif; }
+  </style>
+</head>
+
+<body>
+  <div class="content-main">
+    <div class="field--name-body">
+      <div class="field__item">
+        <h2>Securing the EU's sea lanes</h2>
+        <p class="intro">Intro text typed into the Drupal body, outside the embed. A few passages carry a large share of the trade, energy and data that Europe depends on. See also the <a href="#endnote-001">page's own endnote</a>: a link like this must not disturb the dashboard.</p>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" />
+        <link rel="stylesheet" href="css/db.css" />
+
+        <!-- add data-mobile-sticky to try the phone layout with the map pinned in the top third -->
+        <div class="db-root"><p>&nbsp;</p></div>
+
+        <script type="module" src="js/main.js"></script>
+
+        <p class="intro">Text continues after the embed.</p>
+        <h2>References</h2>
+        <p class="intro" id="endnote-001"><a href="#"><b>1.</b></a> The page's own endnote.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
