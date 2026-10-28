@@ -306,8 +306,9 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   const selPoint = (s) =>
     s.t === "theatre" ? XY.t[s.id] : s.t === "choke" ? XY.c[s.id] : XY.s[s.id];
 
-  // a shockwave: its epicentre and every place it reaches. A chokepoint: itself plus the same
-  // for each shockwave of its theatre (or theme).
+  // a shockwave: its epicentre and every place it reaches. A chokepoint: itself, its theatre and
+  // the epicentre of each shockwave of that theatre; the places those reach are left out. A
+  // chokepoint that belongs to a theme, not a theatre, frames everything lit by that theme.
   const shockPoints = (sw) => [
     XY.s[sw.id],
     ...sw.reach.map((r) => proj(r[0], r[1])),
@@ -319,7 +320,12 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   function eventPoints(s) {
     if (s.t === "shock") return shockPoints(D.S[s.id]);
     const c = D.C[s.id];
-    return [XY.c[c.id], ...shocksOf(c).flatMap(shockPoints)];
+    if (!c.theatre) return pointsForTheme(c.theme);
+    return [
+      XY.c[c.id],
+      XY.t[c.theatre],
+      ...shocksOf(c).map((sw) => XY.s[sw.id]),
+    ];
   }
 
   function targetFor(st) {
@@ -695,7 +701,14 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       );
       g.classList.toggle("is-dim", dimFor(t.id));
     });
-    const pulsing = new Set(st.sel?.t === "shock" ? [st.sel.id] : []);
+    // the wash breathes for the selected shockwave, or for each shockwave of the selected chokepoint's theatre (none for theme-level chokepoints)
+    const pulsing = new Set(
+      st.sel?.t === "shock"
+        ? [st.sel.id]
+        : st.sel?.t === "choke" && D.C[st.sel.id].theatre
+          ? shocksOf(D.C[st.sel.id]).map((sw) => sw.id)
+          : [],
+    );
     D.chokepoints.forEach((c) => {
       const g = els.ck[c.id];
       g.style.display = L.ch ? "" : "none";
@@ -709,7 +722,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       g.classList.toggle("is-dim", itemDim(s));
       washes[s.id].style.display = L.sh ? "" : "none";
       washes[s.id].classList.toggle("is-dim", itemDim(s));
-      // the wash breathes only for the selected shockwave
       const pulse = pulsing.has(s.id);
       washes[s.id].classList.toggle("is-pulse", pulse);
       washes[s.id].setAttribute(
