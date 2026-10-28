@@ -11,8 +11,8 @@ import { esc } from "./content.js";
 import { theme } from "./theme.js";
 
 const ICON = {
-  ck: `<svg width="16" height="18" viewBox="-9.5 -11 19 22" aria-hidden="true"><path d="M-6.2-10H6.2Q8-10 6.85-8.61L1.15-1.73Q0-0.34-1.15-1.73L-6.85-8.61Q-8-10-6.2-10Z M-6.2 10H6.2Q8 10 6.85 8.61L1.15 1.73Q0 0.34-1.15 1.73L-6.85 8.61Q-8 10-6.2 10Z" fill="${theme.teal}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" paint-order="stroke"/></svg>`,
-  sk: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.5" fill="${theme.fuchsia2}" fill-opacity=".2"/><circle cx="8" cy="8" r="5.6" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5" stroke-dasharray="2 2"/></svg>`,
+  ck: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.teal}" stroke="${theme.ink}" stroke-width="1.3" stroke-linejoin="round"/></svg>`,
+  sk: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="${theme.fuchsia2}"/><circle cx="8" cy="8" r="5" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5"/><circle cx="8" cy="8" r="7.2" fill="none" stroke="${theme.fuchsia2}" stroke-width="1" stroke-dasharray="2 2"/></svg>`,
 };
 
 // text with [[3]] endnote markers -> Drupal's endnote pattern, ids prefixed so they never clash with the page's own
@@ -60,9 +60,6 @@ export function panelHTML(state, D) {
     `<button type="button" class="db-row" data-sel="${sel}"><span class="db-nm">${esc(name)}</span></button>`;
   const kinRow = (sel, icon, name, sub) =>
     `<button type="button" class="db-kinrow" data-sel="${sel}">${icon}<span><b>${esc(name)}</b><span>${esc(sub)}</span></span></button>`;
-  const prompts = () =>
-    "";
-
   // ── overview ──────────────────────────────────────────────────────────
   function overview() {
     const regions = Object.keys(D.groups)
@@ -119,8 +116,7 @@ export function panelHTML(state, D) {
       <h2 class="db-title">${esc(group.name)}</h2>
       <p class="db-lede">${esc(group.lede)}</p>
       ${cards(group.data)}
-      ${prompts()}
-      ${sec("tt", "Where the theatres meet", gq ? "Where do the places interact, and how does pressure at one travel to the others? Select a connection to see it on the map." : "", `<div class="db-lks">${links}</div>`)}
+      ${sec("tt", "Where the theatres meet", D.questions.meet, `<div class="db-lks">${links}</div>`)}
       ${free(group, "tt")}
       ${sec("tt", "Theatres in this region", "", `<div class="db-rows">${rows}</div>`)}
       ${meta(group.author)}`;
@@ -192,10 +188,9 @@ export function panelHTML(state, D) {
       <h2 class="db-title">${esc(th.name)}</h2>
       <p class="db-lede">${esc(th.lede)}</p>
       ${cards(th.data)}
-      ${prompts()}
       ${kin ? `<div class="db-kin" aria-label="Subsections">${kin}</div>` : ""}
       ${free(th, "th")}
-      ${links ? sec("th", "Where it shows up", gq ? "Which theatres does this theme connect? Linked theatres are highlighted on the map." : "", `<div>${links}</div>`) : ""}
+      ${links ? sec("th", "Where it shows up", D.questions.themeLinks, `<div>${links}</div>`) : ""}
       ${meta("Author to be confirmed")}`;
   }
 

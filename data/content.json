@@ -10,12 +10,10 @@
   ],
   "hint": "Select a theatre label, a chokepoint gate or a shockwave epicentre on the map, or pick one below. Regions and cross-cutting themes are listed together, as one set of entry points."
  },
- "prompts": [
-  "Where do the places interact, and how does pressure at one travel to the others?",
-  "What do they have in common (triggers, dependencies, vulnerabilities)?",
-  "What does this mean for the EU as a whole, and what should it do?",
-  "Who are the EU's partners across the geography or theme, and under what conditions?"
- ],
+ "questions": {
+  "meet": "Where do the places interact, and how does pressure at one travel to the others? Select a connection to see it on the map.",
+  "themeLinks": "Which theatres does this theme connect? Linked theatres are highlighted on the map."
+ },
  "ui": {
   "cardsNote": "Indicative figures for layout only. The author verifies and sources each one.",
   "status": "Status: placeholder",

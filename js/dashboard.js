@@ -6,7 +6,7 @@
 //   view    "map" | "pat"
 //   sel     { t: "theatre" | "choke" | "shock", id } | null
 //   theme   theme id | null          region   region id | null          link   index of a connection in a region | null
-//   layers  { th, ch, sh }           gq       guiding questions on or off
+//   layers  { th, ch, sh }           gq       guiding questions on or off (always on: no button for now)
 //
 // Optional attributes on .db-root:
 //   data-hash="off"        no link state in the page address (the first dashboard on a page has it by default)
@@ -47,7 +47,6 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
         <button type="button" class="db-tile db-tab" role="tab" id="${uid}-tab-map" aria-controls="${uid}-map" aria-selected="true" data-view="map">Map</button>
         <button type="button" class="db-tile db-tab" role="tab" id="${uid}-tab-pat" aria-controls="${uid}-pat" aria-selected="false" data-view="pat">Patterns</button>
       </div>
-      <button type="button" class="db-tile db-gq" aria-pressed="true" title="Show the guiding question under each heading">Guiding questions</button>
     </div>
     <div class="db-filters">
       <div class="db-tiles" role="group" aria-label="Regions"><span class="db-flabel">Region</span>${regionTiles}</div>
@@ -69,7 +68,6 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   const patView = q(`#${uid}-pat`);
   const mapcol = q(".db-mapcol");
   const textcol = q(".db-textcol");
-  const gqBtn = q(".db-gq");
   const filters = q(".db-filters");
 
   const map = makeDashMap(q(".db-map"), {
@@ -127,7 +125,6 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     const isMap = v === "map";
     mapView.hidden = !isMap;
     patView.hidden = isMap;
-    gqBtn.hidden = !isMap;
     filters.hidden = !isMap; // region and theme tiles do nothing in the patterns table
     root.querySelectorAll(".db-tab").forEach((b) => b.setAttribute("aria-selected", b.dataset.view === v));
     if (isMap) {
@@ -151,7 +148,6 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     const rg = activeRegion();
     root.querySelectorAll("[data-region].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.region === rg));
     root.querySelectorAll("[data-theme].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.theme === state.theme));
-    gqBtn.setAttribute("aria-pressed", state.gq);
   }
   // render({ user }): user = true when a person asked for it (writes the address, scrolls to the text)
   function render({ user = false, animate = true, scroll = user } = {}) {
@@ -182,14 +178,10 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   // ── events ──────────────────────────────────────────────────────────────
   // one listener for the panel, the tiles, the tabs and the patterns table
   root.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-sel],[data-theme],[data-region],[data-link],[data-back],[data-tomap],[data-view],.db-gq");
+    const b = e.target.closest("[data-sel],[data-theme],[data-region],[data-link],[data-back],[data-tomap],[data-view]");
     if (!b || !root.contains(b)) return;
     if (b.matches(".db-map *")) return; // the map handles its own
     if (b.dataset.view) return setView(b.dataset.view);
-    if (b.matches(".db-gq")) {
-      state.gq = !state.gq;
-      return render();
-    }
     if (b.dataset.sel) {
       const [t, id] = b.dataset.sel.split(":");
       if (state.view !== "map") setView("map", { user: false });

@@ -442,7 +442,7 @@
   transform-origin: center;
 }
 
-.db-wash {
+.db-wash.is-pulse {
   animation: db-breathe 3.5s ease-in-out infinite;
 }
 
@@ -456,7 +456,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.6667); /* 1.5 x the ring out to 2.5 x */
+    transform: scale(3.3333); /* 1.5 x the ring out to 5 x */
   }
 }
 
@@ -467,7 +467,18 @@
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
-  opacity: 0.45;
+}
+
+.db-sw-ring--1 {
+  opacity: 1;
+}
+
+.db-sw-ring--2 {
+  opacity: 0.6;
+}
+
+.db-sw-ring--3 {
+  opacity: 0.3;
 }
 
 /* labels for chokepoints and shockwaves: on when zoomed in, or when selected */
@@ -491,6 +502,11 @@
 .db-root .db-mk.is-dim .db-lb,
 .db-root .db-tl.is-dim text {
   visibility: hidden;
+}
+
+/* a dimmed theatre label keeps no navy box either (theme / region links would otherwise leave empty blue boxes) */
+.db-root .db-tl.is-dim rect {
+  fill: transparent;
 }
 
 /* places a shockwave reaches */

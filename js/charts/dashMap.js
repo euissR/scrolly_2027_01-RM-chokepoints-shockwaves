@@ -73,6 +73,11 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
           <stop offset=".55" stop-color="${theme.fuchsia2}" stop-opacity=".2"/>
           <stop offset="1" stop-color="${theme.fuchsia2}" stop-opacity="0"/>
         </radialGradient>
+        <radialGradient id="${uid}-wash-hi">
+          <stop offset="0" stop-color="${theme.fuchsia2}" stop-opacity=".6"/>
+          <stop offset=".55" stop-color="${theme.fuchsia2}" stop-opacity=".3"/>
+          <stop offset="1" stop-color="${theme.fuchsia2}" stop-opacity="0"/>
+        </radialGradient>
       </defs>
       <g class="db-vp">
         <path class="db-land"/>
@@ -307,17 +312,14 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     XY.s[sw.id],
     ...sw.reach.map((r) => proj(r[0], r[1])),
   ];
+  const shocksOf = (c) =>
+    D.shockwaves.filter((sw) =>
+      c.theatre ? sw.theatre === c.theatre : sw.theme === c.theme,
+    );
   function eventPoints(s) {
     if (s.t === "shock") return shockPoints(D.S[s.id]);
     const c = D.C[s.id];
-    return [
-      XY.c[c.id],
-      ...D.shockwaves
-        .filter((sw) =>
-          c.theatre ? sw.theatre === c.theatre : sw.theme === c.theme,
-        )
-        .flatMap(shockPoints),
-    ];
+    return [XY.c[c.id], ...shocksOf(c).flatMap(shockPoints)];
   }
 
   function targetFor(st) {
@@ -693,6 +695,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       );
       g.classList.toggle("is-dim", dimFor(t.id));
     });
+    const pulsing = new Set(st.sel?.t === "shock" ? [st.sel.id] : []);
     D.chokepoints.forEach((c) => {
       const g = els.ck[c.id];
       g.style.display = L.ch ? "" : "none";
@@ -706,6 +709,13 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       g.classList.toggle("is-dim", itemDim(s));
       washes[s.id].style.display = L.sh ? "" : "none";
       washes[s.id].classList.toggle("is-dim", itemDim(s));
+      // the wash breathes only for the selected shockwave
+      const pulse = pulsing.has(s.id);
+      washes[s.id].classList.toggle("is-pulse", pulse);
+      washes[s.id].setAttribute(
+        "fill",
+        `url(#${uid}-wash${pulse ? "-hi" : ""})`,
+      );
     });
     el.querySelectorAll("[data-layer]").forEach((b) =>
       b.setAttribute("aria-pressed", L[b.dataset.layer]),
