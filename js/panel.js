@@ -11,7 +11,7 @@ import { esc } from "./content.js";
 import { theme } from "./theme.js";
 
 const ICON = {
-  ck: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.teal}" stroke="${theme.ink}" stroke-width="1.3" stroke-linejoin="round"/></svg>`,
+  ck: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.neutral}" stroke="${theme.ink}" stroke-width="1.3" stroke-linejoin="round"/></svg>`,
   sk: `<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="${theme.fuchsia2}"/><circle cx="8" cy="8" r="5" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5"/><circle cx="8" cy="8" r="7.2" fill="none" stroke="${theme.fuchsia2}" stroke-width="1" stroke-dasharray="2 2"/></svg>`,
 };
 
@@ -21,11 +21,27 @@ const txt = (s) =>
     /\[\[(\d+)\]\]/g,
     '<span id="db-endnote-$1-backlink"><a href="#db-endnote-$1"><sup><b>($1)</b></sup></a></span>',
   );
-const paras = (p) => (Array.isArray(p) ? p : [p]).map((x) => `<p>${txt(x)}</p>`).join("");
+// A paragraph that is only {{data:layer_id|Button text}} becomes the "View data" button for that map layer;
+// one that is only {{chart:chart_id}} becomes an empty figure that charts.js fills. Unknown ids leave nothing.
+let known = { layers: {}, charts: {} };
+const DATA_ICON = `<svg class="db-sw" viewBox="0 0 18 16" aria-hidden="true"><circle cx="5" cy="11" r="3.5" fill="${theme.teal2}"/><circle cx="13" cy="5" r="3" fill="none" stroke="${theme.teal2}" stroke-width="2"/></svg>`;
+const para = (x) => {
+  let m = x.match(/^\{\{data:([\w-]+)\|(.+)\}\}$/);
+  if (m) {
+    return known.layers[m[1]]
+      ? `<div class="db-dataline"><button type="button" class="db-databtn" data-layer-id="${m[1]}" data-label="${esc(m[2])}" aria-pressed="false">${DATA_ICON}<span class="db-databtn-t">${esc(m[2])}</span></button></div>`
+      : "";
+  }
+  m = x.match(/^\{\{chart:([\w-]+)\}\}$/);
+  if (m) return known.charts[m[1]] ? `<figure class="db-fig" data-chart="${m[1]}"></figure>` : "";
+  return `<p>${txt(x)}</p>`;
+};
+const paras = (p) => (Array.isArray(p) ? p : [p]).map(para).join("");
 
 export function panelHTML(state, D) {
   const { T, C, S, H } = D;
   const gq = state.gq;
+  known = { layers: D.layers ?? {}, charts: D.charts ?? {} };
 
   const sec = (cls, title, q, body) =>
     `<section class="db-sec db-sec--${cls}"><h3 class="db-h3">${esc(title)}</h3>${gq && q ? `<p class="db-q">${esc(q)}</p>` : ""}${body}</section>`;

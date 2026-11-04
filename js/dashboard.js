@@ -7,6 +7,7 @@
 //   sel     { t: "theatre" | "choke" | "shock", id } | null
 //   theme   theme id | null          region   region id | null          link   index of a connection in a region | null
 //   layers  { th, ch, sh }           gq       guiding questions on or off (always on: no button for now)
+//   layer   id of the data layer shown on the map (a "View data" button in the text), or null; never in the address
 //
 // Optional attributes on .db-root:
 //   data-hash="off"        no link state in the page address (the first dashboard on a page has it by default)
@@ -17,6 +18,8 @@ import { panelHTML, notesHTML } from "./panel.js";
 import { patternsHTML } from "./patterns.js";
 import { readRoute, routeOf, writeRoute } from "./hash.js";
 import { esc } from "./content.js";
+import { loadLayerRows, keyHTML } from "./layers.js";
+import { mountCharts } from "./charts.js";
 
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let instances = 0;
@@ -30,6 +33,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     region: null,
     link: null,
     layers: { th: true, ch: true, sh: true },
+    layer: null,
     gq: true,
   };
 
@@ -54,7 +58,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     </div>
     <div class="db-view" id="${uid}-map" role="tabpanel" aria-labelledby="${uid}-tab-map">
       <div class="db-main">
-        <div class="db-mapcol"><div class="db-map"></div></div>
+        <div class="db-mapcol"><div class="db-map"></div><div class="db-datakey" hidden></div></div>
         <div class="db-textcol"><div class="db-panel" aria-live="polite"></div></div>
       </div>
       <div class="db-notes" hidden></div>
@@ -69,6 +73,9 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   const mapcol = q(".db-mapcol");
   const textcol = q(".db-textcol");
   const filters = q(".db-filters");
+  const datakey = q(".db-datakey");
+  let charts = null; // the inline charts of the open chapter
+  let panelKey = null; // what the panel shows; it is rewritten only when that changes
 
   const map = makeDashMap(q(".db-map"), {
     rows: D,
@@ -76,6 +83,8 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     on: {
       select: (t, id) => select(t, id),
       toggleLayer: (k) => {
+        // while a data layer is shown, the chokepoint and shockwave pills bring the markers back
+        if (state.layer && k !== "th") return setLayer(null);
         state.layers[k] = !state.layers[k];
         render();
       },
@@ -88,6 +97,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     state.theme = null;
     state.region = null;
     state.link = null;
+    state.layer = null;
   }
   // a chokepoint or shockwave that belongs to a theme opens with that theme lit
   function setSel(t, id) {
@@ -100,7 +110,23 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   }
   function select(t, id) {
     setSel(t, id);
+    state.layer = null;
     render({ user: true });
+  }
+  // show a data layer on the map (null = hide it); its rows load once, the map follows when they are in
+  function setLayer(id) {
+    state.layer = id;
+    const def = id && D.layers?.[id];
+    if (def && !def.rows) {
+      loadLayerRows(def)
+        .then(() => state.layer === id && render())
+        .catch((err) => {
+          console.error(err);
+          if (state.layer === id) setLayer(null);
+        });
+    }
+    render({ scroll: false });
+    if (id && innerWidth <= 768) toMap(); // on a phone the map sits above the text
   }
   function back() {
     clear();
@@ -149,11 +175,34 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     root.querySelectorAll("[data-region].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.region === rg));
     root.querySelectorAll("[data-theme].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.theme === state.theme));
   }
+  // the "View data" buttons in the text and the key under the map follow state.layer
+  function syncLayerUI() {
+    const def = state.layer && D.layers?.[state.layer];
+    panel.querySelectorAll("[data-layer-id]").forEach((b) => {
+      const on = b.dataset.layerId === state.layer;
+      b.setAttribute("aria-pressed", on);
+      b.querySelector(".db-databtn-t").textContent = on ? `On the map: ${D.layers[b.dataset.layerId].title} · Hide` : b.dataset.label;
+    });
+    const k = def?.rows ? state.layer : "";
+    if (datakey.dataset.k !== k) {
+      datakey.dataset.k = k;
+      datakey.innerHTML = k ? keyHTML(def) : "";
+    }
+    datakey.hidden = !k;
+  }
   // render({ user }): user = true when a person asked for it (writes the address, scrolls to the text)
   function render({ user = false, animate = true, scroll = user } = {}) {
-    panel.innerHTML = panelHTML(state, D);
-    notes.innerHTML = notesHTML(state, D);
-    notes.hidden = !notes.innerHTML;
+    // the panel (and its charts) is rebuilt only when the chapter changes, not for a layer or a pill
+    const pk = [routeOf(state), state.link, state.gq].join("|");
+    if (pk !== panelKey) {
+      panelKey = pk;
+      charts?.destroy();
+      panel.innerHTML = panelHTML(state, D);
+      charts = mountCharts(panel, D);
+      notes.innerHTML = notesHTML(state, D);
+      notes.hidden = !notes.innerHTML;
+    }
+    syncLayerUI();
     syncTiles();
     map.update(state, { animate });
     if (user && useHash) writeRoute(routeOf(state));
@@ -178,10 +227,12 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   // ── events ──────────────────────────────────────────────────────────────
   // one listener for the panel, the tiles, the tabs and the patterns table
   root.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-sel],[data-theme],[data-region],[data-link],[data-back],[data-tomap],[data-view]");
+    const b = e.target.closest("[data-sel],[data-theme],[data-region],[data-link],[data-back],[data-tomap],[data-view],[data-layer-id],[data-layer-off]");
     if (!b || !root.contains(b)) return;
     if (b.matches(".db-map *")) return; // the map handles its own
     if (b.dataset.view) return setView(b.dataset.view);
+    if (b.dataset.layerOff !== undefined) return setLayer(null);
+    if (b.dataset.layerId) return setLayer(state.layer === b.dataset.layerId ? null : b.dataset.layerId);
     if (b.dataset.sel) {
       const [t, id] = b.dataset.sel.split(":");
       if (state.view !== "map") setView("map", { user: false });
@@ -207,6 +258,7 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     if (row && e.key === "Enter") row.click();
   });
   root.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && state.view === "map" && state.layer) return setLayer(null);
     if (e.key === "Escape" && state.view === "map" && (state.sel || state.theme || state.region)) back();
   });
 

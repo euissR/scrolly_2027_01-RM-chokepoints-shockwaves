@@ -9,7 +9,9 @@
 // spec: { width }   drawing width in map units (default 1000)
 // on:   { select(type, id), toggleLayer(key) }   what the map reports back
 //
-// state it reads: { sel: {t, id}, theme, region, link, layers: {th, ch, sh} }
+// state it reads: { sel: {t, id}, theme, region, link, layer, layers: {th, ch, sh} }
+//   layer = id of a data layer (D.layers, data/map_layers.json) with its rows loaded: its points are drawn,
+//   the chokepoints, shockwaves and links are hidden and the camera frames the points
 // The camera follows the focus (selection, theme, region, link): it moves only when that changes,
 // so toggling a layer or the guiding questions never throws the reader's own pan and zoom away.
 // With nothing selected it frames all the places on the map; zooming out reaches the whole world.
@@ -22,6 +24,7 @@ import { theme } from "../theme.js";
 import { geoRobinson } from "../robinson.js";
 import { makeHover } from "./hover.js";
 import { esc } from "../content.js";
+import { symbolAttrs } from "../layers.js";
 
 const NS = "http://www.w3.org/2000/svg";
 const RING = 16; // radius of the dashed ring; the soft wash behind a shockwave is 1.5 x this and breathes out to 2.5 x (CSS)
@@ -88,11 +91,12 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
         <g class="db-washes"></g>
         <g class="db-selwave"></g>
       </g>
+      <g class="db-data"></g>
       <g class="db-markers"></g>
     </svg>
     <div class="db-ctl db-layers" role="group" aria-label="Map layers">
       <button type="button" class="db-pill" data-layer="th" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="none" stroke="${theme.navy}" stroke-width="1.5"/><text x="8" y="12" text-anchor="middle" class="db-sw-t">T</text></svg>Theatres</button>
-      <button type="button" class="db-pill" data-layer="ch" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.teal}" stroke="#fff" stroke-width="1" stroke-linejoin="round" paint-order="stroke"/></svg>Chokepoints</button>
+      <button type="button" class="db-pill" data-layer="ch" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.neutral}" stroke="#fff" stroke-width="1" stroke-linejoin="round" paint-order="stroke"/></svg>Chokepoints</button>
       <button type="button" class="db-pill" data-layer="sh" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.5" fill="${theme.fuchsia2}" fill-opacity=".2"/><circle cx="8" cy="8" r="5.6" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5" stroke-dasharray="2 2"/></svg>Shockwaves</button>
     </div>
     <div class="db-ctl db-zoom">
@@ -104,6 +108,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   const svg = el.querySelector(".db-svg");
   const q = (s) => svg.querySelector(s);
   const markers = q(".db-markers");
+  const dataLayer = q(".db-data");
   const washLayer = q(".db-washes");
   const selWave = q(".db-selwave");
   const linkLayer = q(".db-links");
@@ -258,12 +263,35 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     let h = Math.max(y1 - y0, minSpan);
     w += w * padFrac * 2;
     h += h * padFrac * 2;
-    return clamp({
-      cx: (x0 + x1) / 2,
-      cy: (y0 + y1) / 2,
-      k: Math.min(maxK, Math.min(V0[2] / w, V0[3] / h)),
-    });
+    const fr = opts.frame ? frameBox() : null;
+    const k = Math.min(maxK, fitK(w, h, fr));
+    let cy = (y0 + y1) / 2;
+    if (fr) {
+      // the layer buttons cover the top of the map: centre the points in the part below them
+      const s = Math.min(fr.w / (V0[2] / k), fr.h / (V0[3] / k));
+      cy -= fr.inset / (2 * s);
+    }
+    return clamp({ cx: (x0 + x1) / 2, cy, k });
   }
+  // the frame as drawn, and how much of its top the layer buttons cover (px)
+  function frameBox() {
+    const r = svg.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const lay = el.querySelector(".db-layers");
+    const inset = lay ? Math.max(0, lay.getBoundingClientRect().bottom - r.top) + 8 : 0;
+    return { w: r.width, h: r.height, inset: r.height - inset > 100 ? inset : 0 };
+  }
+  // the zoom that shows a w x h area. Without a frame: as if the frame had the world's own shape (2:1).
+  // With one: its real shape, minus the strip at the top that the buttons cover.
+  function fitK(w, h, fr) {
+    if (!fr) return Math.min(V0[2] / w, V0[3] / h);
+    const full = fr.w / fr.h;
+    const eff = fr.w / (fr.h - fr.inset);
+    return full <= V0[2] / V0[3]
+      ? V0[2] / Math.max(w, h * eff)
+      : V0[3] / Math.max((h * fr.h) / (fr.h - fr.inset), w / full);
+  }
+
   function moveCam(target, animate) {
     const sel = d3.select(svg);
     sel.interrupt("cam");
@@ -328,7 +356,21 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     ];
   }
 
+  // the points of a data layer (or the corners of its own view, if the layer defines one)
+  const layerPoints = (def) =>
+    def.view
+      ? [[def.view.lon[0], def.view.lat[0]], [def.view.lon[1], def.view.lat[1]], [def.view.lon[0], def.view.lat[1]], [def.view.lon[1], def.view.lat[0]]].map(([lo, la]) => proj(la, lo))
+      : def.rows
+          .map((r) => [+r[def.lon], +r[def.lat]])
+          .filter(([lo, la]) => Number.isFinite(lo) && Number.isFinite(la))
+          .map(([lo, la]) => proj(la, lo));
+
   function targetFor(st) {
+    const ldef = st.layer && D.layers?.[st.layer];
+    if (ldef?.rows) {
+      const pts = layerPoints(ldef);
+      if (pts.length) return fitTarget(pts, { padFrac: ldef.pad ?? 0.1, minSpan: 40, maxK: 6, frame: true });
+    }
     const s = st.sel;
     if (s) {
       return s.t === "theatre"
@@ -589,7 +631,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     for (let i = pxItems.length - 1; i >= 0; i--)
       if (pxItems[i].reach) pxItems.splice(i, 1);
     const sel = st.sel;
-    if (!sel || sel.t !== "shock") return;
+    if (st.layer || !sel || sel.t !== "shock") return;
     const s = D.S[sel.id];
     const [x, y] = XY.s[s.id];
     let R = 0;
@@ -634,7 +676,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   // links between theatres, when a region is open
   function drawLinks(st) {
     linkLayer.replaceChildren();
-    if (!st.region || st.sel || st.theme) return;
+    if (!st.region || st.sel || st.theme || st.layer) return;
     D.groups[st.region].links.forEach((lk, i) => {
       const pts = lk.theatres.map((id) => XY.t[id]);
       for (let n = 0; n < pts.length - 1; n++) {
@@ -711,16 +753,16 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     );
     D.chokepoints.forEach((c) => {
       const g = els.ck[c.id];
-      g.style.display = L.ch ? "" : "none";
+      g.style.display = L.ch && !st.layer ? "" : "none";
       g.classList.toggle("is-sel", isSel("choke", c.id));
       g.classList.toggle("is-dim", itemDim(c));
     });
     D.shockwaves.forEach((s) => {
       const g = els.sk[s.id];
-      g.style.display = L.sh ? "" : "none";
+      g.style.display = L.sh && !st.layer ? "" : "none";
       g.classList.toggle("is-sel", isSel("shock", s.id));
       g.classList.toggle("is-dim", itemDim(s));
-      washes[s.id].style.display = L.sh ? "" : "none";
+      washes[s.id].style.display = L.sh && !st.layer ? "" : "none";
       washes[s.id].classList.toggle("is-dim", itemDim(s));
       const pulse = pulsing.has(s.id);
       washes[s.id].classList.toggle("is-pulse", pulse);
@@ -729,11 +771,58 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
         `url(#${uid}-wash${pulse ? "-hi" : ""})`,
       );
     });
+    // while a data layer is shown, the chokepoint and shockwave pills read as off
     el.querySelectorAll("[data-layer]").forEach((b) =>
-      b.setAttribute("aria-pressed", L[b.dataset.layer]),
+      b.setAttribute("aria-pressed", L[b.dataset.layer] && (!st.layer || b.dataset.layer === "th")),
     );
     drawSelection(st);
     drawLinks(st);
+    drawData(st);
+  }
+
+  // ── a data layer: one symbol per row, at constant screen size like the markers ──
+  function bindPoint(g, mark, name, sub) {
+    const show = (e) => {
+      tooltip.html(`<strong>${esc(name)}</strong><br>${esc(sub)}`).style("opacity", 1);
+      hover.enter(e, { mark });
+    };
+    g.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse" && !drag) show(e);
+    });
+    g.addEventListener("pointerleave", hover.leave);
+    g.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!moved && e.pointerType !== "mouse") show(e); // a touch screen has no hover: a tap shows the tooltip
+    });
+    g.addEventListener("focus", show);
+    g.addEventListener("blur", hover.leave);
+  }
+  let drawnLayer = null;
+  function drawData(st) {
+    const def = st.layer && D.layers?.[st.layer];
+    const key = def?.rows ? st.layer : null;
+    if (key === drawnLayer) return;
+    drawnLayer = key;
+    dataLayer.replaceChildren();
+    for (let i = pxItems.length - 1; i >= 0; i--) if (pxItems[i].data) pxItems.splice(i, 1);
+    if (!key) return;
+    def.rows.forEach((r) => {
+      const lon = r[def.lon] === "" ? NaN : +r[def.lon];
+      const lat = r[def.lat] === "" ? NaN : +r[def.lat];
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) return; // no coordinates: a gap, not 0,0
+      const status = r[def.status];
+      const g = make(
+        "g",
+        { class: "db-pt", tabindex: 0, role: "img", "aria-label": `${r[def.label]}, ${r[def.country] ? `${r[def.country]}, ` : ""}${status}` },
+        dataLayer,
+      );
+      make("circle", { class: "db-hit", r: 11 }, g);
+      const sym = make("circle", { ...symbolAttrs(status), cx: 0, cy: 0 }, g);
+      bindPoint(g, sym, r[def.label], [r[def.country], status].filter(Boolean).join(" · "));
+      place(g, proj(lat, lon));
+      pxItems[pxItems.length - 1].data = true;
+    });
+    placeAll();
   }
 
   // ── pan and zoom ────────────────────────────────────────────────────────
@@ -828,7 +917,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     if (!measured) measure();
     refresh(st);
     applyCam();
-    const key = [st.sel?.t, st.sel?.id, st.theme, st.region, st.link].join("|");
+    const key = [st.sel?.t, st.sel?.id, st.theme, st.region, st.link, st.layer && (D.layers?.[st.layer]?.rows ? st.layer : `${st.layer}…`)].join("|");
     if (key !== lastKey) {
       const first = lastKey === null;
       lastKey = key;

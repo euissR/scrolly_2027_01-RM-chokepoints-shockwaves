@@ -1,0 +1,14 @@
+{
+  "atl_ports": {
+    "type": "points",
+    "title": "Chinese-linked ports",
+    "file": "gs_12_chinese_ports.csv",
+    "lon": "lon",
+    "lat": "lat",
+    "label": "port",
+    "country": "country",
+    "status": "status",
+    "statuses": ["Active", "Completed", "In progress", "Cancelled", "Inactive", "Unclear"],
+    "source": "CSIS"
+  }
+}

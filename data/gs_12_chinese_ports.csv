@@ -1,0 +1,26 @@
+port,country,status,lon,lat,ISO3_CODE,NAME_ENGL
+Kingston Freeport Terminal,Jamaica,Active,-76.792813,17.971215,JAM,Jamaica
+Colón Container Port,Panama,Cancelled,-79.897408,9.3553,PAN,Panama
+Port of Cristóbal,Panama,Active,-79.907187,9.257876,PAN,Panama
+Puerto Cortés terminal,Honduras,Completed,-87.942668,15.851465,HND,Honduras
+Port of Santiago de Cuba,Cuba,Completed,-75.829493,20.021426,CUB,Cuba
+Cuba Floating Dock,Cuba,Completed,-82.358963,23.135305,CUB,Cuba
+Puerto Cabello,Venezuela,Completed,-68.043668,10.467793,VEN,Venezuela
+Cienfuegos LNG Terminal,Cuba,Inactive,-80.453078,22.145986,CUB,Cuba
+Pequiven Maritime Terminal,Venezuela,Completed,-68.202717,10.486173,VEN,Venezuela
+La Brea Dry Docking Facility,Trinidad and Tobago,Unclear,-61.615892,10.237108,TTO,Trinidad and Tobago
+St. John’s Harbor,Antigua and Barbuda,Completed,-61.844851,17.118457,ATG,Antigua and Barbuda
+Veracruz,Mexico,Active,-96.666667,19.333333,MEX,Mexico
+Tuxpan container terminal,Mexico,Completed,-97.393662,20.929834,MEX,Mexico
+Freeport Container Port,Bahamas,Active,-78.695362,26.535681,BHS,Bahamas
+North Abaco Island Port,Bahamas,Completed,-77.061038,26.538273,BHS,Bahamas
+Paranaguá Port Terminal,Brazil,Active,-48.52267,-25.514882,BRA,Brazil
+Port of Açu VLCC Terminal,Brazil,In progress,-41.096168,-21.764951,BRA,Brazil
+Porto São Luís,Brazil,Cancelled,-44.296394,-2.529526,BRA,Brazil
+Babitonga Grain Terminal,Brazil,Unclear,-48.630809,-26.249509,BRA,Brazil
+Rio Grande Container Terminal,Brazil,Cancelled,-52.09913,-32.033425,BRA,Brazil
+Santos STS11 Agriculture Terminal,Brazil,In progress,-46.316632,-23.960945,BRA,Brazil
+Porto Sul logistics complex,Brazil,In progress,-39.045384,-14.792599,BRA,Brazil
+Buenos Aires Container Terminal 5,Argentina,Inactive,-58.38879,-34.609558,ARG,Argentina
+Rio Grande Multipurpose Port,Argentina,Cancelled,-67.701856,-53.785828,ARG,Argentina
+Montevideo dredging,Uruguay,In progress,-56.19131,-34.905892,URY,Uruguay

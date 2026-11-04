@@ -1,0 +1,24 @@
+{
+  "panama_tonnage": {
+    "type": "bars",
+    "title": "Top countries by Panama Canal cargo, FY2025",
+    "subtitle": "Origin plus destination tonnage, million long tons",
+    "source": "Panama Canal Authority",
+    "file": "gs_15_panama_tonnage.csv",
+    "label": "country",
+    "value": "tonnage_long_tons",
+    "scale": 0.000001,
+    "decimals": 1,
+    "rank": "rank",
+    "top": 10,
+    "also": { "eu": "EU" },
+    "colors": [
+      { "where": { "eu": "EU" }, "color": "EU" },
+      { "where": { "country": "United States" }, "color": "USA" },
+      { "where": { "country": "China" }, "color": "CHN" }
+    ],
+    "key": [{ "label": "EU member states", "color": "EU" }],
+    "valueLabel": "Cargo tonnage",
+    "unit": "million long tons"
+  }
+}
