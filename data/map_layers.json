@@ -8,7 +8,52 @@
     "label": "port",
     "country": "country",
     "status": "status",
-    "statuses": ["Active", "Completed", "In progress", "Cancelled", "Inactive", "Unclear"],
+    "statuses": [
+      "Active",
+      "Completed",
+      "In progress",
+      "Cancelled",
+      "Inactive",
+      "Unclear"
+    ],
     "source": "CSIS"
+  },
+  "atl_security": {
+    "type": "bubbles",
+    "title": "Security and defence ties with the EU",
+    "file": "gs_06_security_agreements.csv",
+    "lon": "lon",
+    "lat": "lat",
+    "label": "country",
+    "tip": "agreement_types",
+    "tipSplit": ";",
+    "size": {
+      "col": "n_agreement_types",
+      "r": {
+        "1": 5,
+        "2": 7,
+        "3": 9
+      },
+      "labels": {
+        "1": "1 type",
+        "2": "2 types",
+        "3": "3 types"
+      }
+    },
+    "note": "Only Atlantic and Caribbean littoral countries are shown.",
+    "pad": 0.12
+  },
+  "atl_trade": {
+    "type": "bubbles",
+    "title": "Trade agreements with the EU",
+    "file": "gs_05_trade_agreements.csv",
+    "lon": "lon",
+    "lat": "lat",
+    "label": "country",
+    "tip": "agreement",
+    "r": 4.5,
+    "keyLabel": "Country with an agreement",
+    "note": "Only Atlantic and Caribbean littoral countries are shown.",
+    "pad": 0.12
   }
 }

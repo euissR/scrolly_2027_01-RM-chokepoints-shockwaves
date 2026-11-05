@@ -160,7 +160,7 @@
     },
     {
      "h": "What the EU can do",
-     "p": "Id et id pariatur sed pretium consectetur consectetur pariatur exercitation esse eu consectetur laboris aliquip anim vitae morbi laborum anim officia laboris at leo in cillum esse incididunt posuere sint interdum ultricies."
+     "p": ["Id et id pariatur sed pretium consectetur consectetur pariatur exercitation esse eu consectetur laboris aliquip anim vitae morbi laborum anim officia laboris at leo in cillum esse incididunt posuere sint interdum ultricies.", "{{data:atl_security|View data: security and defence ties}}", "{{data:atl_trade|View data: trade agreements}}"]
     }
    ],
    "links": [

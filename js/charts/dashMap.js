@@ -24,7 +24,7 @@ import { theme } from "../theme.js";
 import { geoRobinson } from "../robinson.js";
 import { makeHover } from "./hover.js";
 import { esc } from "../content.js";
-import { symbolAttrs } from "../layers.js";
+import { symbolAttrs, bubbleAttrs, bubbleR, tipLines } from "../layers.js";
 
 const NS = "http://www.w3.org/2000/svg";
 const RING = 16; // radius of the dashed ring; the soft wash behind a shockwave is 1.5 x this and breathes out to 2.5 x (CSS)
@@ -783,7 +783,8 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   // ── a data layer: one symbol per row, at constant screen size like the markers ──
   function bindPoint(g, mark, name, sub) {
     const show = (e) => {
-      tooltip.html(`<strong>${esc(name)}</strong><br>${esc(sub)}`).style("opacity", 1);
+      const lines = (Array.isArray(sub) ? sub : [sub]).map(esc).join("<br>");
+      tooltip.html(`<strong>${esc(name)}</strong>${lines ? `<br>${lines}` : ""}`).style("opacity", 1);
       hover.enter(e, { mark });
     };
     g.addEventListener("pointerenter", (e) => {
@@ -806,19 +807,29 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     dataLayer.replaceChildren();
     for (let i = pxItems.length - 1; i >= 0; i--) if (pxItems[i].data) pxItems.splice(i, 1);
     if (!key) return;
-    def.rows.forEach((r) => {
+    const bub = def.type === "bubbles";
+    const rows = bub ? [...def.rows].sort((a, b) => bubbleR(def, b) - bubbleR(def, a)) : def.rows; // small bubbles on top
+    rows.forEach((r) => {
       const lon = r[def.lon] === "" ? NaN : +r[def.lon];
       const lat = r[def.lat] === "" ? NaN : +r[def.lat];
       if (!Number.isFinite(lon) || !Number.isFinite(lat)) return; // no coordinates: a gap, not 0,0
       const status = r[def.status];
+      const lines = bub ? tipLines(def, r) : [];
       const g = make(
         "g",
-        { class: "db-pt", tabindex: 0, role: "img", "aria-label": `${r[def.label]}, ${r[def.country] ? `${r[def.country]}, ` : ""}${status}` },
+        {
+          class: "db-pt",
+          tabindex: 0,
+          role: "img",
+          "aria-label": bub
+            ? [r[def.label], ...lines].join(", ")
+            : `${r[def.label]}, ${r[def.country] ? `${r[def.country]}, ` : ""}${status}`,
+        },
         dataLayer,
       );
-      make("circle", { class: "db-hit", r: 11 }, g);
-      const sym = make("circle", { ...symbolAttrs(status), cx: 0, cy: 0 }, g);
-      bindPoint(g, sym, r[def.label], [r[def.country], status].filter(Boolean).join(" · "));
+      make("circle", { class: "db-hit", r: bub ? Math.max(7, bubbleR(def, r) + 3) : 11 }, g);
+      const sym = make("circle", { ...(bub ? bubbleAttrs(def, r) : symbolAttrs(status)), cx: 0, cy: 0 }, g);
+      bindPoint(g, sym, r[def.label], bub ? lines : [r[def.country], status].filter(Boolean).join(" · "));
       place(g, proj(lat, lon));
       pxItems[pxItems.length - 1].data = true;
     });
