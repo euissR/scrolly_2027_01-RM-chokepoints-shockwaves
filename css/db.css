@@ -61,66 +61,55 @@
   color: var(--db-muted);
 }
 
-/* ── tabs, tiles, filters ───────────────────────────────────────────────── */
+/* ── chapter tabs and the strip under them ──────────────────────────────── */
 
 .db-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  position: relative;
+  z-index: 3; /* above the sticky map, so the tour card can overlap it */
   padding: 0 0 12px;
+  margin-bottom: 12px;
   border-bottom: 1px solid var(--db-light);
 }
 
 .db-tabs {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-.db-root .db-tile {
-  min-height: 44px;
-  padding: 0 16px;
-  font: 700 1rem/1 var(--db-font) !important;
+.db-root .db-tab {
+  min-height: 32px;
+  padding: 0 8px;
+  font: 700 0.9375rem/1 var(--db-font) !important;
   color: var(--db-ink);
   background: #fff;
   border: 1px solid var(--db-light);
   border-radius: 2px;
   cursor: pointer;
-  white-space: nowrap;
   text-transform: none;
   box-shadow: none;
 }
 
-.db-root .db-tile:hover {
+.db-root .db-tab:hover {
   border-color: var(--db-neutral);
 }
 
-.db-root .db-tile[aria-pressed="true"],
-.db-root .db-tile[aria-selected="true"] {
+.db-root .db-tab[aria-selected="true"] {
   background: var(--db-neutral);
   border-color: var(--db-neutral);
   color: #fff;
 }
 
-.db-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 40px;
-  padding: 16px 0 20px;
+/* the chapter number: regular weight next to the bold name */
+.db-num {
+  font-weight: 400;
 }
 
-.db-tiles {
+.db-strip {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.db-flabel {
-  min-width: 3rem;
-  font: 0.875rem var(--db-font);
-  color: var(--db-muted);
+  gap: 6px;
+  margin: -2px 0 14px;
 }
 
 /* ── layout: map left (sticky), text right, endnotes under both ─────────── */
@@ -313,55 +302,6 @@
   fill: transparent;
 }
 
-.db-markers.is-hidelabels .db-tl:not(.is-sel) {
-  display: none;
-}
-
-/* theatre labels: navy text; navy fill when linked; thick black outline when selected */
-.db-tl text {
-  font: 700 14px var(--db-font);
-  fill: var(--db-navy);
-  paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.9);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-  pointer-events: none;
-}
-
-.db-tl rect {
-  fill: transparent;
-  pointer-events: all;
-}
-
-.db-tl:hover text {
-  fill: #000;
-}
-
-.db-tl.is-linked rect {
-  fill: var(--db-navy);
-}
-
-.db-tl.is-linked text {
-  fill: #fff;
-  stroke: none;
-}
-
-.db-tl.is-sel rect {
-  fill: #fff;
-  stroke: #000;
-  stroke-width: 3;
-}
-
-.db-tl.is-sel text {
-  fill: var(--db-navy);
-  stroke: none;
-}
-
-.db-tl:focus-visible rect {
-  stroke: var(--db-navy);
-  stroke-width: 2;
-}
-
 /* chokepoints: a gate that pinches the shipping lane */
 .db-wedge {
   fill: var(--db-choke);
@@ -494,19 +434,19 @@
 }
 
 .db-svg.is-showlabels .db-lb,
+.db-mk.is-lit .db-lb,
 .db-mk.is-sel .db-lb {
   display: inline;
 }
 
 /* dimmed places carry no label: faint text is too hard to read (the marker keeps its tooltip) */
-.db-root .db-mk.is-dim .db-lb,
-.db-root .db-tl.is-dim text {
+.db-root .db-mk.is-dim .db-lb {
   visibility: hidden;
 }
 
-/* a dimmed theatre label keeps no navy box either (theme / region links would otherwise leave empty blue boxes) */
-.db-root .db-tl.is-dim rect {
-  fill: transparent;
+/* one place on the map: the pills have nothing to filter */
+.db-map.is-single .db-layers {
+  display: none;
 }
 
 /* places a shockwave reaches */
@@ -545,30 +485,6 @@
   to {
     opacity: 1;
     transform: none;
-  }
-}
-
-/* connections between theatres, when a region is open */
-.db-lk {
-  fill: none;
-  stroke: var(--db-navy);
-  stroke-width: 2;
-  stroke-dasharray: 6 5;
-  vector-effect: non-scaling-stroke;
-  pointer-events: none;
-  opacity: 0.4;
-  stroke-linecap: round;
-}
-
-.db-lk.is-on {
-  opacity: 1;
-  stroke-width: 3.5;
-  animation: db-flow 0.9s linear infinite;
-}
-
-@keyframes db-flow {
-  to {
-    stroke-dashoffset: -22;
   }
 }
 
@@ -693,8 +609,7 @@
   color: var(--db-muted);
 }
 
-.db-hint,
-.db-hubnote {
+.db-hint {
   color: var(--db-muted);
   font-size: 0.9375rem;
 }
@@ -750,195 +665,148 @@
   color: var(--db-muted);
 }
 
-/* lists of places */
-.db-grp {
-  margin: 1.25rem 0 0.375rem;
-  padding: 0;
-  font: 700 0.9375rem var(--db-font);
-  color: var(--db-muted);
-  background: none;
-  border: 0;
-  text-align: left;
-  width: 100%;
-}
-
-.db-root button.db-grp--link:hover {
-  color: var(--db-ink);
-  text-decoration: underline;
-}
-
-.db-rows {
-  display: grid;
-  gap: 2px;
-}
-
-.db-root .db-row {
-  display: flex;
+/* chapter chips (the strip under the tabs) */
+.db-root .db-chip {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  width: 100%;
-  min-height: 44px;
-  padding: 8px 10px;
-  font: 700 1rem var(--db-font) !important;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 10px;
+  font: 700 0.875rem var(--db-font) !important;
   color: var(--db-ink);
-  text-align: left;
-  background: none;
-  border: 0;
+  background: #fff;
+  border: 1px solid var(--db-light);
   border-radius: 2px;
+  cursor: pointer;
 }
 
-.db-root .db-row:hover {
-  background: var(--db-wash);
+.db-root .db-chip:hover {
+  border-color: var(--db-neutral);
 }
 
-.db-sub {
+.db-chip svg {
+  flex: none;
+}
+
+/* the open chapter: thick black outline */
+.db-root .db-chip[aria-pressed="true"] {
+  border-color: #000;
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+/* previous and next chapter, at the end of the text */
+.db-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.db-root .db-navbtn {
+  max-width: 48%;
+  padding: 8px 12px;
+  text-align: left;
+  font-family: var(--db-font) !important;
+  color: var(--db-ink);
+  background: #fff;
+  border: 1px solid var(--db-light);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.db-root .db-navbtn:hover {
+  border-color: var(--db-neutral);
+}
+
+.db-navbtn--next {
+  margin-left: auto;
+  text-align: right !important;
+}
+
+.db-navlab {
+  display: block;
   font: 0.875rem var(--db-font);
   color: var(--db-muted);
 }
 
-.db-chips {
+.db-navbtn b {
+  font: 700 1rem/1.3 var(--db-font);
+}
+
+/* the tour: a ring around a real element, and a card that explains it */
+.db-root .db-tourbtn {
+  min-height: 40px;
+  padding: 0 16px;
+  font: 700 0.9375rem var(--db-font) !important;
+  color: #fff;
+  background: var(--db-neutral);
+  border: 1px solid var(--db-neutral);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.db-root .db-tourbtn--ghost {
+  color: var(--db-ink);
+  background: #fff;
+  border-color: var(--db-light);
+}
+
+.db-ring {
+  position: absolute;
+  z-index: 6;
+  border: 3px solid #000;
+  border-radius: 6px;
+  pointer-events: none;
+  animation: db-ring-in 0.7s both;
+}
+
+.db-ring--round {
+  border-radius: 50%;
+}
+
+@keyframes db-ring-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.db-tourcard {
+  position: absolute;
+  z-index: 7;
+  width: min(320px, 100%);
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--db-ink);
+  font: 0.9375rem/1.45 var(--db-font);
+}
+
+.db-tourcard--below {
+  left: 0;
+  top: calc(100% + 10px);
+}
+
+.db-tourcard--side {
+  left: calc(100% + 1.25rem);
+  top: 0;
+}
+
+.db-tourcard p {
+  margin: 0 0 0.75rem;
+}
+
+.db-tour-n {
+  margin-bottom: 4px;
+  color: var(--db-muted);
+}
+
+.db-tour-btns {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 0 0 1rem;
 }
 
-.db-root .db-chip {
-  min-height: 32px;
-  padding: 0 10px;
-  font: 700 0.875rem var(--db-font) !important;
-  color: var(--db-navy);
-  background: #fff;
-  border: 1px solid var(--db-navy);
-  border-radius: 2px;
-}
-
-.db-root .db-chip:hover {
-  background: var(--db-wash);
-}
-
-.db-root .db-chip--ck {
-  border-color: var(--db-choke);
-  color: var(--db-ink);
-}
-
-.db-root .db-chip--sk {
-  border-color: var(--db-shock);
-  color: var(--db-ink);
-}
-
-.db-kin {
-  display: grid;
-  gap: 8px;
-  margin: 0 0 1.25rem;
-}
-
-.db-root .db-kinrow {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
-  padding: 10px 12px;
-  text-align: left;
-  font-family: var(--db-font) !important;
-  color: var(--db-ink);
-  background: #fff;
-  border: 1px solid var(--db-light);
-  border-radius: 2px;
-}
-
-.db-root .db-kinrow:hover {
-  border-color: var(--db-neutral);
-}
-
-.db-kinrow svg {
-  flex: none;
-  margin-top: 2px;
-}
-
-.db-kinrow b {
-  display: block;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-.db-kinrow span span {
-  display: block;
-  font-size: 0.9375rem;
-  line-height: 1.35;
-  color: var(--db-muted);
-}
-
-.db-root .db-linkrow {
-  display: block;
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 10px 12px;
-  text-align: left;
-  font-family: var(--db-font) !important;
-  color: var(--db-ink);
-  background: #fff;
-  border: 1px solid var(--db-light);
-  border-radius: 2px;
-}
-
-.db-root .db-linkrow:hover {
-  border-color: var(--db-navy);
-}
-
-.db-linkrow b {
-  display: block;
-  font-size: 1rem;
-}
-
-.db-linkrow span {
-  font-size: 0.9375rem;
-  color: var(--db-muted);
-}
-
-/* connections between theatres */
-.db-lkcard {
-  margin-bottom: 10px;
-  background: #fff;
-  border: 1px solid var(--db-light);
-  border-radius: 2px;
-}
-
-.db-lkcard.is-on {
-  border: 2px solid var(--db-navy);
-}
-
-.db-root .db-lkhead {
-  display: block;
-  width: 100%;
-  padding: 12px 14px 6px;
-  text-align: left;
-  font-family: var(--db-font) !important;
-  color: var(--db-ink);
-  background: none;
-  border: 0;
-}
-
-.db-lkhead b {
-  display: block;
-  margin-bottom: 3px;
-  font: 700 1.0625rem var(--db-font-title);
-  color: var(--db-navy);
-}
-
-.db-lkhead span {
-  display: block;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--db-muted);
-}
-
-.db-lkchips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 4px 14px 12px;
+.db-tour-btns .db-tourbtn:last-child {
+  margin-left: auto;
 }
 
 .db-prompts {
@@ -1016,130 +884,6 @@
 
 /* ── patterns tab ───────────────────────────────────────────────────────── */
 
-.db-pat {
-  padding-top: 1.5rem;
-}
-
-.db-callouts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
-  margin: 1.25rem 0 1.75rem;
-}
-
-.db-callout {
-  padding: 14px 16px;
-  border: 1px solid var(--db-light);
-  border-radius: 2px;
-}
-
-.db-callout p {
-  margin: 0 0 6px;
-  font-size: 0.9375rem;
-}
-
-.db-root .db-callout ul {
-  margin: 0 !important;
-  padding: 0 0 0 18px !important;
-  list-style: disc !important;
-}
-
-.db-root .db-callout li {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: disc !important;
-  background: none !important;
-}
-
-.db-tblwrap {
-  overflow-x: auto; /* a scroll box for the wide table; nothing sticky sits inside it */
-  border: 1px solid var(--db-light);
-}
-
-/* the table: Drupal styles table, th, td and zebra rows, so every part is set here and wins */
-.db-root .db-tbl {
-  display: table !important;
-  width: 100% !important;
-  min-width: 860px;
-  margin: 0 !important;
-  border: 0 !important;
-  border-collapse: collapse !important;
-  border-spacing: 0 !important;
-  table-layout: auto !important;
-  background: #fff !important;
-  box-shadow: none !important;
-}
-
-.db-root .db-tbl thead {
-  display: table-header-group !important;
-  background: none !important;
-  border: 0 !important;
-}
-
-.db-root .db-tbl tbody {
-  display: table-row-group !important;
-  border: 0 !important;
-}
-
-.db-root .db-tbl tr,
-.db-root .db-tbl tbody tr:nth-child(odd),
-.db-root .db-tbl tbody tr:nth-child(even) {
-  display: table-row !important;
-  background: none !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-.db-root .db-tbl th,
-.db-root .db-tbl td {
-  display: table-cell !important;
-  position: static !important;
-  width: auto;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 11px 14px !important;
-  text-align: left !important;
-  vertical-align: top !important;
-  border: 0 !important;
-  border-bottom: 1px solid var(--db-light) !important;
-  background: #fff !important;
-  box-shadow: none !important;
-  font: 400 1rem/1.35 var(--db-font) !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  color: var(--db-ink) !important;
-}
-
-.db-root .db-tbl th {
-  font-weight: 700 !important;
-  color: var(--db-muted) !important;
-  background: var(--db-wash) !important;
-  white-space: nowrap;
-}
-
-.db-root .db-tbl .db-tr {
-  cursor: pointer;
-}
-
-.db-root .db-tbl .db-tr:hover td {
-  background: var(--db-wash) !important;
-}
-
-.db-root .db-tbl tbody tr:last-child td {
-  border-bottom: 0 !important;
-}
-
-.db-nm {
-  font-weight: 700;
-}
-
-.db-synth {
-  margin-top: 1.75rem;
-  padding: 16px 18px;
-  border: 1.5px dashed var(--db-light);
-  color: var(--db-muted);
-}
-
 /* ── phone ──────────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
@@ -1182,30 +926,15 @@
     font-size: 0.8125rem !important;
   }
 
-  /* region and theme tiles: two per row, no sideways scroll */
-  .db-filters {
-    display: block;
-    padding: 12px 0 16px;
+  .db-root .db-tab {
+    min-height: 36px;
+    padding: 0 8px;
   }
 
-  .db-tiles {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .db-tiles + .db-tiles {
-    margin-top: 12px;
-  }
-
-  .db-tiles .db-flabel {
-    grid-column: 1 / -1;
-  }
-
-  .db-root .db-tile {
-    padding: 6px 10px;
-    line-height: 1.15 !important;
-    white-space: normal;
+  .db-tourcard--side {
+    left: 0;
+    top: calc(100% + 10px);
+    width: 100%;
   }
 
   .db-cards {
@@ -1231,7 +960,7 @@
 @media (prefers-reduced-motion: reduce) {
   .db-wash,
   .db-rn,
-  .db-lk.is-on {
+  .db-ring {
     animation: none;
   }
 

@@ -2,8 +2,9 @@
 //
 //   const { content, geo } = await loadData();
 //
-// content: the authored text (data/content.json) plus lookups by id: T (theatres), C (chokepoints),
-//          S (shockwaves), H (themes). A shockwave with `at` sits on that chokepoint and takes its position.
+// content: the authored text (data/content.json) plus lookups by id: R (regions), C (chokepoints), S (shockwaves).
+//          Every chokepoint and shockwave belongs to one region (`region`) and is a sub-chapter of it; a region
+//          lists its sub-chapters in reading order (`items`). `seq` is the whole page in reading order.
 //          layers (data/map_layers.json) and charts (data/charts.json), each by id: optional files.
 // geo:     { countries, borders, coast } from "0 d3 world.R"
 
@@ -31,18 +32,20 @@ const withIds = (o) => Object.fromEntries(Object.entries(o ?? {}).map(([id, v]) 
 
 function index(c) {
   const by = (list) => Object.fromEntries(list.map((x) => [x.id, x]));
-  const T = by(c.theatres);
+  const R = by(c.regions);
   const C = by(c.chokepoints);
   const S = by(c.shockwaves);
-  const H = by(c.themes);
-  c.shockwaves.forEach((s) => {
-    if (s.at) {
-      s.lat = C[s.at].lat;
-      s.lon = C[s.at].lon;
-      s.coincident = true;
-    }
-  });
-  return { ...c, T, C, S, H };
+  const pt = (id) => C[id] ?? S[id];
+  // the whole page in reading order: intro, then each region followed by its sub-chapters, then the conclusions
+  const seq = [
+    { k: "intro", id: "intro", label: "Sea lanes" },
+    ...c.regions.flatMap((r) => [
+      { k: "region", id: r.id, label: `${r.num} ${r.tab}` },
+      ...r.items.map((id) => ({ k: C[id] ? "choke" : "shock", id, label: pt(id).short || pt(id).name })),
+    ]),
+    { k: "concl", id: "concl", label: "Conclusions" },
+  ];
+  return { ...c, R, C, S, seq };
 }
 
 // text from content.json goes into the page as text, never as markup

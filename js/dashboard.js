@@ -2,11 +2,11 @@
 //
 //   makeDashboard(root, { content, geo, useHash });
 //
-// State lives here; filters, tiles and the text drive it, and the map follows:
-//   view    "map" | "pat"
-//   sel     { t: "theatre" | "choke" | "shock", id } | null
-//   theme   theme id | null          region   region id | null          link   index of a connection in a region | null
-//   layers  { th, ch, sh }           gq       guiding questions on or off (always on: no button for now)
+// State lives here; the tabs, the strip and the text drive it, and the map follows:
+//   chap    "intro" | a region id | "concl"       the chapter whose tab is lit
+//   sel     { t: "choke" | "shock", id } | null   a sub-chapter of the open region (the map then shows only that place)
+//   layers  { ch, sh }                            the chokepoint and shockwave pills
+//   gq      guiding questions on or off (always on: no button for now)
 //   layer   id of the data layer shown on the map (a "View data" button in the text), or null; never in the address
 //
 // Optional attributes on .db-root:
@@ -14,12 +14,11 @@
 //   data-mobile-sticky     phone layout: the map stays in the top third of the screen while the text scrolls under it
 
 import { makeDashMap } from "./charts/dashMap.js";
-import { panelHTML, notesHTML } from "./panel.js";
-import { patternsHTML } from "./patterns.js";
+import { panelHTML, notesHTML, tabsHTML, stripHTML } from "./panel.js";
 import { readRoute, routeOf, writeRoute } from "./hash.js";
-import { esc } from "./content.js";
 import { loadLayerRows, keyHTML } from "./layers.js";
 import { mountCharts } from "./charts.js";
+import { esc } from "./content.js";
 
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let instances = 0;
@@ -27,52 +26,31 @@ let instances = 0;
 export function makeDashboard(root, { content: D, geo, useHash = true }) {
   const uid = `db${++instances}`;
   const state = {
-    view: "map",
+    chap: "intro",
     sel: null,
-    theme: null,
-    region: null,
-    link: null,
-    layers: { th: true, ch: true, sh: true },
+    layers: { ch: true, sh: true },
     layer: null,
     gq: true,
   };
 
   // ── markup ──────────────────────────────────────────────────────────────
-  const regionTiles = Object.keys(D.groups)
-    .map((g) => `<button type="button" class="db-tile" data-region="${g}" aria-pressed="false">${esc(D.groups[g].name)}</button>`)
-    .join("");
-  const themeTiles = D.themes
-    .map((th) => `<button type="button" class="db-tile" data-theme="${th.id}" aria-pressed="false">${esc(th.name)}</button>`)
-    .join("");
-
   root.innerHTML = `
-    <div class="db-bar">
-      <div class="db-tabs" role="tablist" aria-label="Views">
-        <button type="button" class="db-tile db-tab" role="tab" id="${uid}-tab-map" aria-controls="${uid}-map" aria-selected="true" data-view="map">Map</button>
-        <button type="button" class="db-tile db-tab" role="tab" id="${uid}-tab-pat" aria-controls="${uid}-pat" aria-selected="false" data-view="pat">Patterns</button>
-      </div>
-    </div>
-    <div class="db-filters">
-      <div class="db-tiles" role="group" aria-label="Regions"><span class="db-flabel">Region</span>${regionTiles}</div>
-      <div class="db-tiles" role="group" aria-label="Themes"><span class="db-flabel">Theme</span>${themeTiles}</div>
-    </div>
-    <div class="db-view" id="${uid}-map" role="tabpanel" aria-labelledby="${uid}-tab-map">
+    <div class="db-bar"><div class="db-tabs" role="tablist" aria-label="Chapters">${tabsHTML(D)}</div></div>
+    <div class="db-strip" role="group" aria-label="Chapters in this region" hidden></div>
+    <div class="db-view" id="${uid}-map">
       <div class="db-main">
         <div class="db-mapcol"><div class="db-map"></div><div class="db-datakey" hidden></div></div>
         <div class="db-textcol"><div class="db-panel" aria-live="polite"></div></div>
       </div>
       <div class="db-notes" hidden></div>
-    </div>
-    <div class="db-view db-pat" id="${uid}-pat" role="tabpanel" aria-labelledby="${uid}-tab-pat" hidden></div>`;
+    </div>`;
 
   const q = (s) => root.querySelector(s);
   const panel = q(".db-panel");
   const notes = q(".db-notes");
-  const mapView = q(`#${uid}-map`);
-  const patView = q(`#${uid}-pat`);
+  const strip = q(".db-strip");
   const mapcol = q(".db-mapcol");
   const textcol = q(".db-textcol");
-  const filters = q(".db-filters");
   const datakey = q(".db-datakey");
   let charts = null; // the inline charts of the open chapter
   let panelKey = null; // what the panel shows; it is rewritten only when that changes
@@ -81,10 +59,10 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     rows: D,
     geo,
     on: {
-      select: (t, id) => select(t, id),
+      select: (t, id) => go(t, id),
       toggleLayer: (k) => {
-        // while a data layer is shown, the chokepoint and shockwave pills bring the markers back
-        if (state.layer && k !== "th") return setLayer(null);
+        // while a data layer is shown, the pills bring the markers back
+        if (state.layer) return setLayer(null);
         state.layers[k] = !state.layers[k];
         render();
       },
@@ -92,26 +70,18 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   });
 
   // ── state changes (what a click means) ──────────────────────────────────
-  function clear() {
+  // go("intro" | "concl" | "region" | "choke" | "shock", id)
+  function go(kind, id, { user = true } = {}) {
+    endTour();
+    state.layer = null;
     state.sel = null;
-    state.theme = null;
-    state.region = null;
-    state.link = null;
-    state.layer = null;
-  }
-  // a chokepoint or shockwave that belongs to a theme opens with that theme lit
-  function setSel(t, id) {
-    state.sel = { t, id };
-    const e = t === "choke" ? D.C[id] : t === "shock" ? D.S[id] : null;
-    if (e?.theme) {
-      state.theme = e.theme;
-      state.region = null;
+    if (kind === "choke" || kind === "shock") {
+      state.sel = { t: kind, id };
+      state.chap = (kind === "choke" ? D.C[id] : D.S[id]).region;
+    } else {
+      state.chap = kind === "region" ? id : kind;
     }
-  }
-  function select(t, id) {
-    setSel(t, id);
-    state.layer = null;
-    render({ user: true });
+    render({ user });
   }
   // show a data layer on the map (null = hide it); its rows load once, the map follows when they are in
   function setLayer(id) {
@@ -128,52 +98,19 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     render({ scroll: false });
     if (id && innerWidth <= 768) toMap(); // on a phone the map sits above the text
   }
-  function back() {
-    clear();
-    render({ user: true });
-  }
-  function pickTheme(id) {
-    clear();
-    state.theme = id;
-    render({ user: true });
-  }
-  function pickRegion(g) {
-    clear();
-    state.region = g;
-    render({ user: true });
-  }
-  function pickLink(i) {
-    state.link = state.link === i ? null : i;
-    render({ user: false });
-  }
-  function setView(v, { user = true } = {}) {
-    state.view = v;
-    const isMap = v === "map";
-    mapView.hidden = !isMap;
-    patView.hidden = isMap;
-    filters.hidden = !isMap; // region and theme tiles do nothing in the patterns table
-    root.querySelectorAll(".db-tab").forEach((b) => b.setAttribute("aria-selected", b.dataset.view === v));
-    if (isMap) {
-      render({ user, scroll: false });
-    } else {
-      patView.innerHTML = patternsHTML(D);
-      if (user && useHash) writeRoute(routeOf(state));
-    }
-  }
 
   // ── drawing ─────────────────────────────────────────────────────────────
-  const activeRegion = () => {
-    if (state.region && !state.sel && !state.theme) return state.region;
-    const s = state.sel;
-    if (!s) return null;
-    const e = s.t === "theatre" ? D.T[s.id] : s.t === "choke" ? D.C[s.id] : D.S[s.id];
-    const t = s.t === "theatre" ? e : D.T[e.theatre];
-    return t?.group ?? null;
-  };
-  function syncTiles() {
-    const rg = activeRegion();
-    root.querySelectorAll("[data-region].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.region === rg));
-    root.querySelectorAll("[data-theme].db-tile").forEach((b) => b.setAttribute("aria-pressed", b.dataset.theme === state.theme));
+  const tabId = () =>
+    state.chap === "intro"
+      ? "intro:intro"
+      : state.chap === "concl"
+        ? "concl:concl"
+        : `region:${state.chap}`;
+  function syncTabs() {
+    const on = tabId();
+    root
+      .querySelectorAll(".db-tab")
+      .forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === on));
   }
   // the "View data" buttons in the text and the key under the map follow state.layer
   function syncLayerUI() {
@@ -181,7 +118,9 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
     panel.querySelectorAll("[data-layer-id]").forEach((b) => {
       const on = b.dataset.layerId === state.layer;
       b.setAttribute("aria-pressed", on);
-      b.querySelector(".db-databtn-t").textContent = on ? `On the map: ${D.layers[b.dataset.layerId].title} · Hide` : b.dataset.label;
+      b.querySelector(".db-databtn-t").textContent = on
+        ? `On the map: ${D.layers[b.dataset.layerId].title} · Hide`
+        : b.dataset.label;
     });
     const k = def?.rows ? state.layer : "";
     if (datakey.dataset.k !== k) {
@@ -193,17 +132,20 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
   // render({ user }): user = true when a person asked for it (writes the address, scrolls to the text)
   function render({ user = false, animate = true, scroll = user } = {}) {
     // the panel (and its charts) is rebuilt only when the chapter changes, not for a layer or a pill
-    const pk = [routeOf(state), state.link, state.gq].join("|");
+    const pk = [routeOf(state), state.gq].join("|");
     if (pk !== panelKey) {
+      const html = panelHTML(state, D); // built first: if it fails, the next click tries again
       panelKey = pk;
       charts?.destroy();
-      panel.innerHTML = panelHTML(state, D);
+      panel.innerHTML = html;
       charts = mountCharts(panel, D);
       notes.innerHTML = notesHTML(state, D);
       notes.hidden = !notes.innerHTML;
+      strip.innerHTML = stripHTML(state, D);
+      strip.hidden = !strip.innerHTML;
     }
     syncLayerUI();
-    syncTiles();
+    syncTabs();
     map.update(state, { animate });
     if (user && useHash) writeRoute(routeOf(state));
     if (scroll) showText();
@@ -211,76 +153,151 @@ export function makeDashboard(root, { content: D, geo, useHash = true }) {
 
   // after a choice, make sure the top of the chapter is on screen (page scrolling, no inner scrollbar)
   function showText() {
-    const r = textcol.getBoundingClientRect();
     const stacked = innerWidth <= 768;
-    const stuck = stacked && root.hasAttribute("data-mobile-sticky");
-    if (r.top < 0 || (stacked && r.top > innerHeight * 0.7)) {
+    if (!stacked) {
+      const r = root.getBoundingClientRect(); // desktop: the tabs and the strip stay in view with the text
+      if (r.top < 0)
+        scrollTo({
+          top: scrollY + r.top - 8,
+          behavior: REDUCED ? "auto" : "smooth",
+        });
+      return;
+    }
+    const r = textcol.getBoundingClientRect();
+    const stuck = root.hasAttribute("data-mobile-sticky");
+    if (r.top < 0 || r.top > innerHeight * 0.7) {
       const offset = (stuck ? mapcol.offsetHeight : 0) + 8;
-      scrollTo({ top: scrollY + r.top - offset, behavior: REDUCED ? "auto" : "smooth" });
+      scrollTo({
+        top: scrollY + r.top - offset,
+        behavior: REDUCED ? "auto" : "smooth",
+      });
     }
   }
   function toMap() {
     const r = mapcol.getBoundingClientRect();
-    scrollTo({ top: scrollY + r.top - 8, behavior: REDUCED ? "auto" : "smooth" });
+    scrollTo({
+      top: scrollY + r.top - 8,
+      behavior: REDUCED ? "auto" : "smooth",
+    });
   }
 
+  // ── the tour: three steps, each circling a real element on the page ─────
+  // Rings and cards live inside the element they point at (the tab bar, the sticky map column),
+  // so they stay put while the page scrolls.
+  let tour = null; // step index, or null
+  let tourEls = [];
+  function endTour() {
+    if (tour === null) return;
+    tour = null;
+    tourEls.forEach((n) => n.remove());
+    tourEls = [];
+  }
+  function showTour(i, { scroll = true } = {}) {
+    const steps = D.intro.tour;
+    tourEls.forEach((n) => n.remove());
+    tourEls = [];
+    tour = i;
+    const st = steps[i];
+    const bar = q(".db-bar");
+    const mapEl = q(".db-map");
+    const host = st.target === "tabs" ? bar : mapcol;
+    const hostR = host.getBoundingClientRect();
+    const rel = (el, pad) => {
+      const r = el.getBoundingClientRect();
+      return `left:${r.left - hostR.left - pad}px;top:${r.top - hostR.top - pad}px;width:${r.width + 2 * pad}px;height:${r.height + 2 * pad}px`;
+    };
+    let target = st.target === "tabs" ? q(".db-tabs") : mapEl;
+    const round = st.target === "marker";
+    if (round) {
+      target =
+        q(`.db-mk[data-key="${st.marker}"] .db-hit`) ?? q(".db-ck .db-hit");
+    }
+    const ring = document.createElement("div");
+    ring.className = `db-ring${round ? " db-ring--round" : ""}`;
+    ring.setAttribute("style", rel(target, round ? 6 : 5));
+    const card = document.createElement("div");
+    card.className = `db-tourcard db-tourcard--${st.target === "tabs" ? "below" : "side"}`;
+    card.setAttribute("role", "dialog");
+    card.setAttribute("aria-label", "Tour");
+    card.innerHTML = `<div class="db-tour-n">${i + 1} of ${steps.length}</div><h3 class="db-h3 db-h3--sm">${esc(st.title)}</h3><p>${esc(st.text)}</p>
+      <div class="db-tour-btns">${i ? '<button type="button" class="db-tourbtn db-tourbtn--ghost" data-tour="back">Back</button>' : ""}<button type="button" class="db-tourbtn" data-tour="next">${i === steps.length - 1 ? "Done" : "Next"}</button><button type="button" class="db-tourbtn db-tourbtn--ghost" data-tour="end">Skip</button></div>`;
+    host.append(ring, card);
+    tourEls = [ring, card];
+    if (scroll) {
+      const r = (st.target === "tabs" ? bar : mapEl).getBoundingClientRect();
+      const out = r.top < 0 || r.bottom > innerHeight;
+      if (out)
+        scrollTo({
+          top: scrollY + r.top - 8,
+          behavior: REDUCED ? "auto" : "smooth",
+        });
+    }
+    card.querySelector('[data-tour="next"]').focus({ preventScroll: true });
+  }
+  function tourClick(act) {
+    if (act === "start") return showTour(0);
+    if (act === "end") return endTour();
+    if (act === "back") return showTour(tour - 1);
+    if (tour + 1 >= D.intro.tour.length) return endTour();
+    showTour(tour + 1);
+  }
+  new ResizeObserver(
+    () => tour !== null && showTour(tour, { scroll: false }),
+  ).observe(root);
+
   // ── events ──────────────────────────────────────────────────────────────
-  // one listener for the panel, the tiles, the tabs and the patterns table
+  // one listener for the panel, the tabs, the strip and the tour
   root.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-sel],[data-theme],[data-region],[data-link],[data-back],[data-tomap],[data-view],[data-layer-id],[data-layer-off]");
+    const b = e.target.closest(
+      "[data-go],[data-tomap],[data-layer-id],[data-layer-off],[data-tour]",
+    );
     if (!b || !root.contains(b)) return;
     if (b.matches(".db-map *")) return; // the map handles its own
-    if (b.dataset.view) return setView(b.dataset.view);
+    if (b.dataset.tour) return tourClick(b.dataset.tour);
     if (b.dataset.layerOff !== undefined) return setLayer(null);
-    if (b.dataset.layerId) return setLayer(state.layer === b.dataset.layerId ? null : b.dataset.layerId);
-    if (b.dataset.sel) {
-      const [t, id] = b.dataset.sel.split(":");
-      if (state.view !== "map") setView("map", { user: false });
-      return select(t, id);
-    }
+    if (b.dataset.layerId)
+      return setLayer(
+        state.layer === b.dataset.layerId ? null : b.dataset.layerId,
+      );
     if (b.dataset.tomap !== undefined) return toMap();
-    if (b.dataset.back !== undefined) return back();
-    if (b.dataset.link !== undefined) return pickLink(+b.dataset.link);
-    if (b.dataset.theme) {
-      if (b.classList.contains("db-tile") && state.theme === b.dataset.theme) {
-        state.theme = null; // a lit theme tile switches the theme off
-        return render({ user: true });
-      }
-      return pickTheme(b.dataset.theme);
+    if (b.dataset.go) {
+      const [kind, id] = b.dataset.go.split(":");
+      return go(kind, id);
     }
-    if (b.dataset.region) {
-      if (b.classList.contains("db-tile") && activeRegion() === b.dataset.region) return back();
-      return pickRegion(b.dataset.region);
-    }
-  });
-  patView.addEventListener("keydown", (e) => {
-    const row = e.target.closest("[data-sel]");
-    if (row && e.key === "Enter") row.click();
   });
   root.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && state.view === "map" && state.layer) return setLayer(null);
-    if (e.key === "Escape" && state.view === "map" && (state.sel || state.theme || state.region)) back();
+    if (e.key !== "Escape") return;
+    if (tour !== null) return endTour();
+    if (state.layer) return setLayer(null);
+    if (state.sel) go("region", state.chap); // back to the region overview
   });
 
   // ── the address ─────────────────────────────────────────────────────────
   function applyRoute(r) {
-    clear();
-    if (r.type === "patterns") return setView("pat", { user: false });
-    if (state.view !== "map") setView("map", { user: false });
-    if (r.type === "theme") state.theme = r.id;
-    else if (r.type === "region") state.region = r.id;
-    else setSel(r.type, r.id);
+    state.layer = null;
+    state.sel = null;
+    if (r.type === "intro" || r.type === "concl") state.chap = r.type;
+    else if (r.type === "region") state.chap = r.id;
+    else {
+      state.sel = { t: r.type, id: r.id };
+      state.chap = (r.type === "choke" ? D.C[r.id] : D.S[r.id]).region;
+    }
   }
   const route = useHash ? readRoute(D) : null;
   if (route) applyRoute(route);
-  if (state.view === "map") render({ animate: false });
-  if (route) setTimeout(() => root.scrollIntoView({ block: "start", behavior: "auto" }), 250); // a shared link lands on the dashboard
+  render({ animate: false });
+  if (route)
+    setTimeout(
+      () => root.scrollIntoView({ block: "start", behavior: "auto" }),
+      250,
+    ); // a shared link lands on the dashboard
   if (useHash) {
     addEventListener("hashchange", () => {
       const r = readRoute(D); // null for any hash that is not ours (endnotes, other anchors)
       if (!r) return;
+      endTour();
       applyRoute(r);
-      if (state.view === "map") render({ animate: true, scroll: true });
+      render({ animate: true, scroll: true });
     });
   }
 }

@@ -1,20 +1,23 @@
-// dashMap.js: world map of theatres, chokepoints and shockwaves.
+// dashMap.js: world map of chokepoints and shockwaves.
 //
 //   const map = makeDashMap(el, { rows, geo, spec, on });
 //   map.update(state, { animate });
 //
-// rows: the indexed content (content.js): theatres, chokepoints, shockwaves, groups, T/C/S lookups
+// rows: the indexed content (content.js): regions, chokepoints, shockwaves, R/C/S lookups
 // geo:  { countries, borders, coast } from "0 d3 world.R"
 //       three layers, drawn bottom to top: country fills (no outline), borders (disputed ones dashed), coastline
 // spec: { width }   drawing width in map units (default 1000)
 // on:   { select(type, id), toggleLayer(key) }   what the map reports back
 //
-// state it reads: { sel: {t, id}, theme, region, link, layer, layers: {th, ch, sh} }
-//   layer = id of a data layer (D.layers, data/map_layers.json) with its rows loaded: its points are drawn,
-//   the chokepoints, shockwaves and links are hidden and the camera frames the points
-// The camera follows the focus (selection, theme, region, link): it moves only when that changes,
-// so toggling a layer or the guiding questions never throws the reader's own pan and zoom away.
-// With nothing selected it frames all the places on the map; zooming out reaches the whole world.
+// state it reads: { chap, sel: {t, id}, layer, layers: {ch, sh} }
+//   chap   "intro" | "concl": every place is shown. A region id: the places of that region are lit (and labelled),
+//          the rest sit at the dim opacity; the camera frames the region.
+//   sel    one chokepoint or shockwave: the map shows only that place (a shockwave with the places it reaches).
+//   layer  id of a data layer (D.layers, data/map_layers.json) with its rows loaded: its points are drawn,
+//          the chokepoints and shockwaves are hidden and the camera frames the points
+// The camera follows the focus (chapter, selection, layer): it moves only when that changes,
+// so toggling a pill never throws the reader's own pan and zoom away.
+// With nothing in focus it frames all the places on the map; zooming out reaches the whole world.
 //
 // Same map style as the other EUISS maps: Robinson projection, white land, light-grey outlines,
 // no ocean fill. Dimmed items keep their own colour at theme.dim opacity (set in db.css).
@@ -62,14 +65,13 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   const proj = (lat, lon) => projection([lon, lat]);
 
   // positions in map units, by id
-  const XY = { t: {}, c: {}, s: {} };
-  D.theatres.forEach((t) => (XY.t[t.id] = proj(t.at[0], t.at[1])));
+  const XY = { c: {}, s: {} };
   D.chokepoints.forEach((c) => (XY.c[c.id] = proj(c.lat, c.lon)));
   D.shockwaves.forEach((s) => (XY.s[s.id] = proj(s.lat, s.lon)));
 
   // ── markup ──────────────────────────────────────────────────────────────
   el.innerHTML = `
-    <svg class="db-svg" role="group" aria-label="${esc(spec.alt ?? "World map of maritime theatres, chokepoints and shockwaves. Every place on it can also be chosen from the text next to the map.")}">
+    <svg class="db-svg" role="group" aria-label="${esc(spec.alt ?? "World map of chokepoints and shockwaves. Every place on it can also be chosen from the chapter tabs and the row under them.")}">
       <defs>
         <radialGradient id="${uid}-wash">
           <stop offset="0" stop-color="${theme.fuchsia2}" stop-opacity=".4"/>
@@ -87,7 +89,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
         <path class="db-bord"/>
         <path class="db-bord db-bord--disp"/>
         <path class="db-coast"/>
-        <g class="db-links"></g>
         <g class="db-washes"></g>
         <g class="db-selwave"></g>
       </g>
@@ -95,7 +96,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       <g class="db-markers"></g>
     </svg>
     <div class="db-ctl db-layers" role="group" aria-label="Map layers">
-      <button type="button" class="db-pill" data-layer="th" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="none" stroke="${theme.navy}" stroke-width="1.5"/><text x="8" y="12" text-anchor="middle" class="db-sw-t">T</text></svg>Theatres</button>
       <button type="button" class="db-pill" data-layer="ch" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2H14L8 7.2Z M2 14H14L8 8.8Z" fill="${theme.neutral}" stroke="#fff" stroke-width="1" stroke-linejoin="round" paint-order="stroke"/></svg>Chokepoints</button>
       <button type="button" class="db-pill" data-layer="sh" aria-pressed="true"><svg class="db-sw" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.5" fill="${theme.fuchsia2}" fill-opacity=".2"/><circle cx="8" cy="8" r="5.6" fill="none" stroke="${theme.fuchsia2}" stroke-width="1.5" stroke-dasharray="2 2"/></svg>Shockwaves</button>
     </div>
@@ -111,7 +111,6 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   const dataLayer = q(".db-data");
   const washLayer = q(".db-washes");
   const selWave = q(".db-selwave");
-  const linkLayer = q(".db-links");
   const tooltip = d3.select(el.querySelector(".db-tooltip"));
   const hover = makeHover(el, tooltip);
 
@@ -167,13 +166,8 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   let dodgeTimer;
   function dodge() {
     if (!el.offsetParent) return;
-    const nodes = [
-      ...markers.querySelectorAll(".db-tl text, .db-lb, .db-rn text"),
-    ];
-    const mateOf = (n) =>
-      n.parentNode.classList.contains("db-tl")
-        ? n.previousElementSibling
-        : null;
+    const nodes = [...markers.querySelectorAll(".db-lb, .db-rn text")];
+    const mateOf = () => null;
     nodes.forEach((n) => {
       n.removeAttribute("transform");
       mateOf(n)?.removeAttribute("transform");
@@ -278,8 +272,14 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     const r = svg.getBoundingClientRect();
     if (!r.width || !r.height) return null;
     const lay = el.querySelector(".db-layers");
-    const inset = lay ? Math.max(0, lay.getBoundingClientRect().bottom - r.top) + 8 : 0;
-    return { w: r.width, h: r.height, inset: r.height - inset > 100 ? inset : 0 };
+    const inset = lay
+      ? Math.max(0, lay.getBoundingClientRect().bottom - r.top) + 8
+      : 0;
+    return {
+      w: r.width,
+      h: r.height,
+      inset: r.height - inset > 100 ? inset : 0,
+    };
   }
   // the zoom that shows a w x h area. Without a frame: as if the frame had the world's own shape (2:1).
   // With one: its real shape, minus the strip at the top that the buttons cover.
@@ -318,48 +318,29 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       });
   }
 
-  // points that belong to a theatre, region or theme
-  const pointsForTheatre = (t) => [
-    XY.t[t.id],
-    ...D.chokepoints.filter((c) => c.theatre === t.id).map((c) => XY.c[c.id]),
-    ...D.shockwaves.filter((s) => s.theatre === t.id).map((s) => XY.s[s.id]),
-  ];
-  const pointsForRegion = (g) =>
-    D.theatres.filter((t) => t.group === g).flatMap(pointsForTheatre);
-  const pointsForTheme = (th) => [
-    ...D.chokepoints.filter((c) => c.theme === th).map((c) => XY.c[c.id]),
-    ...D.shockwaves.filter((s) => s.theme === th).map((s) => XY.s[s.id]),
-    ...D.theatres.filter((t) => t.themes[th]).map((t) => XY.t[t.id]),
-  ];
-  const selPoint = (s) =>
-    s.t === "theatre" ? XY.t[s.id] : s.t === "choke" ? XY.c[s.id] : XY.s[s.id];
+  // the map points of a region, and of one chokepoint or shockwave
+  const xyOf = (id) => XY.c[id] ?? XY.s[id];
+  const pointsForRegion = (g) => D.R[g].items.map(xyOf);
+  const selPoint = (s) => (s.t === "choke" ? XY.c[s.id] : XY.s[s.id]);
+  const nm = (e) => e.short || e.name; // the short name on the map
 
-  // a shockwave: its epicentre and every place it reaches. A chokepoint: itself, its theatre and
-  // the epicentre of each shockwave of that theatre; the places those reach are left out. A
-  // chokepoint that belongs to a theme, not a theatre, frames everything lit by that theme.
+  // a shockwave: its epicentre and every place it reaches. A chokepoint: itself.
   const shockPoints = (sw) => [
     XY.s[sw.id],
     ...sw.reach.map((r) => proj(r[0], r[1])),
   ];
-  const shocksOf = (c) =>
-    D.shockwaves.filter((sw) =>
-      c.theatre ? sw.theatre === c.theatre : sw.theme === c.theme,
-    );
-  function eventPoints(s) {
-    if (s.t === "shock") return shockPoints(D.S[s.id]);
-    const c = D.C[s.id];
-    if (!c.theatre) return pointsForTheme(c.theme);
-    return [
-      XY.c[c.id],
-      XY.t[c.theatre],
-      ...shocksOf(c).map((sw) => XY.s[sw.id]),
-    ];
-  }
+  const eventPoints = (s) =>
+    s.t === "shock" ? shockPoints(D.S[s.id]) : [XY.c[s.id]];
 
   // the points of a data layer (or the corners of its own view, if the layer defines one)
   const layerPoints = (def) =>
     def.view
-      ? [[def.view.lon[0], def.view.lat[0]], [def.view.lon[1], def.view.lat[1]], [def.view.lon[0], def.view.lat[1]], [def.view.lon[1], def.view.lat[0]]].map(([lo, la]) => proj(la, lo))
+      ? [
+          [def.view.lon[0], def.view.lat[0]],
+          [def.view.lon[1], def.view.lat[1]],
+          [def.view.lon[0], def.view.lat[1]],
+          [def.view.lon[1], def.view.lat[0]],
+        ].map(([lo, la]) => proj(la, lo))
       : def.rows
           .map((r) => [+r[def.lon], +r[def.lat]])
           .filter(([lo, la]) => Number.isFinite(lo) && Number.isFinite(la))
@@ -369,40 +350,20 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     const ldef = st.layer && D.layers?.[st.layer];
     if (ldef?.rows) {
       const pts = layerPoints(ldef);
-      if (pts.length) return fitTarget(pts, { padFrac: ldef.pad ?? 0.1, minSpan: 40, maxK: 6, frame: true });
+      if (pts.length)
+        return fitTarget(pts, {
+          padFrac: ldef.pad ?? 0.1,
+          minSpan: 40,
+          maxK: 6,
+          frame: true,
+        });
     }
     const s = st.sel;
-    if (s) {
-      return s.t === "theatre"
-        ? fitTarget(pointsForTheatre(D.T[s.id]), {
-            padFrac: 0.6,
-            minSpan: 40,
-            maxK: 9,
-          })
-        : fitTarget(eventPoints(s), { padFrac: 0.3, minSpan: 40, maxK: 6 });
-    }
-    if (st.theme)
-      return fitTarget(pointsForTheme(st.theme), {
-        padFrac: 0.35,
-        minSpan: 60,
-        maxK: 6,
-      });
-    if (st.region) {
-      if (st.link != null) {
-        const pts = D.groups[st.region].links[st.link].theatres.flatMap((id) =>
-          pointsForTheatre(D.T[id]),
-        );
-        return fitTarget(pts, { padFrac: 0.35, minSpan: 55, maxK: 9 });
-      }
-      return fitTarget(pointsForRegion(st.region), {
-        padFrac: 0.4,
-        minSpan: 55,
-        maxK: 9,
-      });
-    }
+    if (s) return fitTarget(eventPoints(s), { padFrac: 0.3, minSpan: 40, maxK: 6 });
+    if (D.R[st.chap])
+      return fitTarget(pointsForRegion(st.chap), { padFrac: 0.4, minSpan: 55, maxK: 9 });
     // overview: frame every place on the map (the world beyond them is one zoom-out away)
     const all = [
-      ...Object.values(XY.t),
       ...Object.values(XY.c),
       ...Object.values(XY.s),
     ];
@@ -410,9 +371,8 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   }
 
   // ── markers ─────────────────────────────────────────────────────────────
-  const els = { th: {}, ck: {}, sk: {} };
+  const els = { ck: {}, sk: {} };
   const washes = {};
-  const labels = []; // theatre labels, measured once visible and fonts are in
   let moved = false; // a drag just happened: the click that ends it is not a selection
 
   // click and keyboard on a marker
@@ -458,56 +418,13 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     place(g, XY.s[s.id]);
   });
 
-  // theatre labels
-  D.theatres.forEach((t) => {
-    const g = make(
-      "g",
-      {
-        class: "db-mk db-tl",
-        tabindex: 0,
-        role: "button",
-        "aria-label": `${t.name} (theatre)`,
-      },
-      markers,
-    );
-    const rect = make("rect", {}, g);
-    const text = make(
-      "text",
-      { x: t.lab.dx, y: t.lab.dy, "text-anchor": t.lab.a },
-      g,
-    );
-    // a long name breaks into two lines at the space nearest its middle
-    const nm = t.short || t.name;
-    let cut = -1;
-    if (nm.length > 18)
-      for (let i = 0; i < nm.length; i++)
-        if (
-          nm[i] === " " &&
-          (cut < 0 ||
-            Math.abs(i - nm.length / 2) < Math.abs(cut - nm.length / 2))
-        )
-          cut = i;
-    if (cut < 0) text.textContent = nm;
-    else
-      [nm.slice(0, cut), nm.slice(cut + 1)].forEach((ln, i) => {
-        const ts = make(
-          "tspan",
-          { x: t.lab.dx, dy: i ? "1.1em" : "-0.55em" },
-          text,
-        );
-        ts.textContent = ln;
-      });
-    labels.push({ rect, text });
-    activate(g, () => on.select("theatre", t.id));
-    els.th[t.id] = place(g, XY.t[t.id]);
-  });
-
   // shockwave epicentres
   D.shockwaves.forEach((s) => {
     const g = make(
       "g",
       {
         class: "db-mk db-sk",
+        "data-key": s.id,
         tabindex: 0,
         role: "button",
         "aria-label": `${s.name} (shockwave)`,
@@ -530,9 +447,9 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       },
       g,
     );
-    lb.textContent = s.name;
+    lb.textContent = nm(s);
     activate(g, () => on.select("shock", s.id));
-    bindTip(g, hit, s.name, `Shockwave · ${s.status}`);
+    bindTip(g, hit, nm(s), `Shockwave · ${s.status}`);
     els.sk[s.id] = place(g, XY.s[s.id]);
   });
 
@@ -542,6 +459,7 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       "g",
       {
         class: "db-mk db-ck",
+        "data-key": c.id,
         tabindex: 0,
         role: "button",
         "aria-label": `${c.name} (chokepoint)`,
@@ -597,32 +515,13 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
       { class: "db-lb", x: 0, y: -20, "text-anchor": "middle" },
       g,
     );
-    lb.textContent = c.name;
+    lb.textContent = nm(c);
     activate(g, () => on.select("choke", c.id));
-    bindTip(g, hit, c.name, `Chokepoint · ${c.kind}`);
+    bindTip(g, hit, nm(c), `Chokepoint · ${c.kind}`);
     els.ck[c.id] = place(g, XY.c[c.id]);
   });
 
   const reachLayer = make("g", {}, markers);
-
-  // size the label boxes to their text; needs the map to be visible and the font loaded
-  let measured = false;
-  function measure() {
-    if (!el.offsetParent) return;
-    labels.forEach(({ rect, text }) => {
-      const bb = text.getBBox();
-      rect.setAttribute("x", bb.x - 6);
-      rect.setAttribute("y", bb.y - 2);
-      rect.setAttribute("width", bb.width + 12);
-      rect.setAttribute("height", bb.height + 4);
-      rect.setAttribute("rx", 2);
-    });
-    measured = true;
-  }
-  document.fonts?.ready.then(() => {
-    measured = false;
-    measure();
-  });
 
   // ── selection: rings around the epicentre and the places it reaches ──────
   function drawSelection(st) {
@@ -673,110 +572,44 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     placeAll();
   }
 
-  // links between theatres, when a region is open
-  function drawLinks(st) {
-    linkLayer.replaceChildren();
-    if (!st.region || st.sel || st.theme || st.layer) return;
-    D.groups[st.region].links.forEach((lk, i) => {
-      const pts = lk.theatres.map((id) => XY.t[id]);
-      for (let n = 0; n < pts.length - 1; n++) {
-        const [x1, y1] = pts[n];
-        const [x2, y2] = pts[n + 1];
-        const dx = x2 - x1;
-        const dy = y2 - y1;
-        const d = Math.hypot(dx, dy) || 1;
-        const c = d * 0.16;
-        const mx = (x1 + x2) / 2 - (dy / d) * c;
-        const my = (y1 + y2) / 2 + (dx / d) * c;
-        make(
-          "path",
-          {
-            d: `M${x1},${y1} Q${mx},${my} ${x2},${y2}`,
-            class: `db-lk${st.link === i ? " is-on" : ""}`,
-          },
-          linkLayer,
-        );
-      }
-    });
-  }
-
-  // ── what is lit, dimmed or selected ─────────────────────────────────────
-  const focusTheatre = (s) => {
-    if (!s) return null;
-    if (s.t === "theatre") return s.id;
-    return (s.t === "choke" ? D.C[s.id] : D.S[s.id]).theatre || null;
-  };
+  // ── what is lit, dimmed, shown or selected ──────────────────────────────
   function refresh(st) {
-    const ft = focusTheatre(st.sel);
-    const th = st.theme;
-    const rg = st.region;
+    const rg = D.R[st.chap] ? st.chap : null; // a region overview or one of its sub-chapters
+    const sel = st.sel;
     const L = st.layers;
-    const lk =
-      rg && !st.sel && st.link != null ? D.groups[rg].links[st.link] : null;
-    const dimFor = (tid) =>
-      ft
-        ? ft !== tid
-        : th
-          ? !D.T[tid].themes[th]
-          : rg
-            ? lk
-              ? !lk.theatres.includes(tid)
-              : D.T[tid].group !== rg
-            : false;
-    const itemDim = (e) => {
-      if (e.theatre) return dimFor(e.theatre);
-      if (ft) return true;
-      if (th) return th !== e.theme;
-      if (rg) return true;
-      return false;
-    };
-    const isSel = (t, id) => !!st.sel && st.sel.t === t && st.sel.id === id;
+    const isSel = (t, id) => !!sel && sel.t === t && sel.id === id;
+    // a sub-chapter is open: the map shows that place only. Otherwise the pills decide.
+    const shown = (t, e, pill) => !st.layer && (sel ? isSel(t, e.id) : pill);
+    // a region overview: its places are lit and labelled, the others are dimmed
+    const lit = (e) => !sel && !!rg && e.region === rg;
+    const dim = (e) => !sel && !!rg && e.region !== rg;
 
-    D.theatres.forEach((t) => {
-      const g = els.th[t.id];
-      g.style.display = L.th ? "" : "none";
-      g.classList.toggle("is-sel", isSel("theatre", t.id));
-      g.classList.toggle(
-        "is-linked",
-        !!(th && t.themes[th]) ||
-          (!!rg && (lk ? lk.theatres.includes(t.id) : t.group === rg)),
-      );
-      g.classList.toggle("is-dim", dimFor(t.id));
-    });
-    // the wash breathes for the selected shockwave, or for each shockwave of the selected chokepoint's theatre (none for theme-level chokepoints)
-    const pulsing = new Set(
-      st.sel?.t === "shock"
-        ? [st.sel.id]
-        : st.sel?.t === "choke" && D.C[st.sel.id].theatre
-          ? shocksOf(D.C[st.sel.id]).map((sw) => sw.id)
-          : [],
-    );
     D.chokepoints.forEach((c) => {
       const g = els.ck[c.id];
-      g.style.display = L.ch && !st.layer ? "" : "none";
+      g.style.display = shown("choke", c, L.ch) ? "" : "none";
       g.classList.toggle("is-sel", isSel("choke", c.id));
-      g.classList.toggle("is-dim", itemDim(c));
+      g.classList.toggle("is-lit", lit(c));
+      g.classList.toggle("is-dim", dim(c));
     });
     D.shockwaves.forEach((s) => {
       const g = els.sk[s.id];
-      g.style.display = L.sh && !st.layer ? "" : "none";
+      const on = shown("shock", s, L.sh);
+      g.style.display = on ? "" : "none";
       g.classList.toggle("is-sel", isSel("shock", s.id));
-      g.classList.toggle("is-dim", itemDim(s));
-      washes[s.id].style.display = L.sh && !st.layer ? "" : "none";
-      washes[s.id].classList.toggle("is-dim", itemDim(s));
-      const pulse = pulsing.has(s.id);
+      g.classList.toggle("is-lit", lit(s));
+      g.classList.toggle("is-dim", dim(s));
+      washes[s.id].style.display = on ? "" : "none";
+      washes[s.id].classList.toggle("is-dim", dim(s));
+      const pulse = isSel("shock", s.id); // the wash breathes for the selected shockwave
       washes[s.id].classList.toggle("is-pulse", pulse);
-      washes[s.id].setAttribute(
-        "fill",
-        `url(#${uid}-wash${pulse ? "-hi" : ""})`,
-      );
+      washes[s.id].setAttribute("fill", `url(#${uid}-wash${pulse ? "-hi" : ""})`);
     });
-    // while a data layer is shown, the chokepoint and shockwave pills read as off
+    // one place on the map: the pills have nothing to filter (they return while a data layer is shown)
+    el.classList.toggle("is-single", !!sel && !st.layer);
     el.querySelectorAll("[data-layer]").forEach((b) =>
-      b.setAttribute("aria-pressed", L[b.dataset.layer] && (!st.layer || b.dataset.layer === "th")),
+      b.setAttribute("aria-pressed", L[b.dataset.layer] && !st.layer),
     );
     drawSelection(st);
-    drawLinks(st);
     drawData(st);
   }
 
@@ -784,7 +617,9 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   function bindPoint(g, mark, name, sub) {
     const show = (e) => {
       const lines = (Array.isArray(sub) ? sub : [sub]).map(esc).join("<br>");
-      tooltip.html(`<strong>${esc(name)}</strong>${lines ? `<br>${lines}` : ""}`).style("opacity", 1);
+      tooltip
+        .html(`<strong>${esc(name)}</strong>${lines ? `<br>${lines}` : ""}`)
+        .style("opacity", 1);
       hover.enter(e, { mark });
     };
     g.addEventListener("pointerenter", (e) => {
@@ -805,10 +640,13 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
     if (key === drawnLayer) return;
     drawnLayer = key;
     dataLayer.replaceChildren();
-    for (let i = pxItems.length - 1; i >= 0; i--) if (pxItems[i].data) pxItems.splice(i, 1);
+    for (let i = pxItems.length - 1; i >= 0; i--)
+      if (pxItems[i].data) pxItems.splice(i, 1);
     if (!key) return;
     const bub = def.type === "bubbles";
-    const rows = bub ? [...def.rows].sort((a, b) => bubbleR(def, b) - bubbleR(def, a)) : def.rows; // small bubbles on top
+    const rows = bub
+      ? [...def.rows].sort((a, b) => bubbleR(def, b) - bubbleR(def, a))
+      : def.rows; // small bubbles on top
     rows.forEach((r) => {
       const lon = r[def.lon] === "" ? NaN : +r[def.lon];
       const lat = r[def.lat] === "" ? NaN : +r[def.lat];
@@ -827,9 +665,26 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
         },
         dataLayer,
       );
-      make("circle", { class: "db-hit", r: bub ? Math.max(7, bubbleR(def, r) + 3) : 11 }, g);
-      const sym = make("circle", { ...(bub ? bubbleAttrs(def, r) : symbolAttrs(status)), cx: 0, cy: 0 }, g);
-      bindPoint(g, sym, r[def.label], bub ? lines : [r[def.country], status].filter(Boolean).join(" · "));
+      make(
+        "circle",
+        { class: "db-hit", r: bub ? Math.max(7, bubbleR(def, r) + 3) : 11 },
+        g,
+      );
+      const sym = make(
+        "circle",
+        {
+          ...(bub ? bubbleAttrs(def, r) : symbolAttrs(status, def.color)),
+          cx: 0,
+          cy: 0,
+        },
+        g,
+      );
+      bindPoint(
+        g,
+        sym,
+        r[def.label],
+        bub ? lines : [r[def.country], status].filter(Boolean).join(" · "),
+      );
       place(g, proj(lat, lon));
       pxItems[pxItems.length - 1].data = true;
     });
@@ -925,10 +780,14 @@ export function makeDashMap(el, { rows: D, geo, spec = {}, on }) {
   let lastKey = null;
   function update(st, { animate = true } = {}) {
     state = st;
-    if (!measured) measure();
     refresh(st);
     applyCam();
-    const key = [st.sel?.t, st.sel?.id, st.theme, st.region, st.link, st.layer && (D.layers?.[st.layer]?.rows ? st.layer : `${st.layer}…`)].join("|");
+    const key = [
+      st.chap,
+      st.sel?.t,
+      st.sel?.id,
+      st.layer && (D.layers?.[st.layer]?.rows ? st.layer : `${st.layer}…`),
+    ].join("|");
     if (key !== lastKey) {
       const first = lastKey === null;
       lastKey = key;
